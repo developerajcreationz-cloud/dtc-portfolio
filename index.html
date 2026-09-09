@@ -271,6 +271,7 @@
   /* inline video pill */
   .ng-vid{
     display:inline-block;
+    position:relative;
     width:1.5em;
     height:.6em;
     border-radius:.08em;
@@ -281,10 +282,22 @@
     transform-origin:center;
     animation:ngRise .8s cubic-bezier(.22,1,.36,1) forwards, ngVidPulse 5s ease-in-out infinite;
   }
+  /* The source clips are portrait (9:16 UGC-style) but this pill is a
+     landscape container. object-fit:cover on the iframe itself only
+     affects how the iframe box fits its parent — it can't reach inside
+     and change how Vimeo positions the video within the iframe's own
+     viewport. So instead the iframe is sized to the video's own portrait
+     ratio, oversized and centered, and the parent's overflow:hidden
+     crops it down to the landscape pill — a manual object-fit:cover for
+     iframe content. */
   .ng-vid iframe{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:230%;
+    height:auto;
+    aspect-ratio:9/16;
+    transform:translate(-50%,-50%);
     display:block;
     border:0;
     pointer-events:none;
@@ -483,7 +496,7 @@
 
       <!-- Video card -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448464.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448464?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448464.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448464?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Testimonial card -->
@@ -501,12 +514,12 @@
 
       <!-- Video card -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220657751.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220657751?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220657751.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220657751?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Video card -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448399.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448399?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448399.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448399?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- "See full portfolio" inline link -->
@@ -516,7 +529,7 @@
 
       <!-- Video card -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448452.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448452?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448452.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448452?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Testimonial card -->
@@ -534,7 +547,7 @@
 
       <!-- Video card -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448398.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448398?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448398.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448398?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Testimonial card -->
@@ -552,12 +565,12 @@
 
       <!-- Video card -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448330.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448330?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448330.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448330?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Video card -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448770.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448770?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448770.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448770?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
     </div><!-- /masonry -->
@@ -1353,7 +1366,7 @@
 
       <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220451938.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220451938?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220451938.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220451938?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Testimonial -->
@@ -1368,12 +1381,12 @@
 
       <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448493.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448493?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448493.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448493?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448519.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448519?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448519.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448519?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Testimonial -->
@@ -1388,7 +1401,7 @@
 
       <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448591.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448591?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448591.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448591?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Testimonial (long) -->
@@ -1403,7 +1416,7 @@
 
       <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448616.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448616?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448616.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448616?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Dark promo -->
@@ -1423,7 +1436,7 @@
 
       <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448671.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448671?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448671.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448671?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Green promo -->
@@ -1433,7 +1446,7 @@
 
       <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448672.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448672?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448672.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448672?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Testimonial -->
@@ -1448,7 +1461,7 @@
 
       <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448585.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448585?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448585.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448585?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Testimonial -->
@@ -1463,7 +1476,7 @@
 
       <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448699.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448699?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448699.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448699?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Testimonial -->
@@ -1478,12 +1491,12 @@
 
       <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448768.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448768?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448768.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448768?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
       <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448755.jpg')"><iframe class="ng-vimeo" data-src="https://player.vimeo.com/video/1220448755?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448755.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448755?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
       </a>
 
     </div>
@@ -2521,32 +2534,12 @@
     el.addEventListener('dragstart', function(e){ e.preventDefault(); });
   });
 
-  // ---- Staged (not lazy) video loading ----
-  // Every clip still loads eagerly — nothing waits for scroll or
-  // viewport visibility — but not all 20 in one simultaneous burst.
-  // The 2 hero clips keep a real src in the HTML (fetchpriority="high"),
-  // so they win the initial network race outright. The other 18 ship
-  // with data-src and get switched on in two waves, top-to-bottom by
-  // section, once the browser has had a moment to get the hero clips
-  // started: the "Works" preview grid (7 clips), then the full "Works"
-  // grid further down the page (11 clips). This just orders when each
-  // wave *starts*; it does not gate on scroll position the way the
-  // lazy-load approach did.
-  function startFrames(selector){
-    document.querySelectorAll(selector).forEach(function(f){
-      if(f.dataset.src){ f.src = f.dataset.src; f.removeAttribute('data-src'); }
-    });
-  }
-  function whenIdle(cb, timeout){
-    if('requestIdleCallback' in window){ requestIdleCallback(cb, {timeout: timeout}); }
-    else { setTimeout(cb, timeout); }
-  }
-  whenIdle(function(){
-    startFrames('#ng-works iframe.ng-vimeo[data-src]');
-    whenIdle(function(){
-      startFrames('#ng-grid iframe.ng-vimeo[data-src]');
-    }, 700);
-  }, 200);
+  // All 20 clips load eagerly and simultaneously - no lazy-load, no
+  // staged waterfall, no gating on scroll/idle/viewport of any kind, on
+  // desktop or mobile. (A staged version was tried and reverted: it
+  // relied on requestIdleCallback firing promptly, which isn't
+  // guaranteed on a real device under load, and could leave later
+  // sections showing only their poster thumbnail for too long.)
 })();
 </script>
 
