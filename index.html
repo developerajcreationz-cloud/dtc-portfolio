@@ -19,6 +19,12 @@
      file is ever missing. -->
 <script src="assets/js/lenis.min.js"></script>
 
+<!-- Vimeo Player SDK — lets hovering a clip unmute it (and re-mute on
+     mouse-leave) via the official postMessage API. Loaded from Vimeo's
+     own CDN since it has to stay in sync with their player; if it fails
+     to load the clips simply stay muted, no other functionality breaks. -->
+<script src="https://player.vimeo.com/api/player.js"></script>
+
 <style>
   html{scroll-behavior:smooth;}
   html,body{margin:0;padding:0;}
@@ -161,9 +167,9 @@
 <section class="ng-hero" id="ng-hero">
   <!-- floating metric pills -->
   <span class="ng-pill ng-pill--cpa"  style="--x:4%;  --y:4%;">  <i class="dot" style="background:#ff5a5f"></i>CPA</span>
-  <span class="ng-pill ng-pill--ctr"  style="--x:27%; --y:8%;"> <i class="dot" style="background:#2fe6a0"></i>CTR</span>
   <span class="ng-pill ng-pill--roas" style="--x:64%; --y:2%;"> <i class="dot" style="background:#b6f24a"></i>ROAS</span>
-  <span class="ng-pill ng-pill--cpc"  style="--x:87%; --y:7%;"> <i class="dot" style="background:#5b5bff"></i>CPC</span>
+  <span class="ng-pill ng-pill--ctr ng-pill--bottom"  style="--x:8%;  --y:5%;"> <i class="dot" style="background:#2fe6a0"></i>CTR</span>
+  <span class="ng-pill ng-pill--cpc ng-pill--bottom"  style="--x:80%; --y:5%;"> <i class="dot" style="background:#5b5bff"></i>CPC</span>
 
   <div class="ng-hero__inner">
     <!-- Headline with inline video pills -->
@@ -210,11 +216,11 @@
     --muted:#9aa0a6;
     position:relative;
     width:100%;
-    min-height:88vh;
+    min-height:72vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:64px 20px;
+    padding:64px 20px 40px;
     background:#fff;
     overflow:hidden;
     font-family:'Poppins','Helvetica Neue',Arial,sans-serif;
@@ -274,7 +280,7 @@
     position:relative;
     width:1.5em;
     height:.6em;
-    border-radius:.08em;
+    border-radius:.14em;
     overflow:hidden;
     vertical-align:middle;
     background:#e9e9e9 center/cover no-repeat;
@@ -361,6 +367,12 @@
     letter-spacing:.04em;
     opacity:0;
     animation:ngPillIn .7s ease forwards, ngFloat 6s ease-in-out infinite;
+  }
+  /* anchored from the bottom of the hero instead of the top, so these
+     stay clear of the headline regardless of how tall it renders */
+  .ng-pill--bottom{
+    top:auto;
+    bottom:var(--y);
   }
   .ng-pill .dot{
     width:10px;height:10px;border-radius:50%;display:inline-block;
@@ -944,7 +956,7 @@
     flex-direction:column;
     justify-content:space-between;
     width:100%;
-    max-width:150px;
+    max-width:100%;
     margin-left:auto;
     aspect-ratio:3/4.2;
     padding:16px;
@@ -2540,6 +2552,36 @@
   // relied on requestIdleCallback firing promptly, which isn't
   // guaranteed on a real device under load, and could leave later
   // sections showing only their poster thumbnail for too long.)
+
+  // ---- Hover-to-unmute ----
+  // Every clip autoplays muted (required for autoplay in every browser).
+  // Hovering a clip unmutes just that one via Vimeo's official Player
+  // API; moving off it (or onto a different clip) re-mutes it, so at
+  // most one clip plays sound at a time. The iframes themselves have
+  // pointer-events:none (see the download-deterrent block above), so
+  // hover is detected on the wrapper - the iframe is transparent to
+  // pointer events, meaning the wrapper is already the effective hover
+  // target with no changes needed there.
+  if(typeof Vimeo !== 'undefined' && Vimeo.Player){
+    var soundWraps = document.querySelectorAll('.ng-vid, .ng-vidwrap');
+    var activePlayer = null;
+    soundWraps.forEach(function(wrap){
+      var iframe = wrap.querySelector('iframe.ng-vimeo');
+      if(!iframe) return;
+      var player = new Vimeo.Player(iframe);
+      wrap.addEventListener('mouseenter', function(){
+        if(activePlayer && activePlayer !== player){
+          activePlayer.setMuted(true).catch(function(){});
+        }
+        activePlayer = player;
+        player.setMuted(false).catch(function(){});
+      });
+      wrap.addEventListener('mouseleave', function(){
+        player.setMuted(true).catch(function(){});
+        if(activePlayer === player) activePlayer = null;
+      });
+    });
+  }
 })();
 </script>
 
