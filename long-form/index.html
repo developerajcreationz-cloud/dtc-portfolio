@@ -489,7 +489,7 @@
 <!-- ===================== long-form-section.html ===================== -->
 <!-- ============================================================
      LONG-FORM FILMS — landscape (16:9) showcase
-     Layout: 1 large featured film (2 rows tall) + 5 landscape cards.
+     Layout: 7 landscape films mixed with testimonial + promo cards.
      Click any film -> lightbox with the full Vimeo player (sound,
      controls, fullscreen). Cards show a muted hover-preview poster.
      TO SWAP VIDEOS: change the data-vimeo-id on each .lf-card
@@ -506,44 +506,81 @@
     </div>
 
     <div class="lf__grid">
-
-      <!-- Featured -->
-      <button type="button" class="lf-card lf-card--feature" data-vimeo-id="1230981253" data-title="Brand film &mdash; Featured" data-anim>
+      <button type="button" class="lf-card lf-card--video lf-card--wide" data-vimeo-id="1230981253" data-title="Brand film — Featured" data-anim>
         <span class="lf-thumb" style="background-image:url('https://vumbnail.com/1230981253.jpg')"></span>
         <span class="lf-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="lf-meta"><span class="lf-tag">Brand film</span><strong>Brand film &mdash; Featured</strong><span class="lf-sub">Long-form &middot; 16:9</span></span>
+        <span class="lf-meta"><span class="lf-tag">Brand film</span><strong>Brand film — Featured</strong></span>
       </button>
-
-      <button type="button" class="lf-card" data-vimeo-id="1230980966" data-title="Video sales letter" data-anim>
+      <div class="lf-card lf-card--quote" data-anim>
+        <span class="lf-quote__mark">&rdquo;</span>
+        <p class="lf-quote__text">Consistently strong edits for our PPC rotation &mdash; reliable, on-brand, and quick to iterate.</p>
+        <div class="lf-quote__author"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' rx='40' fill='%230e0e0e'/%3E%3Ctext x='50%25' y='53%25' font-family='Poppins%2CArial%2Csans-serif' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3EKO%3C/text%3E%3C/svg%3E" alt="K. Okafor"><div><strong>K. Okafor</strong><span>Head of Growth, Pathwell</span></div></div>
+      </div>
+      <div class="lf-card lf-card--promo lf-promo--orange" data-anim>
+        <div class="lf-promo__badge">Long-form</div>
+        <h4>Tell the whole story</h4>
+        <p>Films that keep them watching</p>
+      </div>
+      <button type="button" class="lf-card lf-card--video" data-vimeo-id="1230980966" data-title="Video sales letter" data-anim>
         <span class="lf-thumb" style="background-image:url('https://vumbnail.com/1230980966.jpg')"></span>
         <span class="lf-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="lf-meta"><span class="lf-tag">VSL</span><strong>Video sales letter</strong><span class="lf-sub">Long-form &middot; 16:9</span></span>
+        <span class="lf-meta"><span class="lf-tag">VSL</span><strong>Video sales letter</strong></span>
       </button>
-
-      <button type="button" class="lf-card" data-vimeo-id="1230961735" data-title="Founder story" data-anim>
+      <button type="button" class="lf-card lf-card--video" data-vimeo-id="1230961735" data-title="Founder story" data-anim>
         <span class="lf-thumb" style="background-image:url('https://vumbnail.com/1230961735.jpg')"></span>
         <span class="lf-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="lf-meta"><span class="lf-tag">Founder story</span><strong>Founder story</strong><span class="lf-sub">Long-form &middot; 16:9</span></span>
+        <span class="lf-meta"><span class="lf-tag">Founder story</span><strong>Founder story</strong></span>
       </button>
-
-      <button type="button" class="lf-card" data-vimeo-id="1230961736" data-title="YouTube ad" data-anim>
+      <div class="lf-card lf-card--quote" data-anim>
+        <span class="lf-quote__mark">&rdquo;</span>
+        <p class="lf-quote__text">Fast turnarounds, sharp taste, and he actually reads the brief. Rare combination and it shows in the finished cuts.</p>
+        <div class="lf-quote__author"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' rx='40' fill='%23dc2626'/%3E%3Ctext x='50%25' y='53%25' font-family='Poppins%2CArial%2Csans-serif' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3ETA%3C/text%3E%3C/svg%3E" alt="T. Alvarez"><div><strong>T. Alvarez</strong><span>Creative Director, Lumen Goods</span></div></div>
+      </div>
+      <button type="button" class="lf-card lf-card--video lf-card--wide" data-vimeo-id="1230961736" data-title="YouTube ad" data-anim>
         <span class="lf-thumb" style="background-image:url('https://vumbnail.com/1230961736.jpg')"></span>
         <span class="lf-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="lf-meta"><span class="lf-tag">YouTube ad</span><strong>YouTube ad</strong><span class="lf-sub">Long-form &middot; 16:9</span></span>
+        <span class="lf-meta"><span class="lf-tag">YouTube ad</span><strong>YouTube ad</strong></span>
       </button>
-
-      <button type="button" class="lf-card" data-vimeo-id="1230961738" data-title="Product explainer" data-anim>
+      <button type="button" class="lf-card lf-card--video" data-vimeo-id="1230961738" data-title="Product explainer" data-anim>
         <span class="lf-thumb" style="background-image:url('https://vumbnail.com/1230961738.jpg')"></span>
         <span class="lf-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="lf-meta"><span class="lf-tag">Explainer</span><strong>Product explainer</strong><span class="lf-sub">Long-form &middot; 16:9</span></span>
+        <span class="lf-meta"><span class="lf-tag">Explainer</span><strong>Product explainer</strong></span>
       </button>
-
-      <button type="button" class="lf-card" data-vimeo-id="1230961741" data-title="Testimonial film" data-anim>
+      <div class="lf-card lf-card--promo lf-promo--dark" data-anim>
+        <div class="lf-promo__badge">Now booking</div>
+        <h4>Now booking: VSLs &amp; brand films</h4>
+        <p>Limited slots each month</p>
+      </div>
+      <div class="lf-card lf-card--quote" data-anim>
+        <span class="lf-quote__mark">&rdquo;</span>
+        <p class="lf-quote__text">Skilled editor, clear communicator, and genuinely up to date on what&rsquo;s working on social right now.</p>
+        <div class="lf-quote__author"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' rx='40' fill='%236366f1'/%3E%3Ctext x='50%25' y='53%25' font-family='Poppins%2CArial%2Csans-serif' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3EDM%3C/text%3E%3C/svg%3E" alt="D. Marsh"><div><strong>D. Marsh</strong><span>Performance Marketing Manager, Basecamp Gear</span></div></div>
+      </div>
+      <button type="button" class="lf-card lf-card--video lf-card--wide" data-vimeo-id="1230961741" data-title="Testimonial film" data-anim>
         <span class="lf-thumb" style="background-image:url('https://vumbnail.com/1230961741.jpg')"></span>
         <span class="lf-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
-        <span class="lf-meta"><span class="lf-tag">Testimonial</span><strong>Testimonial film</strong><span class="lf-sub">Long-form &middot; 16:9</span></span>
+        <span class="lf-meta"><span class="lf-tag">Testimonial</span><strong>Testimonial film</strong></span>
       </button>
-
+      <div class="lf-card lf-card--promo lf-promo--green" data-anim>
+        <div class="lf-promo__badge">Offer</div>
+        <h4>Save 20% on your first order</h4>
+        <p>Start a project today</p>
+      </div>
+      <button type="button" class="lf-card lf-card--video" data-vimeo-id="1230980965" data-title="Case study film" data-anim>
+        <span class="lf-thumb" style="background-image:url('https://vumbnail.com/1230980965.jpg')"></span>
+        <span class="lf-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="lf-meta"><span class="lf-tag">Case study</span><strong>Case study film</strong></span>
+      </button>
+      <div class="lf-card lf-card--quote" data-anim>
+        <span class="lf-quote__mark">&rdquo;</span>
+        <p class="lf-quote__text">Went well beyond the brief every single time. Experienced, easy to talk to, and the edits speak for themselves.</p>
+        <div class="lf-quote__author"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' rx='40' fill='%230d9488'/%3E%3Ctext x='50%25' y='53%25' font-family='Poppins%2CArial%2Csans-serif' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3ENO%3C/text%3E%3C/svg%3E" alt="N. Osei"><div><strong>N. Osei</strong><span>CMO, Hettle Foods</span></div></div>
+      </div>
+      <div class="lf-card lf-card--quote" data-anim>
+        <span class="lf-quote__mark">&rdquo;</span>
+        <p class="lf-quote__text">Helped us build a content library that actually performs across every channel we run, not just one.</p>
+        <div class="lf-quote__author"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%23111%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ECB%3C/text%3E%3C/svg%3E" alt="C. Bianchi"><div><strong>C. Bianchi</strong><span>Marketing Director, Solace Home</span></div></div>
+      </div>
     </div>
 
     <div class="lf__cta">
@@ -573,30 +610,44 @@
   .lf__head h2 em{font-style:italic;color:#9aa0a6;}
   .lf__head p{margin:0;color:var(--muted);font-size:clamp(14px,1.6vw,17px);line-height:1.6;}
 
-  .lf__grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;}
+  .lf__grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-flow:dense;gap:16px;}
   .lf-card{
-    grid-column:span 2;position:relative;display:block;width:100%;padding:0;border:0;cursor:pointer;
-    aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#111;text-align:left;font:inherit;color:#fff;
+    position:relative;display:block;width:100%;border-radius:18px;overflow:hidden;font:inherit;
     opacity:0;transform:translateY(24px);
     transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1),box-shadow .3s ease;
   }
   .lf-card.is-in{opacity:1;transform:translateY(0);}
-  .lf-card--feature{grid-column:span 4;grid-row:span 2;aspect-ratio:auto;border-radius:24px;}
+  .lf-card--video{padding:0;border:0;cursor:pointer;aspect-ratio:16/9;background:#111;text-align:left;color:#fff;}
+  .lf-card--wide{grid-column:span 2;aspect-ratio:auto;}
+  .lf-card--quote{background:#f4f4f5;padding:22px 22px;display:flex;flex-direction:column;gap:14px;}
+  .lf-quote__mark{font-size:36px;line-height:.5;color:var(--ink);font-weight:700;align-self:flex-end;}
+  .lf-quote__text{margin:0;color:#2a2a2a;font-size:14px;font-weight:500;line-height:1.55;}
+  .lf-quote__author{display:flex;align-items:center;gap:10px;margin-top:auto;}
+  .lf-quote__author img{width:38px;height:38px;border-radius:50%;flex:0 0 auto;}
+  .lf-quote__author strong{display:block;font-size:13px;color:var(--ink);font-weight:600;}
+  .lf-quote__author span{display:block;font-size:11.5px;color:var(--muted);line-height:1.3;margin-top:1px;}
+  .lf-card--promo{padding:22px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;min-height:170px;}
+  .lf-card--promo h4{margin:0;font-size:20px;font-weight:700;line-height:1.2;}
+  .lf-card--promo p{margin:0;font-size:13px;font-weight:500;opacity:.85;}
+  .lf-promo__badge{align-self:flex-start;font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.25);color:#fff;margin-bottom:auto;}
+  .lf-promo--orange{background:#e8722e;color:#fff;}
+  .lf-promo--dark{background:#0e0e0e;color:#fff;}
+  .lf-promo--green{background:#c6f024;color:#14210a;}
   .lf-card:hover{box-shadow:0 18px 40px rgba(0,0,0,.18);}
   .lf-card:focus-visible{outline:3px solid var(--green);outline-offset:3px;}
   .lf-thumb{position:absolute;inset:0;background:#222 center/cover no-repeat;transition:transform .6s ease;}
   .lf-card:hover .lf-thumb{transform:scale(1.05);}
-  .lf-card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,0) 55%);}
+  .lf-card--video::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,0) 55%);}
   .lf-play{
     position:absolute;z-index:2;top:50%;left:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;
     background:rgba(255,255,255,.92);display:grid;place-items:center;transition:transform .3s ease,background .3s ease;
   }
-  .lf-card--feature .lf-play{width:84px;height:84px;margin:-42px 0 0 -42px;}
+  .lf-card--wide .lf-play{width:76px;height:76px;margin:-38px 0 0 -38px;}
   .lf-play svg{width:46%;height:46%;fill:#111;margin-left:4%;}
   .lf-card:hover .lf-play{transform:scale(1.1);background:var(--green);}
   .lf-meta{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:18px 20px;display:flex;flex-direction:column;gap:4px;}
   .lf-meta strong{font-size:clamp(14px,1.5vw,18px);font-weight:600;letter-spacing:-.01em;}
-  .lf-card--feature .lf-meta strong{font-size:clamp(18px,2.4vw,28px);}
+  .lf-card--wide .lf-meta strong{font-size:clamp(17px,2vw,24px);}
   .lf-sub{font-size:12px;opacity:.75;}
   .lf-tag{align-self:flex-start;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:11px;font-weight:500;padding:3px 10px;border-radius:999px;margin-bottom:4px;}
 
@@ -616,14 +667,16 @@
   .lf-modal__x{position:absolute;top:-44px;right:0;background:none;border:0;color:#fff;font-size:34px;line-height:1;cursor:pointer;}
 
   @media (max-width:900px){
-    .lf-card{grid-column:span 3;}
-    .lf-card--feature{grid-column:1 / -1;grid-row:auto;aspect-ratio:16/9;}
+    .lf__grid{grid-template-columns:repeat(2,1fr);}
   }
   @media (max-width:600px){
     .lf{padding:56px 16px 64px;}
     .lf__grid{gap:14px;}
-    .lf-card,.lf-card--feature{grid-column:1 / -1;border-radius:16px;}
-    .lf-play,.lf-card--feature .lf-play{width:56px;height:56px;margin:-28px 0 0 -28px;}
+    .lf__grid{grid-template-columns:1fr;}
+    .lf-card{border-radius:16px;}
+    .lf-card--wide{grid-column:auto;aspect-ratio:16/9;}
+    .lf-card--promo{min-height:130px;}
+    .lf-play,.lf-card--wide .lf-play{width:56px;height:56px;margin:-28px 0 0 -28px;}
   }
   @media (prefers-reduced-motion:reduce){.lf-card{transition:none;opacity:1;transform:none;}}
 </style>
