@@ -3,24 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahmad Jan — Performance Video Editor</title>
+<title>Ahmad Jan — Short-Form Video Editor | Reels, Speed Ramps &amp; More</title>
+<meta name="description" content="Short-form video editing for DTC brands: scroll-stopping Reels, speed ramps and before/after edits by Ahmad Jan.">
 
 <!-- Green sunburst favicon, styled after Claude's asterisk mark -->
-<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
 
 <!-- Single shared font load for the whole page -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
-<!-- Lenis v1.3.26 — smooth scroll (MIT license, see assets/js/lenis.LICENSE.txt).
+<!-- Lenis v1.3.26 — smooth scroll (MIT license, see ../assets/js/lenis.LICENSE.txt).
      Vendored locally rather than pulled from a CDN so the page has no
      third-party runtime dependency once it's uploaded to Hostinger.
      Loaded early so it's ready before the page's scroll-triggered
      animations start listening; falls back gracefully to native
      scroll-behavior (see body{scroll-behavior:smooth} below) if this
      file is ever missing. -->
-<script src="assets/js/lenis.min.js"></script>
+<script src="../assets/js/lenis.min.js"></script>
 
 <!-- Vimeo Player SDK — lets hovering a clip unmute it (and re-mute on
      mouse-leave) via the official postMessage API. Loaded from Vimeo's
@@ -53,8 +54,9 @@
 
     <nav class="ng-nav__links" id="ng-nav-links">
       <a href="#ng-hero">Home</a>
+      <a href="#ng-reels">Reels</a>
       <a href="#ng-journey">Journey</a>
-      <a href="#ng-grid">Works</a>
+      <a href="#ng-speedramp">Speed Ramps</a>
       <a href="#ng-qa">FAQs</a>
     </nav>
 
@@ -123,7 +125,7 @@
       background:#fff;border-bottom:1px solid #efeff1;
       max-height:0;overflow:hidden;transition:max-height .35s ease;
     }
-    .ng-nav__links.open{max-height:280px;}
+    .ng-nav__links.open{max-height:340px;}
     .ng-nav__links a{padding:15px 22px;border-top:1px solid #f3f3f4;font-size:15px;}
     .ng-nav__links a::after{display:none;}
     .ng-nav__burger{display:flex;}
@@ -483,310 +485,126 @@
 </script>
 
 
-<!-- ===================== works-section.html ===================== -->
-<!-- ============================================================
-     WORKS / PORTFOLIO SECTION — masonry grid
-     Card types: video · testimonial · CTA
-     Responsive columns:  desktop 4  ·  tablet 3  ·  mobile 2
-     Self-contained: HTML + CSS + JS inline.
-     Drop into an HTML widget / code-snippet plugin.
-     Swap the video URLs, testimonial text, avatars & CTA link.
-     ============================================================ -->
-
-<!-- Poppins (same family as the rest of the site) -->
-
-<section class="ng-works" id="ng-works">
-  <div class="ng-works__inner">
-
-    <!-- MASONRY GRID -->
-    <div class="ng-masonry">
-
-      <!-- CTA card -->
-      <div class="ng-card ng-card--cta" data-anim>
-        <div class="ng-cta__text">
-          <h3>Have a brand?<br>Let&rsquo;s build ads.</h3>
-          <a href="#ng-form" class="ng-cta__link">Start a project</a>
-        </div>
+<!-- ===================== short-form: reels ===================== -->
+<section class="sf-sec " id="ng-reels">
+  <div class="sf-inner">
+    <div class="sf-head" data-anim>
+      <span class="sf-eyebrow">Short-form</span>
+      <h2>Reels that stop the scroll</h2>
+      <p>Vertical, fast-paced cuts built for Reels, TikTok and Shorts.</p>
+    </div>
+    <div class="sf-masonry">
+      <div class="ng-card ng-card--promo ng-promo--orange" data-anim>
+        <div class="ng-promo__badge">Skincare</div>
+        <h4>Skip the guesswork</h4>
+        <p>Glow starts here</p>
       </div>
-
-      <!-- Video card -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220450611.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220450611?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231025311.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025311?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
       </a>
-
-      <!-- Testimonial card -->
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
-        <p class="ng-quote__text">Ahmad plugged straight into our workflow and started shipping ad-ready cuts within days — no hand-holding needed.</p>
+        <p class="ng-quote__text">Fast turnarounds, sharp taste, and he actually reads the brief. Rare combination and it shows in the finished cuts.</p>
         <div class="ng-quote__author">
-          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%25236366f1%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EMR%3C/text%3E%3C/svg%3E" alt="M. Reyes">
-          <div>
-            <strong>M. Reyes</strong>
-            <span>Marketing Lead, Bloom &amp; Co.</span>
-          </div>
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523dc2626%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ETA%3C/text%3E%3C/svg%3E" alt="T. Alvarez">
+          <div><strong>T. Alvarez</strong><span>Creative Director, Lumen Goods</span></div>
         </div>
       </div>
-
-      <!-- Video card -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220450612.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220450612?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231025310.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025310?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
       </a>
-
-      <!-- Video card -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1228120877.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1228120877?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023666.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023666?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
       </a>
-
-      <!-- "See full portfolio" inline link -->
-      <div class="ng-card ng-card--link" data-anim>
-        <a href="#ng-grid">See full portfolio <span aria-hidden="true">&darr;</span></a>
-      </div>
-
-      <!-- Video card -->
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1228120874.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1228120874?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
-      </a>
-
-      <!-- Testimonial card -->
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
-        <p class="ng-quote__text">Sharp editing instincts and genuinely useful hook ideas. Our Meta creatives have been outperforming everything we ran before.</p>
+        <p class="ng-quote__text">Consistently strong edits for our PPC rotation — reliable, on-brand, and quick to iterate.</p>
         <div class="ng-quote__author">
-          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523059669%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EJW%3C/text%3E%3C/svg%3E" alt="J. Whitfield">
-          <div>
-            <strong>J. Whitfield</strong>
-            <span>Growth Marketer, Nordholt</span>
-          </div>
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%25237c3aed%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ERO%3C/text%3E%3C/svg%3E" alt="R. Okafor">
+          <div><strong>R. Okafor</strong><span>Head of Growth, Pathwell</span></div>
         </div>
       </div>
-
-      <!-- Video card -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1228120875.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1228120875?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023664.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023664?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
       </a>
-
-      <!-- Testimonial card -->
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
-        <p class="ng-quote__text">Handed over a folder of raw clips and got back ads that actually looked like ads — clean cuts, strong pacing, real results.</p>
+        <p class="ng-quote__text">If you want ads that perform and not just look nice, Ahmad is the guy. We saw a real lift within the first batch of creatives.</p>
         <div class="ng-quote__author">
-          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523d97706%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ESK%3C/text%3E%3C/svg%3E" alt="S. Kapoor">
-          <div>
-            <strong>S. Kapoor</strong>
-            <span>Founder, Verve Supply</span>
-          </div>
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%25230891b2%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EEL%3C/text%3E%3C/svg%3E" alt="E. Lindqvist">
+          <div><strong>E. Lindqvist</strong><span>Co-Founder, Norrsken Skincare</span></div>
         </div>
       </div>
-
-      <!-- Video card -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1228123549.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1228123549?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023665.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023665?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
       </a>
-
-      <!-- Video card -->
+      <div class="ng-card ng-card--promo ng-promo--dark" data-anim>
+        <h4>Now hiring: remote, full-time, yours</h4>
+      </div>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Skilled editor, clear communicator, and genuinely up to date on what's working on social right now. Already lined up our next batch.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523ca8a04%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EDM%3C/text%3E%3C/svg%3E" alt="D. Marsh">
+          <div><strong>D. Marsh</strong><span>Performance Marketing Manager, Basecamp Gear</span></div>
+        </div>
+      </div>
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1228121419.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1228121419?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023663.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023663?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
       </a>
-
-    </div><!-- /masonry -->
+      <div class="ng-card ng-card--promo ng-promo--green" data-anim>
+        <h4>Save 20% on your first order</h4>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016149.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016149?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Went well beyond the brief every single time. Experienced, easy to talk to, and the edits speak for themselves.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%252316a34a%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ENO%3C/text%3E%3C/svg%3E" alt="N. Osei">
+          <div><strong>N. Osei</strong><span>CEO, Fettle Foods</span></div>
+        </div>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016027.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016027?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Meticulous with detail and easy to brief. Our Facebook creatives have never looked this tight.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523db2777%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EPA%3C/text%3E%3C/svg%3E" alt="P. Aoki">
+          <div><strong>P. Aoki</strong><span>Brand Manager, Kindred Pet Co.</span></div>
+        </div>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016080.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016080?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Helped us build a content library that actually performs across every channel we run, not just one.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%25234338ca%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ECB%3C/text%3E%3C/svg%3E" alt="C. Bianchi">
+          <div><strong>C. Bianchi</strong><span>Marketing Director, Solace Home</span></div>
+        </div>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015996.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015996?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015995.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015995?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015992.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015992?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015994.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015994?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+    </div>
   </div>
 </section>
 
-<style>
-  .ng-works{
-    --ink:#181818;
-    --muted:#8a8f96;
-    --card-radius:18px;
-    --gap:18px;
-    background:#fff;
-    padding:64px 20px;
-    font-family:'Poppins','Helvetica Neue',Arial,sans-serif;
-    box-sizing:border-box;
-  }
-  .ng-works *{box-sizing:border-box;}
-  .ng-works__inner{max-width:1080px;margin:0 auto;}
 
-  /* ---------- Masonry via CSS columns ---------- */
-  #ng-works .ng-masonry{
-    column-count:5;              /* desktop */
-    column-gap:var(--gap);
-  }
-  #ng-works .ng-card{
-    display:block;
-    width:100%;
-    margin:0 0 var(--gap);
-    break-inside:avoid;          /* keep cards whole across columns */
-    -webkit-column-break-inside:avoid;
-    border-radius:var(--card-radius);
-    overflow:hidden;
-    position:relative;
-    /* scroll-in animation */
-    opacity:0;
-    transform:translateY(24px);
-    transition:opacity .6s ease, transform .6s cubic-bezier(.22,1,.36,1);
-  }
-  #ng-works .ng-card.is-in{opacity:1;transform:translateY(0);}
-
-  /* ---------- Video card ---------- */
-  #ng-works .ng-card--video{
-    background:#eee;
-    line-height:0;
-    cursor:pointer;
-  }
-  #ng-works .ng-vidwrap{
-    width:100%;
-    aspect-ratio:9/16;
-    display:block;
-    position:relative;
-    overflow:hidden;
-    background:#eee center/cover no-repeat;
-    transition:transform .5s ease;
-  }
-  #ng-works .ng-vidwrap iframe{
-    position:absolute;inset:0;
-    width:100%;height:100%;
-    object-fit:cover;
-    border:0;
-    pointer-events:none;
-  }
-  #ng-works .ng-card--video:hover .ng-vidwrap{transform:scale(1.04);}
-
-  /* ---------- Testimonial card ---------- */
-  #ng-works .ng-card--quote{
-    background:#f4f4f5;
-    padding:22px 20px;
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-  }
-  #ng-works .ng-quote__mark{
-    font-size:34px;
-    line-height:.5;
-    color:var(--ink);
-    font-weight:700;
-    align-self:flex-end;
-    opacity:.85;
-  }
-  #ng-works .ng-quote__text{
-    margin:0;
-    color:#2a2a2a;
-    font-size:14px;
-    font-weight:500;
-    line-height:1.55;
-  }
-  #ng-works .ng-quote__author{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-top:auto;
-  }
-  #ng-works .ng-quote__author img{
-    width:38px;height:38px;border-radius:50%;object-fit:cover;flex:0 0 auto;
-  }
-  #ng-works .ng-quote__author strong{
-    display:block;font-size:13px;color:var(--ink);font-weight:600;
-    text-decoration:underline;text-underline-offset:2px;
-  }
-  #ng-works .ng-quote__author span{
-    display:block;font-size:11.5px;color:var(--muted);line-height:1.35;margin-top:2px;
-  }
-
-  /* ---------- CTA card ---------- */
-  .ng-card--cta{
-    background:#0b0b0b;
-    aspect-ratio:3/4;
-    display:flex;
-    align-items:flex-end;
-    padding:26px 22px;
-  }
-  .ng-cta__text h3{
-    margin:0 0 10px;
-    color:#fff;
-    font-size:clamp(18px,2vw,22px);
-    font-weight:600;
-    line-height:1.25;
-  }
-  .ng-cta__link{
-    color:#c9f24a;
-    font-size:15px;
-    font-weight:600;
-    text-decoration:none;
-  }
-  .ng-cta__link:hover{text-decoration:underline;}
-
-  /* ---------- "See full portfolio" link card ---------- */
-  .ng-card--link{
-    background:transparent;
-    padding:6px 2px 0;
-    opacity:0;                   /* animated in */
-    transform:translateY(24px);
-    transition:opacity .6s ease, transform .6s ease;
-  }
-  .ng-card--link.is-in{opacity:1;transform:translateY(0);}
-  .ng-card--link a{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    color:var(--ink);
-    font-size:16px;
-    font-weight:600;
-    text-decoration:underline;
-    text-underline-offset:4px;
-  }
-  .ng-card--link a span{transition:transform .3s ease;}
-  .ng-card--link a:hover span{transform:translateY(3px);}
-
-  /* ---------- Responsive breakpoints ---------- */
-  /* Tablet: 3 columns */
-  @media (max-width:1024px){
-    #ng-works .ng-masonry{column-count:3;}
-  }
-  /* Mobile: 2 columns */
-  @media (max-width:640px){
-    .ng-works{padding:44px 14px;}
-    #ng-works .ng-masonry{column-count:2;--gap:12px;column-gap:12px;}
-    #ng-works .ng-card--quote{padding:16px 14px;gap:10px;}
-    #ng-works .ng-quote__text{font-size:12.5px;}
-    #ng-works .ng-quote__author img{width:32px;height:32px;}
-  }
-  /* Very small phones: keep 2 but tighten */
-  @media (max-width:360px){
-    #ng-works .ng-quote__text{font-size:12px;}
-  }
-
-  @media (prefers-reduced-motion:reduce){
-    #ng-works .ng-card, .ng-card--link{opacity:1!important;transform:none!important;transition:none!important;}
-    #ng-works .ng-vidwrap{transition:none!important;}
-  }
-</style>
-
-<script>
-(function(){
-  var cards = document.querySelectorAll('#ng-works [data-anim]');
-
-  // Staggered scroll-reveal
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          var el = e.target;
-          var delay = (el.dataset.i || 0) * 60;
-          setTimeout(function(){ el.classList.add('is-in'); }, delay);
-          io.unobserve(el);
-        }
-      });
-    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
-
-    cards.forEach(function(c,i){ c.dataset.i = i % 8; io.observe(c); });
-  } else {
-    cards.forEach(function(c){ c.classList.add('is-in'); });
-  }
-
-  // Portfolio clips are Vimeo background-player iframes; they load
-  // eagerly and manage their own play state, so no manual play/pause
-  // wiring is needed here.
-})();
-</script>
 
 
 <!-- ===================== journey-section.html ===================== -->
@@ -1356,35 +1174,23 @@
 </script>
 
 
-<!-- ===================== works-grid-full.html ===================== -->
-<!-- ============================================================
-     FULL WORKS GRID — dense masonry
-     Card types: video · testimonial · colored promo/CTA
-     Columns:  desktop 5  ·  tablet 3  ·  mobile 2   (last column included)
-     Self-contained HTML + CSS + JS. Drop into an HTML widget.
-     Swap video URLs, testimonial text, avatars, promo copy & links.
-     ============================================================ -->
-
-
-<section class="ng-grid" id="ng-grid">
-  <div class="ng-grid__inner">
-    <div class="ng-masonry">
-
-      <!-- ===== Column-flow masonry; cards fill top→bottom across 5 columns ===== -->
-
-      <!-- Orange promo -->
+<!-- ===================== short-form: speed ramp + before/after ===================== -->
+<section class="sf-sec " id="ng-speedramp">
+  <div class="sf-inner">
+    <div class="sf-head" data-anim>
+      <span class="sf-eyebrow">Motion</span>
+      <h2>Speed ramps</h2>
+      <p>Smooth speed changes that add punch and rhythm to every beat.</p>
+    </div>
+    <div class="sf-masonry">
       <div class="ng-card ng-card--promo ng-promo--orange" data-anim>
         <div class="ng-promo__badge">Skincare</div>
         <h4>Skip the guesswork</h4>
         <p>Glow starts here</p>
       </div>
-
-      <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220450611.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220450611?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462116.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462116?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
       </a>
-
-      <!-- Testimonial -->
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">Fast turnarounds, sharp taste, and he actually reads the brief. Rare combination and it shows in the finished cuts.</p>
@@ -1393,18 +1199,12 @@
           <div><strong>T. Alvarez</strong><span>Creative Director, Lumen Goods</span></div>
         </div>
       </div>
-
-      <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448493.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448493?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462111.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462111?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
       </a>
-
-      <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448519.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448519?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462113.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462113?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
       </a>
-
-      <!-- Testimonial -->
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">Consistently strong edits for our PPC rotation — reliable, on-brand, and quick to iterate.</p>
@@ -1413,13 +1213,9 @@
           <div><strong>R. Okafor</strong><span>Head of Growth, Pathwell</span></div>
         </div>
       </div>
-
-      <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448591.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448591?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462115.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462115?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
       </a>
-
-      <!-- Testimonial (long) -->
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">If you want ads that perform and not just look nice, Ahmad is the guy. We saw a real lift within the first batch of creatives.</p>
@@ -1428,18 +1224,12 @@
           <div><strong>E. Lindqvist</strong><span>Co-Founder, Norrsken Skincare</span></div>
         </div>
       </div>
-
-      <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448616.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448616?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462080.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462080?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
       </a>
-
-      <!-- Dark promo -->
       <div class="ng-card ng-card--promo ng-promo--dark" data-anim>
         <h4>Now hiring: remote, full-time, yours</h4>
       </div>
-
-      <!-- Testimonial -->
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">Skilled editor, clear communicator, and genuinely up to date on what's working on social right now. Already lined up our next batch.</p>
@@ -1448,23 +1238,15 @@
           <div><strong>D. Marsh</strong><span>Performance Marketing Manager, Basecamp Gear</span></div>
         </div>
       </div>
-
-      <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448671.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448671?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462083.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462083?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
       </a>
-
-      <!-- Green promo -->
       <div class="ng-card ng-card--promo ng-promo--green" data-anim>
         <h4>Save 20% on your first order</h4>
       </div>
-
-      <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448672.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448672?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462081.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462081?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
       </a>
-
-      <!-- Testimonial -->
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">Went well beyond the brief every single time. Experienced, easy to talk to, and the edits speak for themselves.</p>
@@ -1473,153 +1255,95 @@
           <div><strong>N. Osei</strong><span>CEO, Fettle Foods</span></div>
         </div>
       </div>
-
-      <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448585.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448585?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462082.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462082?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
       </a>
+    </div>
+  </div>
+</section>
 
-      <!-- Testimonial -->
+<section class="sf-sec sf-sec--pair" id="ng-beforeafter">
+  <div class="sf-inner">
+    <div class="sf-head" data-anim>
+      <span class="sf-eyebrow">Transformation</span>
+      <h2>Before &amp; after</h2>
+      <p>Raw footage on the left, the finished edit on the right.</p>
+    </div>
+    <div class="sf-masonry">
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231027012.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231027012?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Before clip"></iframe></div><span class="sf-label">Before</span>
+      </a>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
-        <p class="ng-quote__text">Meticulous with detail and easy to brief. Our Facebook creatives have never looked this tight.</p>
+        <p class="ng-quote__text">Fast turnarounds, sharp taste, and he actually reads the brief. Rare combination and it shows in the finished cuts.</p>
         <div class="ng-quote__author">
-          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523db2777%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EPA%3C/text%3E%3C/svg%3E" alt="P. Aoki">
-          <div><strong>P. Aoki</strong><span>Brand Manager, Kindred Pet Co.</span></div>
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523dc2626%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ETA%3C/text%3E%3C/svg%3E" alt="T. Alvarez">
+          <div><strong>T. Alvarez</strong><span>Creative Director, Lumen Goods</span></div>
         </div>
       </div>
-
-      <!-- Video -->
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448699.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448699?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231027013.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231027013?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="After clip"></iframe></div><span class="sf-label">After</span>
       </a>
-
-      <!-- Testimonial -->
-      <div class="ng-card ng-card--quote" data-anim>
-        <span class="ng-quote__mark">&rdquo;</span>
-        <p class="ng-quote__text">Helped us build a content library that actually performs across every channel we run, not just one.</p>
-        <div class="ng-quote__author">
-          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%25234338ca%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ECB%3C/text%3E%3C/svg%3E" alt="C. Bianchi">
-          <div><strong>C. Bianchi</strong><span>Marketing Director, Solace Home</span></div>
-        </div>
-      </div>
-
-      <!-- Video -->
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448768.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448768?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
-      </a>
-
-      <!-- Video -->
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220448755.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220448755?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Ahmad Jan portfolio clip"></iframe></div>
-      </a>
-
     </div>
   </div>
 </section>
 
 <style>
-  .ng-grid{
-    --ink:#181818;
-    --muted:#8a8f96;
-    --radius:16px;
-    --gap:14px;
-    background:#fff;
-    padding:56px 20px 72px;
-    font-family:'Poppins','Helvetica Neue',Arial,sans-serif;
-    box-sizing:border-box;
+  .sf-sec{--ink:#181818;--muted:#8a8f96;--radius:16px;--gap:14px;background:#fff;padding:56px 20px 40px;font-family:'Poppins','Helvetica Neue',Arial,sans-serif;}
+  .sf-sec *{box-sizing:border-box;}
+  .sf-inner{max-width:1200px;margin:0 auto;}
+  .sf-head{text-align:center;margin:0 auto 34px;max-width:560px;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  .sf-head.is-in{opacity:1;transform:none;}
+  .sf-eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:#c9f24a;padding:5px 12px;border-radius:999px;}
+  .sf-head h2{margin:14px 0 8px;font-size:clamp(26px,4vw,40px);font-weight:700;line-height:1.15;color:var(--ink);}
+  .sf-head p{margin:0;font-size:15px;line-height:1.55;color:var(--muted);}
+  .sf-masonry{column-count:5;column-gap:var(--gap);}
+  .sf-sec .ng-card{display:block;width:100%;margin:0 0 var(--gap);break-inside:avoid;-webkit-column-break-inside:avoid;border-radius:var(--radius);overflow:hidden;position:relative;opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.44,0,.09,1);}
+  .sf-sec .ng-card.is-in{opacity:1;transform:translateY(0);}
+  .sf-sec .ng-card--video{background:#eee;line-height:0;cursor:pointer;}
+  .sf-sec .ng-vidwrap{width:100%;aspect-ratio:9/16;display:block;position:relative;overflow:hidden;background:#eee center/cover no-repeat;transition:transform .5s ease;}
+  .sf-sec .ng-vidwrap iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;pointer-events:none;}
+  .sf-sec .ng-card--video:hover .ng-vidwrap{transform:scale(1.04);}
+  .sf-label{position:absolute;left:12px;top:12px;z-index:2;font-size:12px;font-weight:600;line-height:1;color:#fff;background:rgba(0,0,0,.6);padding:7px 12px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
+  .sf-sec .ng-card--quote{background:#f4f4f5;padding:18px 16px;display:flex;flex-direction:column;gap:12px;}
+  .sf-sec .ng-quote__mark{font-size:30px;line-height:.5;color:var(--ink);font-weight:700;align-self:flex-end;opacity:.85;}
+  .sf-sec .ng-quote__text{margin:0;color:#2a2a2a;font-size:13px;font-weight:500;line-height:1.5;}
+  .sf-sec .ng-quote__author{display:flex;align-items:center;gap:9px;margin-top:auto;}
+  .sf-sec .ng-quote__author img{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:0 0 auto;}
+  .sf-sec .ng-quote__author strong{display:block;font-size:12px;color:var(--ink);font-weight:600;}
+  .sf-sec .ng-quote__author span{display:block;font-size:11px;color:var(--muted);line-height:1.3;margin-top:1px;}
+  .sf-sec .ng-card--promo{padding:18px 16px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;min-height:150px;text-decoration:none;}
+  .sf-sec .ng-card--promo h4{margin:0;font-size:16px;font-weight:700;line-height:1.2;}
+  .sf-sec .ng-card--promo p{margin:0;font-size:12.5px;font-weight:500;opacity:.85;}
+  .sf-sec .ng-promo__badge{align-self:flex-start;font-size:10.5px;font-weight:600;padding:4px 9px;border-radius:999px;background:rgba(0,0,0,.25);color:#fff;margin-bottom:auto;}
+  .sf-sec .ng-promo--green{background:#c6f024;} .sf-sec .ng-promo--green h4{color:#14210a;}
+  .sf-sec .ng-promo--dark{background:#0e0e0e;aspect-ratio:3/4.4;} .sf-sec .ng-promo--dark h4{color:#fff;}
+  .sf-sec .ng-promo--orange{background:#e8722e;aspect-ratio:3/4.2;} .sf-sec .ng-promo--orange h4,.sf-sec .ng-promo--orange p{color:#fff;}
+  /* before/after: video | testimonial | video */
+  .sf-sec--pair .sf-inner{max-width:640px;}
+  .sf-sec--pair .sf-masonry{column-count:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap);align-items:start;}
+  .sf-sec--pair .ng-card--quote{grid-column:1/-1;order:3;}
+  .sf-sec--pair .ng-card{margin:0;}
+  @media (max-width:1024px){.sf-masonry{column-count:3;}}
+  @media (max-width:640px){
+    .sf-sec{padding:40px 12px 28px;--gap:10px;}
+    .sf-masonry{column-count:2;}
+    .sf-sec--pair .sf-masonry{display:grid;grid-template-columns:repeat(2,1fr);}
+    .sf-sec--pair .ng-card--quote{grid-column:1/-1;order:3;}
+    .sf-sec .ng-card--quote{padding:14px 12px;gap:9px;}
+    .sf-sec .ng-quote__text{font-size:12px;}
+    .sf-sec .ng-quote__author img{width:30px;height:30px;}
+    .sf-sec .ng-card--promo h4{font-size:14px;}
+    .sf-head{margin-bottom:24px;}
   }
-  .ng-grid *{box-sizing:border-box;}
-  .ng-grid__inner{max-width:1200px;margin:0 auto;}
-
-  /* ---------- Masonry (CSS columns) ---------- */
-  #ng-grid .ng-masonry{
-    column-count:5;          /* desktop — last column included */
-    column-gap:var(--gap);
-  }
-  #ng-grid .ng-card{
-    display:block;
-    width:100%;
-    margin:0 0 var(--gap);
-    break-inside:avoid;
-    -webkit-column-break-inside:avoid;
-    border-radius:var(--radius);
-    overflow:hidden;
-    position:relative;
-    opacity:0;
-    transform:translateY(22px);
-    transition:opacity .6s ease, transform .6s cubic-bezier(.44,0,.09,1);
-  }
-  #ng-grid .ng-card.is-in{opacity:1;transform:translateY(0);}
-
-  /* Video */
-  #ng-grid .ng-card--video{background:#eee;line-height:0;cursor:pointer;}
-  #ng-grid .ng-vidwrap{
-    width:100%;aspect-ratio:9/16;display:block;position:relative;overflow:hidden;
-    background:#eee center/cover no-repeat;
-    transition:transform .5s ease;
-  }
-  #ng-grid .ng-vidwrap iframe{
-    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;pointer-events:none;
-  }
-  #ng-grid .ng-card--video:hover .ng-vidwrap{transform:scale(1.04);}
-
-  /* Testimonial */
-  #ng-grid .ng-card--quote{
-    background:#f4f4f5;
-    padding:18px 16px;
-    display:flex;flex-direction:column;gap:12px;
-  }
-  #ng-grid .ng-quote__mark{font-size:30px;line-height:.5;color:var(--ink);font-weight:700;align-self:flex-end;opacity:.85;}
-  #ng-grid .ng-quote__text{margin:0;color:#2a2a2a;font-size:13px;font-weight:500;line-height:1.5;}
-  #ng-grid .ng-quote__author{display:flex;align-items:center;gap:9px;margin-top:auto;}
-  #ng-grid .ng-quote__author img{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:0 0 auto;}
-  #ng-grid .ng-quote__author strong{display:block;font-size:12px;color:var(--ink);font-weight:600;}
-  #ng-grid .ng-quote__author span{display:block;font-size:11px;color:var(--muted);line-height:1.3;margin-top:1px;}
-
-  /* Colored promo cards */
-  .ng-card--promo{
-    padding:18px 16px;
-    display:flex;flex-direction:column;justify-content:flex-end;gap:8px;
-    min-height:150px;
-    text-decoration:none;
-  }
-  .ng-card--promo h4{margin:0;font-size:16px;font-weight:700;line-height:1.2;}
-  .ng-card--promo p{margin:0;font-size:12.5px;font-weight:500;opacity:.85;}
-  .ng-promo__badge{
-    align-self:flex-start;
-    font-size:10.5px;font-weight:600;padding:4px 9px;border-radius:999px;
-    background:rgba(0,0,0,.25);color:#fff;margin-bottom:auto;
-  }
-  .ng-promo--green{background:#c6f024;}
-  .ng-promo--green h4{color:#14210a;}
-  .ng-promo--dark{background:#0e0e0e;aspect-ratio:3/4.4;}
-  .ng-promo--dark h4{color:#fff;}
-  .ng-promo--orange{background:#e8722e;aspect-ratio:3/4.2;}
-  .ng-promo--orange h4,.ng-promo--orange p{color:#fff;}
-
-  /* ---------- Responsive ---------- */
-  @media (max-width:1024px){         /* tablet → 3 columns */
-    #ng-grid .ng-masonry{column-count:3;}
-  }
-  @media (max-width:640px){          /* mobile → 2 columns */
-    .ng-grid{padding:40px 12px 56px;}
-    #ng-grid .ng-masonry{column-count:2;--gap:10px;column-gap:10px;}
-    #ng-grid .ng-card--quote{padding:14px 12px;gap:9px;}
-    #ng-grid .ng-quote__text{font-size:12px;}
-    #ng-grid .ng-quote__author img{width:30px;height:30px;}
-    .ng-card--promo h4{font-size:14px;}
-  }
-
   @media (prefers-reduced-motion:reduce){
-    #ng-grid .ng-card{opacity:1!important;transform:none!important;transition:none!important;}
-    #ng-grid .ng-vidwrap{transition:none!important;}
+    .sf-sec .ng-card,.sf-head{opacity:1!important;transform:none!important;transition:none!important;}
+    .sf-sec .ng-vidwrap{transition:none!important;}
   }
 </style>
-
 <script>
 (function(){
-  var cards = document.querySelectorAll('#ng-grid [data-anim]');
+  var els = document.querySelectorAll('.sf-sec [data-anim]');
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){
@@ -1630,16 +1354,14 @@
         }
       });
     }, {threshold:.1, rootMargin:'0px 0px -40px 0px'});
-    cards.forEach(function(c,i){ c.dataset.i = i % 10; io.observe(c); });
+    els.forEach(function(c,i){ c.dataset.i = i % 10; io.observe(c); });
   } else {
-    cards.forEach(function(c){ c.classList.add('is-in'); });
+    els.forEach(function(c){ c.classList.add('is-in'); });
   }
-
-  // Portfolio clips are Vimeo background-player iframes; they load
-  // eagerly and manage their own play state, so no manual play/pause
-  // wiring is needed here.
 })();
 </script>
+
+
 
 
 <!-- ===================== core-principles-section.html ===================== -->
@@ -2138,7 +1860,7 @@
 
 <script>
 (function(){
-  // Validates the form, then POSTs it as JSON to assets/php/send-form.php,
+  // Validates the form, then POSTs it as JSON to ../assets/php/send-form.php,
   // which emails the submission to the studio inbox. Requires a PHP host
   // (Hostinger shared/Business plans support this out of the box).
   var form = document.querySelector('#ng-form .ng-form');
@@ -2182,7 +1904,7 @@
     btn.style.pointerEvents = 'none';
     setStatus('', '');
 
-    fetch('assets/php/send-form.php', {
+    fetch('../assets/php/send-form.php', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(collect())
