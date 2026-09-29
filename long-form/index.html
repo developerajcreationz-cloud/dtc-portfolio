@@ -1642,7 +1642,7 @@
   // pointer events, meaning the wrapper is already the effective hover
   // target with no changes needed there.
   if(typeof Vimeo !== 'undefined' && Vimeo.Player){
-    var soundWraps = document.querySelectorAll('.ng-vid, .ng-vidwrap');
+    var soundWraps = document.querySelectorAll('.ng-vidwrap');
     var activePlayer = null;
     soundWraps.forEach(function(wrap){
       var iframe = wrap.querySelector('iframe.ng-vimeo');
