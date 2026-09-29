@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Long-Form Video Editor — Ahmad Jan</title>
-<meta name="description" content="Long-form video editing for DTC brands: VSLs, brand films, founder stories and YouTube ads.">
-<link rel="canonical" href="/long-form/">
+<title>Ahmad Jan — Short-Form Video Editor | Reels, Speed Ramps &amp; More</title>
+<meta name="description" content="Short-form video editing for DTC brands: scroll-stopping Reels, speed ramps and before/after edits by Ahmad Jan.">
 
 <!-- Green sunburst favicon, styled after Claude's asterisk mark -->
 <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
@@ -51,12 +50,13 @@
 
 <header class="ng-nav" id="ng-nav">
   <div class="ng-nav__inner">
-    <a href="../" class="ng-nav__logo">Supads</a>
+    <a href="#ng-hero" class="ng-nav__logo">Supads</a>
 
     <nav class="ng-nav__links" id="ng-nav-links">
       <a href="#ng-hero">Home</a>
-      <a href="../">Short-form</a>
-      <a href="#ng-longform">Long-form</a>
+      <a href="#ng-reels">Reels</a>
+      <a href="#ng-journey">Journey</a>
+      <a href="#ng-speedramp">Speed Ramps</a>
       <a href="#ng-qa">FAQs</a>
     </nav>
 
@@ -125,7 +125,7 @@
       background:#fff;border-bottom:1px solid #efeff1;
       max-height:0;overflow:hidden;transition:max-height .35s ease;
     }
-    .ng-nav__links.open{max-height:280px;}
+    .ng-nav__links.open{max-height:340px;}
     .ng-nav__links a{padding:15px 22px;border-top:1px solid #f3f3f4;font-size:15px;}
     .ng-nav__links a::after{display:none;}
     .ng-nav__burger{display:flex;}
@@ -181,21 +181,21 @@
     <h1 class="ng-headline">
       <span class="ng-line">
         <span>I</span>
-        <em>shape</em>
+        <em>trim</em>
         <span>the</span>
         <span class="ng-vid" data-vimeo-protect style="background-image:url('https://vumbnail.com/359287092.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/359287092?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" fetchpriority="high" tabindex="-1" title="DTC ecommerce ad reel clip"></iframe></span>
-        <span>story.</span>
+        <span>ads.</span>
       </span>
       <span class="ng-line">
         <span>You</span>
-        <em>keep</em>
+        <em>see</em>
         <span>the</span>
         <span class="ng-vid" data-vimeo-protect style="background-image:url('https://vumbnail.com/514250696.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/514250696?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" fetchpriority="high" tabindex="-1" title="DTC ecommerce ad reel clip"></iframe></span>
-        <span>viewers.</span>
+        <span>ROAS.</span>
       </span>
     </h1>
 
-    <p class="ng-sub">Long-form edits &mdash; VSLs, brand films and YouTube ads &mdash;<br>paced for retention and built to convert.</p>
+    <p class="ng-sub">Turning raw footage into scroll-stopping, performance-driven<br>ads that help DTC brands scale with confidence.</p>
 
     <!-- Stats — placeholders: swap in Ahmad's real figures before launch -->
     <div class="ng-stats">
@@ -485,238 +485,883 @@
 </script>
 
 
-
-<!-- ===================== long-form-section.html ===================== -->
-<!-- ============================================================
-     LONG-FORM FILMS — landscape (16:9) showcase
-     Layout: 7 landscape films mixed with testimonial + promo cards.
-     Click any film -> lightbox with the full Vimeo player (sound,
-     controls, fullscreen). Cards show a muted hover-preview poster.
-     TO SWAP VIDEOS: change the data-vimeo-id on each .lf-card
-     (and the title / meta text). Add up to 2 more cards for the
-     8-film set — the grid reflows automatically.
-     ============================================================ -->
-<section class="lf" id="ng-longform">
-  <div class="lf__inner">
-
-    <div class="lf__head">
-      <span class="lf__eyebrow">Long-form</span>
-      <h2>Stories that hold attention <em>past the first 3 seconds.</em></h2>
-      <p>VSLs, brand films, founder stories and YouTube ads &mdash; cut for retention, pacing and conversion.</p>
+<!-- ===================== short-form: reels ===================== -->
+<section class="sf-sec " id="ng-reels">
+  <div class="sf-inner">
+    <div class="sf-head" data-anim>
+      <span class="sf-eyebrow">Short-form</span>
+      <h2>Reels that stop the scroll</h2>
+      <p>Vertical, fast-paced cuts built for Reels, TikTok and Shorts.</p>
     </div>
-
-    <div class="lf__grid">
-      <div class="lf-card lf-card--video lf-card--wide" role="button" tabindex="0" aria-label="Play Brand film — Featured with sound" data-vimeo-id="1230981253" data-title="Brand film — Featured" data-anim>
-        <div class="lf-vid ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1230981253.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1230981253?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Brand film — Featured"></iframe></div>
-        <span class="lf-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Watch full film</span>
-        <span class="lf-meta"><span class="lf-tag">Brand film</span><strong>Brand film — Featured</strong></span>
+    <div class="sf-masonry">
+      <div class="ng-card ng-card--promo ng-promo--orange" data-anim>
+        <div class="ng-promo__badge">Skincare</div>
+        <h4>Skip the guesswork</h4>
+        <p>Glow starts here</p>
       </div>
-      <div class="lf-card lf-card--quote" data-anim>
-        <span class="lf-quote__mark">&rdquo;</span>
-        <p class="lf-quote__text">Consistently strong edits for our PPC rotation &mdash; reliable, on-brand, and quick to iterate.</p>
-        <div class="lf-quote__author"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' rx='40' fill='%230e0e0e'/%3E%3Ctext x='50%25' y='53%25' font-family='Poppins%2CArial%2Csans-serif' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3EKO%3C/text%3E%3C/svg%3E" alt="K. Okafor"><div><strong>K. Okafor</strong><span>Head of Growth, Pathwell</span></div></div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231025311.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025311?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Fast turnarounds, sharp taste, and he actually reads the brief. Rare combination and it shows in the finished cuts.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523dc2626%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ETA%3C/text%3E%3C/svg%3E" alt="T. Alvarez">
+          <div><strong>T. Alvarez</strong><span>Creative Director, Lumen Goods</span></div>
+        </div>
       </div>
-      <div class="lf-card lf-card--promo lf-promo--orange" data-anim>
-        <div class="lf-promo__badge">Long-form</div>
-        <h4>Tell the whole story</h4>
-        <p>Films that keep them watching</p>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231025310.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025310?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023666.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023666?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Consistently strong edits for our PPC rotation — reliable, on-brand, and quick to iterate.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%25237c3aed%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ERO%3C/text%3E%3C/svg%3E" alt="R. Okafor">
+          <div><strong>R. Okafor</strong><span>Head of Growth, Pathwell</span></div>
+        </div>
       </div>
-      <div class="lf-card lf-card--video" role="button" tabindex="0" aria-label="Play Video sales letter with sound" data-vimeo-id="1230980966" data-title="Video sales letter" data-anim>
-        <div class="lf-vid ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1230980966.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1230980966?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Video sales letter"></iframe></div>
-        <span class="lf-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Watch full film</span>
-        <span class="lf-meta"><span class="lf-tag">VSL</span><strong>Video sales letter</strong></span>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023664.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023664?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">If you want ads that perform and not just look nice, Ahmad is the guy. We saw a real lift within the first batch of creatives.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%25230891b2%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EEL%3C/text%3E%3C/svg%3E" alt="E. Lindqvist">
+          <div><strong>E. Lindqvist</strong><span>Co-Founder, Norrsken Skincare</span></div>
+        </div>
       </div>
-      <div class="lf-card lf-card--video" role="button" tabindex="0" aria-label="Play Founder story with sound" data-vimeo-id="1230961735" data-title="Founder story" data-anim>
-        <div class="lf-vid ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1230961735.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1230961735?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Founder story"></iframe></div>
-        <span class="lf-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Watch full film</span>
-        <span class="lf-meta"><span class="lf-tag">Founder story</span><strong>Founder story</strong></span>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023665.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023665?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--promo ng-promo--dark" data-anim>
+        <h4>Now hiring: remote, full-time, yours</h4>
       </div>
-      <div class="lf-card lf-card--quote" data-anim>
-        <span class="lf-quote__mark">&rdquo;</span>
-        <p class="lf-quote__text">Fast turnarounds, sharp taste, and he actually reads the brief. Rare combination and it shows in the finished cuts.</p>
-        <div class="lf-quote__author"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' rx='40' fill='%23dc2626'/%3E%3Ctext x='50%25' y='53%25' font-family='Poppins%2CArial%2Csans-serif' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3ETA%3C/text%3E%3C/svg%3E" alt="T. Alvarez"><div><strong>T. Alvarez</strong><span>Creative Director, Lumen Goods</span></div></div>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Skilled editor, clear communicator, and genuinely up to date on what's working on social right now. Already lined up our next batch.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523ca8a04%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EDM%3C/text%3E%3C/svg%3E" alt="D. Marsh">
+          <div><strong>D. Marsh</strong><span>Performance Marketing Manager, Basecamp Gear</span></div>
+        </div>
       </div>
-      <div class="lf-card lf-card--video lf-card--wide" role="button" tabindex="0" aria-label="Play YouTube ad with sound" data-vimeo-id="1230961736" data-title="YouTube ad" data-anim>
-        <div class="lf-vid ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1230961736.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1230961736?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="YouTube ad"></iframe></div>
-        <span class="lf-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Watch full film</span>
-        <span class="lf-meta"><span class="lf-tag">YouTube ad</span><strong>YouTube ad</strong></span>
-      </div>
-      <div class="lf-card lf-card--video" role="button" tabindex="0" aria-label="Play Product explainer with sound" data-vimeo-id="1230961738" data-title="Product explainer" data-anim>
-        <div class="lf-vid ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1230961738.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1230961738?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Product explainer"></iframe></div>
-        <span class="lf-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Watch full film</span>
-        <span class="lf-meta"><span class="lf-tag">Explainer</span><strong>Product explainer</strong></span>
-      </div>
-      <div class="lf-card lf-card--promo lf-promo--dark" data-anim>
-        <div class="lf-promo__badge">Now booking</div>
-        <h4>Now booking: VSLs &amp; brand films</h4>
-        <p>Limited slots each month</p>
-      </div>
-      <div class="lf-card lf-card--quote" data-anim>
-        <span class="lf-quote__mark">&rdquo;</span>
-        <p class="lf-quote__text">Skilled editor, clear communicator, and genuinely up to date on what&rsquo;s working on social right now.</p>
-        <div class="lf-quote__author"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' rx='40' fill='%236366f1'/%3E%3Ctext x='50%25' y='53%25' font-family='Poppins%2CArial%2Csans-serif' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3EDM%3C/text%3E%3C/svg%3E" alt="D. Marsh"><div><strong>D. Marsh</strong><span>Performance Marketing Manager, Basecamp Gear</span></div></div>
-      </div>
-      <div class="lf-card lf-card--video lf-card--wide" role="button" tabindex="0" aria-label="Play Testimonial film with sound" data-vimeo-id="1230961741" data-title="Testimonial film" data-anim>
-        <div class="lf-vid ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1230961741.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1230961741?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Testimonial film"></iframe></div>
-        <span class="lf-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Watch full film</span>
-        <span class="lf-meta"><span class="lf-tag">Testimonial</span><strong>Testimonial film</strong></span>
-      </div>
-      <div class="lf-card lf-card--promo lf-promo--green" data-anim>
-        <div class="lf-promo__badge">Offer</div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023663.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023663?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--promo ng-promo--green" data-anim>
         <h4>Save 20% on your first order</h4>
-        <p>Start a project today</p>
       </div>
-      <div class="lf-card lf-card--video" role="button" tabindex="0" aria-label="Play Case study film with sound" data-vimeo-id="1230980965" data-title="Case study film" data-anim>
-        <div class="lf-vid ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1230980965.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1230980965?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Case study film"></iframe></div>
-        <span class="lf-open" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>Watch full film</span>
-        <span class="lf-meta"><span class="lf-tag">Case study</span><strong>Case study film</strong></span>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016149.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016149?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Went well beyond the brief every single time. Experienced, easy to talk to, and the edits speak for themselves.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%252316a34a%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ENO%3C/text%3E%3C/svg%3E" alt="N. Osei">
+          <div><strong>N. Osei</strong><span>CEO, Fettle Foods</span></div>
+        </div>
       </div>
-      <div class="lf-card lf-card--quote" data-anim>
-        <span class="lf-quote__mark">&rdquo;</span>
-        <p class="lf-quote__text">Went well beyond the brief every single time. Experienced, easy to talk to, and the edits speak for themselves.</p>
-        <div class="lf-quote__author"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' rx='40' fill='%230d9488'/%3E%3Ctext x='50%25' y='53%25' font-family='Poppins%2CArial%2Csans-serif' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle' dominant-baseline='middle'%3ENO%3C/text%3E%3C/svg%3E" alt="N. Osei"><div><strong>N. Osei</strong><span>CMO, Hettle Foods</span></div></div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016027.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016027?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Meticulous with detail and easy to brief. Our Facebook creatives have never looked this tight.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523db2777%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EPA%3C/text%3E%3C/svg%3E" alt="P. Aoki">
+          <div><strong>P. Aoki</strong><span>Brand Manager, Kindred Pet Co.</span></div>
+        </div>
       </div>
-      <div class="lf-card lf-card--quote" data-anim>
-        <span class="lf-quote__mark">&rdquo;</span>
-        <p class="lf-quote__text">Helped us build a content library that actually performs across every channel we run, not just one.</p>
-        <div class="lf-quote__author"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%23111%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ECB%3C/text%3E%3C/svg%3E" alt="C. Bianchi"><div><strong>C. Bianchi</strong><span>Marketing Director, Solace Home</span></div></div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016080.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016080?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Helped us build a content library that actually performs across every channel we run, not just one.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%25234338ca%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ECB%3C/text%3E%3C/svg%3E" alt="C. Bianchi">
+          <div><strong>C. Bianchi</strong><span>Marketing Director, Solace Home</span></div>
+        </div>
       </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015996.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015996?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015995.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015995?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015992.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015992?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015994.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015994?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
     </div>
-
   </div>
 </section>
 
-<!-- Lightbox -->
-<div class="lf-modal" id="lf-modal" role="dialog" aria-modal="true" aria-label="Video player" hidden>
-  <div class="lf-modal__bg" data-close></div>
-  <div class="lf-modal__box">
-    <button type="button" class="lf-modal__x" data-close aria-label="Close">&times;</button>
-    <div class="lf-modal__frame" id="lf-frame"></div>
-    <div class="lf-modal__title" id="lf-title"></div>
+
+
+
+<!-- ===================== journey-section.html ===================== -->
+<!-- ============================================================
+     JOURNEY / ABOUT SECTION — "Hey! I'm Ahmad."
+     Editorial layout: left labels · center narrative · right labels
+     + sticky green "Let's talk" CTA card.
+     Animations: heading word reveal, row fade/slide-in on scroll,
+     sticky CTA follows as you scroll the rows.
+     Responsive: desktop 3-col · tablet stacked · mobile single column.
+     Self-contained HTML + CSS + JS. Drop into an HTML widget.
+     ============================================================ -->
+
+
+<section class="ng-journey" id="ng-journey">
+  <div class="ng-journey__inner">
+
+    <!-- Heading -->
+    <h2 class="ng-jhead">
+      <span class="w"><em>Hey!</em></span>
+      <span class="w">I&rsquo;m</span>
+      <span class="w ng-jhead__avatar">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='80' height='80' rx='40' fill='%23111111'/%3E%3Ctext x='50%25' y='53%25' font-family='Poppins,Arial,sans-serif' font-size='26' font-weight='700' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'%3EAJ%3C/text%3E%3C/svg%3E" alt="Ahmad Jan">
+      </span>
+      <span class="w">Ahmad.</span>
+    </h2>
+
+    <!-- Rows -->
+    <div class="ng-jbody">
+
+      <!-- ROW 1 -->
+      <div class="ng-jrow" data-row>
+        <div class="ng-jrow__left"><span class="ng-label">Past</span></div>
+        <div class="ng-jrow__mid">
+          <span class="ng-label ng-label--mid">Dream</span>
+          <p class="ng-p ng-p--muted"><span class="hi">Funny enough,</span> I didn&rsquo;t start out editing ads at all — I came from a completely different field. Video was just my way to <span class="hi">unplug from work.</span></p>
+          <p class="ng-p"><span class="hi">I made the jump into full-time creative work and never looked back.</span> <span class="muted">Betting on yourself actually pays off.</span></p>
+        </div>
+        <div class="ng-jrow__right"><span class="ng-label">Love</span></div>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="ng-jrow" data-row>
+        <div class="ng-jrow__left"><span class="ng-label">Passion</span></div>
+        <div class="ng-jrow__mid">
+          <span class="ng-label ng-label--mid">XP</span>
+          <p class="ng-p"><span class="muted">At this point, I&rsquo;ve worked with</span> 60+ DTC brands, created 5k+ ad iterations, <span class="muted">and still love every second of it.</span></p>
+          <p class="ng-p"><span class="muted">Not a freelancer.<br>Still not an agency.</span><br>But a niche creative partner.</p>
+        </div>
+        <div class="ng-jrow__right"><span class="ng-label">Future</span></div>
+      </div>
+
+      <!-- ROW 3 -->
+      <div class="ng-jrow" data-row>
+        <div class="ng-jrow__left"><span class="ng-label">Trust</span></div>
+        <div class="ng-jrow__mid">
+          <span class="ng-label ng-label--mid">Partner</span>
+          <p class="ng-p"><span class="muted">If you&rsquo;re looking for mass-produced, trend-chasing edits — I&rsquo;m probably not your guy.</span> But if you care about structured storytelling, strategic visuals, and ROI-backed performance — then we might get along. I&rsquo;m in this for the long game.</p>
+          <p class="ng-p">I care about the people I work with as much as the work itself.</p>
+          <p class="ng-p ng-p--muted">Working remotely with brands worldwide.</p>
+        </div>
+        <div class="ng-jrow__right">
+          <!-- sticky CTA card -->
+          <a href="https://scheduler.zoom.us/ahmad-jan-2rwy3j/discovery-call" target="_blank" rel="noopener" class="ng-cta-card" data-cta>
+            <span class="ng-cta-card__tag"><i></i>CTA</span>
+            <span class="ng-cta-card__label">Let&rsquo;s talk</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
-</div>
+</section>
 
 <style>
-  .lf{--ink:#161616;--muted:#8a8f96;--green:#c6f024;background:#fff;padding:72px 20px 88px;font-family:'Poppins','Helvetica Neue',Arial,sans-serif;}
-  .lf *{box-sizing:border-box;}
-  .lf__inner{max-width:1180px;margin:0 auto;container-type:inline-size;}
-  .lf__head{text-align:center;max-width:760px;margin:0 auto 44px;}
-  .lf__eyebrow{display:inline-block;background:var(--green);color:var(--ink);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px;}
-  .lf__head h2{margin:18px 0 12px;font-size:clamp(28px,4.4vw,46px);font-weight:600;letter-spacing:-.02em;line-height:1.1;color:var(--ink);}
-  .lf__head h2 em{font-style:italic;color:#9aa0a6;}
-  .lf__head p{margin:0;color:var(--muted);font-size:clamp(14px,1.6vw,17px);line-height:1.6;}
-
-  .lf__grid{--cols:3;--gap:16px;display:grid;grid-template-columns:repeat(var(--cols),1fr);grid-auto-flow:dense;gap:var(--gap);
-    /* every cell is exactly 16:9, so videos are never cropped */
-    grid-auto-rows:calc((100cqw - (var(--cols) - 1) * var(--gap)) / var(--cols) * 9 / 16);}
-  .lf-card{
-    position:relative;display:block;width:100%;height:100%;border-radius:18px;overflow:hidden;font:inherit;
-    opacity:0;transform:translateY(24px);
-    transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1),box-shadow .3s ease;
+  .ng-journey{
+    --ink:#161616;
+    --muted:#a2a7ad;
+    --line:#e9e9ec;
+    --green:#c6f024;
+    background:#fff;
+    padding:80px 24px 96px;
+    font-family:'Poppins','Helvetica Neue',Arial,sans-serif;
+    box-sizing:border-box;
   }
-  .lf-card.is-in{opacity:1;transform:translateY(0);}
-  .lf-card--video{cursor:pointer;background:#000;color:#fff;}
-  .lf-card--wide{grid-column:span 2;grid-row:span 2;}
-  .lf-card--quote{background:#f4f4f5;padding:20px;display:flex;flex-direction:column;gap:14px;}
-  .lf-quote__mark{font-size:36px;line-height:.5;color:var(--ink);font-weight:700;align-self:flex-end;}
-  .lf-quote__text{margin:0;color:#2a2a2a;font-size:14px;font-weight:500;line-height:1.55;}
-  .lf-quote__author{display:flex;align-items:center;gap:10px;margin-top:auto;}
-  .lf-quote__author img{width:38px;height:38px;border-radius:50%;flex:0 0 auto;}
-  .lf-quote__author strong{display:block;font-size:13px;color:var(--ink);font-weight:600;}
-  .lf-quote__author span{display:block;font-size:11.5px;color:var(--muted);line-height:1.3;margin-top:1px;}
-  .lf-card--promo{padding:22px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;}
-  .lf-card--promo h4{margin:0;font-size:20px;font-weight:700;line-height:1.2;}
-  .lf-card--promo p{margin:0;font-size:13px;font-weight:500;opacity:.85;}
-  .lf-promo__badge{align-self:flex-start;font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.25);color:#fff;margin-bottom:auto;}
-  .lf-promo--orange{background:#e8722e;color:#fff;}
-  .lf-promo--dark{background:#0e0e0e;color:#fff;}
-  .lf-promo--green{background:#c6f024;color:#14210a;}
-  .lf-card:hover{box-shadow:0 18px 40px rgba(0,0,0,.18);}
-  .lf-card:focus-visible{outline:3px solid var(--green);outline-offset:3px;}
-  .lf-vid{position:absolute;inset:0;background:#111 center/cover no-repeat;overflow:hidden;}
-  .lf-vid iframe{position:absolute;top:50%;left:50%;width:100%;height:100%;min-width:100%;min-height:100%;
-    aspect-ratio:16/9;transform:translate(-50%,-50%);border:0;pointer-events:none;}
-  .lf-card--video::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.6),rgba(0,0,0,0));}
-  .lf-open{position:absolute;z-index:2;top:12px;right:12px;display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.92);color:#111;
-    font-size:11.5px;font-weight:600;padding:6px 12px 6px 9px;border-radius:999px;opacity:0;transform:translateY(-4px);transition:opacity .25s,transform .25s,background .25s;}
-  .lf-open svg{width:14px;height:14px;fill:currentColor;}
-  .lf-card--video:hover .lf-open,.lf-card--video:focus-visible .lf-open{opacity:1;transform:none;background:var(--green);}
-  .lf-meta{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:14px 18px;display:flex;flex-direction:column;gap:3px;pointer-events:none;}
-  .lf-meta strong{font-size:clamp(13px,1.4vw,17px);font-weight:600;letter-spacing:-.01em;text-shadow:0 1px 8px rgba(0,0,0,.5);}
-  .lf-card--wide .lf-meta{padding:20px 24px;}
-  .lf-card--wide .lf-meta strong{font-size:clamp(17px,2vw,24px);}
-  .lf-tag{align-self:flex-start;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-size:10.5px;font-weight:500;padding:3px 10px;border-radius:999px;}
+  .ng-journey *{box-sizing:border-box;}
+  .ng-journey__inner{max-width:1080px;margin:0 auto;}
 
+  /* ---------- Heading ---------- */
+  .ng-jhead{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:.28em;
+    margin:0 0 90px;
+    font-size:clamp(28px,4.6vw,44px);
+    font-weight:600;
+    color:var(--ink);
+    letter-spacing:-.01em;
+  }
+  .ng-jhead em{font-style:italic;font-weight:600;}
+  .ng-jhead .w{
+    display:inline-flex;
+    align-items:center;
+    opacity:0;
+    transform:translateY(30px);
+    animation:jRise .8s cubic-bezier(.44,0,.09,1) forwards;
+    animation-play-state:paused;   /* triggered by JS when in view */
+  }
+  .ng-jhead .w:nth-child(1){animation-delay:.00s}
+  .ng-jhead .w:nth-child(2){animation-delay:.10s}
+  .ng-jhead .w:nth-child(3){animation-delay:.20s}
+  .ng-jhead .w:nth-child(4){animation-delay:.30s}
+  .ng-jhead__avatar img{
+    width:1.55em;height:1.05em;border-radius:999px;object-fit:cover;
+    display:block;box-shadow:0 4px 14px rgba(0,0,0,.14);
+  }
 
-  /* Lightbox */
-  .lf-modal[hidden]{display:none;}
-  .lf-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;}
-  .lf-modal__bg{position:absolute;inset:0;background:rgba(0,0,0,.86);}
-  .lf-modal__box{position:relative;width:min(1100px,100%);}
-  .lf-modal__frame{aspect-ratio:16/9;width:100%;background:#000;border-radius:14px;overflow:hidden;}
-  .lf-modal__frame iframe{width:100%;height:100%;border:0;display:block;}
-  .lf-modal__title{color:#fff;font-family:'Poppins',sans-serif;font-size:15px;margin-top:12px;opacity:.85;}
-  .lf-modal__x{position:absolute;top:-44px;right:0;background:none;border:0;color:#fff;font-size:34px;line-height:1;cursor:pointer;}
+  /* ---------- Rows layout ---------- */
+  .ng-jrow{
+    display:grid;
+    grid-template-columns:1fr 2.1fr 1fr;
+    gap:24px;
+    padding:44px 0;
+    border-top:1px solid var(--line);
+  }
+  .ng-jrow:first-child{border-top:none;}
 
+  .ng-label{
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.06em;
+    color:var(--ink);
+    text-transform:capitalize;
+  }
+  .ng-jrow__right{text-align:right;}
+  .ng-jrow__right .ng-label{color:var(--ink);}
+  .ng-label--mid{display:block;margin-bottom:18px;}
+
+  .ng-jrow__mid{max-width:440px;}
+  .ng-p{
+    margin:0 0 18px;
+    font-size:15px;
+    line-height:1.62;
+    font-weight:500;
+    color:var(--ink);
+  }
+  .ng-p:last-child{margin-bottom:0;}
+  .ng-p .muted, .ng-p--muted{color:var(--muted);}
+  .ng-p .hi{color:var(--ink);font-weight:600;}
+
+  /* ---------- Scroll reveal for rows (Framer-style fade + rise) ---------- */
+  .ng-jrow__left,.ng-jrow__mid,.ng-jrow__right{
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity .8s cubic-bezier(.44,0,.09,1), transform .8s cubic-bezier(.44,0,.09,1);
+    will-change:opacity, transform;
+  }
+  .ng-jrow.is-in .ng-jrow__left {transition-delay:.00s;opacity:1;transform:translateY(0);}
+  .ng-jrow.is-in .ng-jrow__mid  {transition-delay:.08s;opacity:1;transform:translateY(0);}
+  .ng-jrow.is-in .ng-jrow__right{transition-delay:.16s;opacity:1;transform:translateY(0);}
+
+  /* ---------- Sticky green CTA card ---------- */
+  .ng-jrow__right{position:relative;}
+  .ng-cta-card{
+    position:sticky;
+    top:calc(50vh - 130px);       /* stays centered-ish while scrolling */
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    width:100%;
+    max-width:100%;
+    margin-left:auto;
+    aspect-ratio:3/4.2;
+    padding:16px;
+    border-radius:20px;
+    background:var(--green);
+    text-decoration:none;
+    box-shadow:0 18px 40px rgba(150,190,20,.28);
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .ng-cta-card:hover{transform:translateY(-4px);box-shadow:0 24px 50px rgba(150,190,20,.4);}
+  .ng-cta-card__tag{
+    align-self:flex-end;
+    display:inline-flex;align-items:center;gap:6px;
+    background:#111;color:#fff;
+    font-size:11px;font-weight:600;
+    padding:5px 11px;border-radius:999px;
+  }
+  .ng-cta-card__tag i{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;}
+  .ng-cta-card__label{
+    color:#1a1a1a;font-size:16px;font-weight:600;text-decoration:underline;text-underline-offset:3px;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+
+  /* Tablet ≤ 900px: drop the outer side labels into the flow,
+     keep a 2-col feel (label + text), CTA becomes inline */
   @media (max-width:900px){
-    .lf__grid{--cols:2;}
+    .ng-journey{padding:60px 20px 72px;}
+    .ng-jhead{margin-bottom:60px;}
+    .ng-jrow{
+      grid-template-columns:120px 1fr;
+      gap:18px;
+      padding:36px 0;
+    }
+    .ng-jrow__mid{grid-column:2;max-width:none;}
+    .ng-jrow__left{grid-column:1;grid-row:1;}
+    /* right-side labels move under the left label */
+    .ng-jrow__right{
+      grid-column:1;grid-row:2;
+      text-align:left;
+    }
+    .ng-jrow__right .ng-label{color:var(--muted);}
+    /* CTA card: un-stick, sit in the text column */
+    .ng-cta-card{
+      position:static;
+      max-width:160px;
+      margin:22px 0 0;
+      aspect-ratio:3/3.4;
+    }
+    /* place the CTA row's card below the text nicely */
+    .ng-jrow:last-child{grid-template-columns:120px 1fr;}
+    .ng-jrow:last-child .ng-jrow__right{grid-column:2;grid-row:auto;}
   }
-  @media (max-width:600px){
-    .lf{padding:56px 16px 64px;}
-    .lf__grid{--cols:1;--gap:14px;grid-auto-rows:auto;}
-    .lf-card{border-radius:16px;height:auto;}
-    .lf-card--video{aspect-ratio:16/9;}
-    .lf-card--wide{grid-column:auto;grid-row:auto;}
-    .lf-card--promo{min-height:140px;}
-    .lf-open{opacity:1;transform:none;}
+
+  /* Mobile ≤ 560px: single column, labels stacked above text */
+  @media (max-width:560px){
+    .ng-journey{padding:48px 16px 60px;}
+    .ng-jhead{
+      font-size:clamp(24px,7vw,32px);
+      margin-bottom:44px;
+      gap:.24em;
+    }
+    .ng-jrow{
+      grid-template-columns:1fr;
+      gap:10px;
+      padding:30px 0;
+    }
+    .ng-jrow__left,.ng-jrow__right,.ng-jrow__mid{grid-column:1;}
+    .ng-jrow__left{grid-row:1;}
+    .ng-jrow__mid{grid-row:2;}
+    .ng-jrow__right{grid-row:3;}
+    /* The tablet breakpoint also sets .ng-jrow:last-child{grid-template-
+       columns:120px 1fr} and .ng-jrow:last-child .ng-jrow__right{grid-
+       column:2;grid-row:auto} - both outrank the plain rules above on
+       specificity alone, so they were still winning here: the row kept
+       its 2-column tablet template and the CTA card sat in the narrow
+       120px label column instead of the full row. Override both at
+       matching specificity for the single-column mobile layout. */
+    .ng-jrow:last-child{grid-template-columns:1fr;}
+    .ng-jrow:last-child .ng-jrow__right{grid-column:1;grid-row:3;}
+    .ng-label{color:var(--muted)!important;font-size:12px;}
+    .ng-label--mid{margin-bottom:12px;color:var(--ink)!important;}
+    .ng-p{font-size:14.5px;}
+    .ng-cta-card{width:100%;max-width:100%;aspect-ratio:auto;flex-direction:row;align-items:center;padding:18px;margin-top:18px;margin-left:0;}
+    .ng-cta-card__label{font-size:17px;}
   }
-  @media (prefers-reduced-motion:reduce){.lf-card{transition:none;opacity:1;transform:none;}}
+
+  @media (prefers-reduced-motion:reduce){
+    .ng-jhead .w,
+    .ng-jrow__left,.ng-jrow__mid,.ng-jrow__right{
+      opacity:1!important;transform:none!important;animation:none!important;transition:none!important;
+    }
+  }
+
+  @keyframes jRise{to{opacity:1;transform:translateY(0);}}
 </style>
 
 <script>
 (function(){
-  var cards = document.querySelectorAll('.lf-card');
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } });
-    },{threshold:.12});
-    cards.forEach(function(c){ io.observe(c); });
-  } else { cards.forEach(function(c){ c.classList.add('is-in'); }); }
+  var sec = document.getElementById('ng-journey');
 
-  var modal = document.getElementById('lf-modal');
-  var frame = document.getElementById('lf-frame');
-  var title = document.getElementById('lf-title');
-  var lastFocus = null;
-  function open(card){
-    lastFocus = card;
-    // silence the hover-unmuted background clips while the full player is open
-    if(typeof Vimeo !== 'undefined' && Vimeo.Player){
-      document.querySelectorAll('.lf-vid iframe').forEach(function(f){ new Vimeo.Player(f).setMuted(true).catch(function(){}); });
-    }
-    var id = card.getAttribute('data-vimeo-id');
-    frame.innerHTML = '<iframe src="https://player.vimeo.com/video/'+id+'?autoplay=1&byline=0&title=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Long-form video"></iframe>';
-    title.textContent = card.getAttribute('data-title').replace(/&mdash;/g,'—');
-    modal.hidden = false;
-    document.documentElement.style.overflow = 'hidden';
-    if(window.lenis) window.lenis.stop();
-    modal.querySelector('.lf-modal__x').focus();
+  // Heading word reveal when heading enters view
+  var head = sec.querySelector('.ng-jhead');
+  var rows = sec.querySelectorAll('[data-row]');
+
+  if('IntersectionObserver' in window){
+    var headIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          head.querySelectorAll('.w').forEach(function(w){
+            w.style.animationPlayState = 'running';
+          });
+          headIO.disconnect();
+        }
+      });
+    }, {threshold:.4});
+    headIO.observe(head);
+
+    var rowIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('is-in'); rowIO.unobserve(e.target); }
+      });
+    }, {threshold:.2, rootMargin:'0px 0px -60px 0px'});
+    rows.forEach(function(r){ rowIO.observe(r); });
+  } else {
+    head.querySelectorAll('.w').forEach(function(w){w.style.opacity=1;w.style.transform='none';});
+    rows.forEach(function(r){ r.classList.add('is-in'); });
   }
-  function close(){
-    modal.hidden = true;
-    frame.innerHTML = '';
-    document.documentElement.style.overflow = '';
-    if(window.lenis) window.lenis.start();
-    if(lastFocus) lastFocus.focus();
-  }
-  cards.forEach(function(c){
-    if(!c.hasAttribute('data-vimeo-id')) return;
-    c.addEventListener('click', function(){ open(c); });
-    c.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); open(c); } });
-  });
-  modal.querySelectorAll('[data-close]').forEach(function(b){ b.addEventListener('click', close); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !modal.hidden) close(); });
 })();
 </script>
+
+
+<!-- ===================== portfolio-section.html ===================== -->
+<!-- ============================================================
+     PORTFOLIO SECTION — logo marquee + drifting word-cloud
+     Row 1: continuous logo strip (auto-scroll, loops seamlessly)
+     Below: faint category words in multi-speed marquee rows,
+            with a solid "Portfolio" label centered on top.
+     Pure CSS marquees (no JS needed for motion) + inline styles.
+     Responsive across desktop / tablet / mobile.
+     Swap logo <img> src and the word list as needed.
+     ============================================================ -->
+
+
+<section class="ng-portfolio" id="ng-portfolio">
+
+  <!-- ============ LOGO MARQUEE ============ -->
+  <div class="ng-logos" aria-label="Client logos">
+    <div class="ng-logos__track">
+      <!-- group (duplicated below for seamless loop) -->
+      <!-- Placeholder client wordmarks — swap for Ahmad's real client logos when available -->
+      <div class="ng-logos__group">
+        <span class="ng-logo-chip">Bloom &amp; Co.</span>
+        <span class="ng-logo-chip">Nordholt</span>
+        <span class="ng-logo-chip">Verve Supply</span>
+        <span class="ng-logo-chip">Lumen Goods</span>
+        <span class="ng-logo-chip">Pathwell</span>
+        <span class="ng-logo-chip">Norrsken</span>
+        <span class="ng-logo-chip">Basecamp Gear</span>
+        <span class="ng-logo-chip">Fettle Foods</span>
+        <span class="ng-logo-chip">Kindred Pet Co.</span>
+        <span class="ng-logo-chip">Solace Home</span>
+        <span class="ng-logo-chip">Maren Studio</span>
+        <span class="ng-logo-chip">Northfield</span>
+        <span class="ng-logo-chip">Arlo &amp; Co.</span>
+      </div>
+      <!-- duplicate for seamless loop (aria-hidden) -->
+      <div class="ng-logos__group" aria-hidden="true">
+        <span class="ng-logo-chip">Bloom &amp; Co.</span>
+        <span class="ng-logo-chip">Nordholt</span>
+        <span class="ng-logo-chip">Verve Supply</span>
+        <span class="ng-logo-chip">Lumen Goods</span>
+        <span class="ng-logo-chip">Pathwell</span>
+        <span class="ng-logo-chip">Norrsken</span>
+        <span class="ng-logo-chip">Basecamp Gear</span>
+        <span class="ng-logo-chip">Fettle Foods</span>
+        <span class="ng-logo-chip">Kindred Pet Co.</span>
+        <span class="ng-logo-chip">Solace Home</span>
+        <span class="ng-logo-chip">Maren Studio</span>
+        <span class="ng-logo-chip">Northfield</span>
+        <span class="ng-logo-chip">Arlo &amp; Co.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WORD-CLOUD + PORTFOLIO LABEL ============ -->
+  <div class="ng-wordcloud">
+
+    <!-- Row A → drifts left -->
+    <div class="ng-wc-row ng-wc-row--a">
+      <div class="ng-wc-track ng-wc-track--left">
+        <span>Garden</span><span>Apps</span><span>Health</span><span>Video</span><span>Creative</span><span>Fashion</span><span>Sports</span><span>Food</span><span>Home</span><span>Health</span>
+        <span aria-hidden="true">Garden</span><span aria-hidden="true">Apps</span><span aria-hidden="true">Health</span><span aria-hidden="true">Video</span><span aria-hidden="true">Creative</span><span aria-hidden="true">Fashion</span><span aria-hidden="true">Sports</span><span aria-hidden="true">Food</span><span aria-hidden="true">Home</span><span aria-hidden="true">Health</span>
+      </div>
+    </div>
+
+    <!-- Row B (big) → drifts right -->
+    <div class="ng-wc-row ng-wc-row--b">
+      <div class="ng-wc-track ng-wc-track--right">
+        <span>Apparel</span><span>Kids</span><span>Pet</span><span>Beauty</span><span>Outdoor</span><span>Apparel</span><span>Kids</span><span>Pet</span><span>Beauty</span><span>Outdoor</span>
+        <span aria-hidden="true">Apparel</span><span aria-hidden="true">Kids</span><span aria-hidden="true">Pet</span><span aria-hidden="true">Beauty</span><span aria-hidden="true">Outdoor</span><span aria-hidden="true">Apparel</span><span aria-hidden="true">Kids</span><span aria-hidden="true">Pet</span><span aria-hidden="true">Beauty</span><span aria-hidden="true">Outdoor</span>
+      </div>
+    </div>
+
+    <!-- Row C → drifts left -->
+    <div class="ng-wc-row ng-wc-row--c">
+      <div class="ng-wc-track ng-wc-track--left">
+        <span>Garden</span><span>Books</span><span>Home</span><span>Jewelry</span><span>Production</span><span>Food</span><span>Electronics</span><span>Media</span><span>Sports</span>
+        <span aria-hidden="true">Garden</span><span aria-hidden="true">Books</span><span aria-hidden="true">Home</span><span aria-hidden="true">Jewelry</span><span aria-hidden="true">Production</span><span aria-hidden="true">Food</span><span aria-hidden="true">Electronics</span><span aria-hidden="true">Media</span><span aria-hidden="true">Sports</span>
+      </div>
+    </div>
+
+    <!-- Centered solid label -->
+    <div class="ng-wc-label"><span>Portfolio</span></div>
+  </div>
+</section>
+
+<style>
+  .ng-portfolio{
+    --ink:#121212;
+    --ghost:#ececec;      /* faint word color */
+    background:#fff;
+    padding:56px 0 72px;
+    overflow:hidden;
+    font-family:'Poppins','Helvetica Neue',Arial,sans-serif;
+    box-sizing:border-box;
+  }
+  .ng-portfolio *{box-sizing:border-box;}
+
+  /* ---------- Logo marquee ---------- */
+  .ng-logos{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  }
+  .ng-logos__track{
+    display:flex;
+    width:max-content;
+    animation:ngScrollX 42s linear infinite;
+  }
+  .ng-logos__group{
+    display:flex;
+    align-items:center;
+    gap:clamp(38px,6vw,84px);
+    padding-right:clamp(38px,6vw,84px);
+    flex:0 0 auto;
+  }
+  .ng-logo-chip{
+    font-size:clamp(15px,1.6vw,19px);
+    font-weight:700;
+    letter-spacing:-.01em;
+    color:#3a3d42;
+    opacity:.5;
+    white-space:nowrap;
+    flex:0 0 auto;
+    transition:opacity .3s ease;
+  }
+  .ng-logos:hover .ng-logos__track{animation-play-state:paused;}
+  .ng-logo-chip:hover{opacity:1;}
+
+  /* ---------- Word cloud (scroll-driven parallax) ---------- */
+  .ng-wordcloud{
+    position:relative;
+    margin-top:48px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    user-select:none;
+  }
+  .ng-wc-row{overflow:hidden;width:100%;}
+  .ng-wc-track{
+    display:flex;
+    width:max-content;
+    white-space:nowrap;
+    gap:.4em;
+    font-weight:700;
+    color:var(--ghost);
+    letter-spacing:-.02em;
+    line-height:1.05;
+    will-change:transform;
+    /* position is set by JS on scroll; no CSS animation */
+  }
+  .ng-wc-track span{padding:0 .18em;}
+
+  /* row sizes */
+  .ng-wc-row--a .ng-wc-track{font-size:clamp(34px,6.6vw,74px);}
+  .ng-wc-row--b .ng-wc-track{font-size:clamp(46px,9vw,96px);}
+  .ng-wc-row--c .ng-wc-track{font-size:clamp(34px,6.6vw,74px);}
+
+  /* Solid "Portfolio" label on top */
+  .ng-wc-label{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    pointer-events:none;
+  }
+  .ng-wc-label span{
+    font-size:clamp(46px,9vw,96px);
+    font-weight:700;
+    color:var(--ink);
+    letter-spacing:-.02em;
+    line-height:1;
+    background:#fff;              /* mask the faint words behind it */
+    padding:0 .28em;
+    border-radius:8px;
+  }
+
+  /* ---------- Keyframes ---------- */
+  @keyframes ngScrollX{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}     /* logo track holds 2 groups → -50% loops seamlessly */
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:768px){
+    .ng-portfolio{padding:40px 0 52px;}
+    .ng-logo-chip{font-size:15px;}
+    .ng-wordcloud{margin-top:34px;gap:2px;}
+  }
+  @media (max-width:480px){
+    .ng-logo-chip{font-size:13px;}
+    .ng-wc-label span{padding:0 .18em;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .ng-logos__track{animation:none!important;}
+    .ng-logos{mask-image:none;-webkit-mask-image:none;}
+    /* JS also skips parallax when reduced-motion is set */
+  }
+</style>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) return;
+
+  var section = document.getElementById('ng-portfolio');
+  // Each row: [element, speed, direction]  (direction: -1 moves left, +1 moves right as you scroll down)
+  var rows = [
+    { el: section.querySelector('.ng-wc-row--a .ng-wc-track'), speed: 0.18, dir: -1 },
+    { el: section.querySelector('.ng-wc-row--b .ng-wc-track'), speed: 0.30, dir:  1 },
+    { el: section.querySelector('.ng-wc-row--c .ng-wc-track'), speed: 0.22, dir: -1 }
+  ];
+
+  var ticking = false;
+
+  function update(){
+    var vh = window.innerHeight;
+    var rect = section.getBoundingClientRect();
+
+    // progress: how far the section has travelled through the viewport
+    // 0 when the section top hits the bottom of the viewport, grows as you scroll down
+    var progress = (vh - rect.top);
+
+    rows.forEach(function(r){
+      if(!r.el) return;
+      // base offset centers each row so words fill the width before/after moving
+      var offset = progress * r.speed * r.dir;
+      r.el.style.transform = 'translate3d(' + offset + 'px,0,0)';
+    });
+    ticking = false;
+  }
+
+  function onScroll(){
+    if(!ticking){
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }
+
+  // Center each track initially so there's word coverage on both sides
+  function center(){
+    rows.forEach(function(r){
+      if(!r.el) return;
+      var over = r.el.scrollWidth - r.el.parentElement.clientWidth;
+      // shift left by half the overflow so the middle is visible at rest
+      r.el.dataset.base = -(over/2);
+      r.el.style.marginLeft = (-(over/2)) + 'px';
+    });
+    update();
+  }
+
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', function(){ center(); });
+  center();
+  update();
+})();
+</script>
+
+
+<!-- ===================== short-form: speed ramp + before/after ===================== -->
+<section class="sf-sec " id="ng-speedramp">
+  <div class="sf-inner">
+    <div class="sf-head" data-anim>
+      <span class="sf-eyebrow">Motion</span>
+      <h2>Speed ramps</h2>
+      <p>Smooth speed changes that add punch and rhythm to every beat.</p>
+    </div>
+    <div class="sf-masonry">
+      <div class="ng-card ng-card--promo ng-promo--orange" data-anim>
+        <div class="ng-promo__badge">Skincare</div>
+        <h4>Skip the guesswork</h4>
+        <p>Glow starts here</p>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462116.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462116?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Fast turnarounds, sharp taste, and he actually reads the brief. Rare combination and it shows in the finished cuts.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523dc2626%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ETA%3C/text%3E%3C/svg%3E" alt="T. Alvarez">
+          <div><strong>T. Alvarez</strong><span>Creative Director, Lumen Goods</span></div>
+        </div>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462111.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462111?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462113.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462113?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Consistently strong edits for our PPC rotation — reliable, on-brand, and quick to iterate.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%25237c3aed%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ERO%3C/text%3E%3C/svg%3E" alt="R. Okafor">
+          <div><strong>R. Okafor</strong><span>Head of Growth, Pathwell</span></div>
+        </div>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462115.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462115?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">If you want ads that perform and not just look nice, Ahmad is the guy. We saw a real lift within the first batch of creatives.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%25230891b2%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EEL%3C/text%3E%3C/svg%3E" alt="E. Lindqvist">
+          <div><strong>E. Lindqvist</strong><span>Co-Founder, Norrsken Skincare</span></div>
+        </div>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462080.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462080?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--promo ng-promo--dark" data-anim>
+        <h4>Now hiring: remote, full-time, yours</h4>
+      </div>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Skilled editor, clear communicator, and genuinely up to date on what's working on social right now. Already lined up our next batch.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523ca8a04%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EDM%3C/text%3E%3C/svg%3E" alt="D. Marsh">
+          <div><strong>D. Marsh</strong><span>Performance Marketing Manager, Basecamp Gear</span></div>
+        </div>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462083.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462083?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--promo ng-promo--green" data-anim>
+        <h4>Save 20% on your first order</h4>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462081.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462081?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Went well beyond the brief every single time. Experienced, easy to talk to, and the edits speak for themselves.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%252316a34a%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ENO%3C/text%3E%3C/svg%3E" alt="N. Osei">
+          <div><strong>N. Osei</strong><span>CEO, Fettle Foods</span></div>
+        </div>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462082.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462082?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sf-sec sf-sec--pair" id="ng-beforeafter">
+  <div class="sf-inner">
+    <div class="sf-head" data-anim>
+      <span class="sf-eyebrow">Transformation</span>
+      <h2>Before &amp; after</h2>
+      <p>Raw footage on the left, the finished edit on the right.</p>
+    </div>
+    <div class="sf-masonry">
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231027012.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231027012?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Before clip"></iframe></div><span class="sf-label">Before</span>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Fast turnarounds, sharp taste, and he actually reads the brief. Rare combination and it shows in the finished cuts.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523dc2626%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ETA%3C/text%3E%3C/svg%3E" alt="T. Alvarez">
+          <div><strong>T. Alvarez</strong><span>Creative Director, Lumen Goods</span></div>
+        </div>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231027013.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231027013?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="After clip"></iframe></div><span class="sf-label">After</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sf-sec{--ink:#181818;--muted:#8a8f96;--radius:16px;--gap:14px;background:#fff;padding:56px 20px 40px;font-family:'Poppins','Helvetica Neue',Arial,sans-serif;}
+  .sf-sec *{box-sizing:border-box;}
+  .sf-inner{max-width:1200px;margin:0 auto;}
+  .sf-head{text-align:center;margin:0 auto 34px;max-width:560px;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  .sf-head.is-in{opacity:1;transform:none;}
+  .sf-eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:#c9f24a;padding:5px 12px;border-radius:999px;}
+  .sf-head h2{margin:14px 0 8px;font-size:clamp(26px,4vw,40px);font-weight:700;line-height:1.15;color:var(--ink);}
+  .sf-head p{margin:0;font-size:15px;line-height:1.55;color:var(--muted);}
+  .sf-masonry{column-count:5;column-gap:var(--gap);}
+  .sf-sec .ng-card{display:block;width:100%;margin:0 0 var(--gap);break-inside:avoid;-webkit-column-break-inside:avoid;border-radius:var(--radius);overflow:hidden;position:relative;opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.44,0,.09,1);}
+  .sf-sec .ng-card.is-in{opacity:1;transform:translateY(0);}
+  .sf-sec .ng-card--video{background:#eee;line-height:0;cursor:pointer;}
+  .sf-sec .ng-vidwrap{width:100%;aspect-ratio:9/16;display:block;position:relative;overflow:hidden;background:#eee center/cover no-repeat;transition:transform .5s ease;}
+  .sf-sec .ng-vidwrap iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;pointer-events:none;}
+  .sf-sec .ng-card--video:hover .ng-vidwrap{transform:scale(1.04);}
+  .sf-label{position:absolute;left:12px;top:12px;z-index:2;font-size:12px;font-weight:600;line-height:1;color:#fff;background:rgba(0,0,0,.6);padding:7px 12px;border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
+  .sf-sec .ng-card--quote{background:#f4f4f5;padding:18px 16px;display:flex;flex-direction:column;gap:12px;}
+  .sf-sec .ng-quote__mark{font-size:30px;line-height:.5;color:var(--ink);font-weight:700;align-self:flex-end;opacity:.85;}
+  .sf-sec .ng-quote__text{margin:0;color:#2a2a2a;font-size:13px;font-weight:500;line-height:1.5;}
+  .sf-sec .ng-quote__author{display:flex;align-items:center;gap:9px;margin-top:auto;}
+  .sf-sec .ng-quote__author img{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:0 0 auto;}
+  .sf-sec .ng-quote__author strong{display:block;font-size:12px;color:var(--ink);font-weight:600;}
+  .sf-sec .ng-quote__author span{display:block;font-size:11px;color:var(--muted);line-height:1.3;margin-top:1px;}
+  .sf-sec .ng-card--promo{padding:18px 16px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;min-height:150px;text-decoration:none;}
+  .sf-sec .ng-card--promo h4{margin:0;font-size:16px;font-weight:700;line-height:1.2;}
+  .sf-sec .ng-card--promo p{margin:0;font-size:12.5px;font-weight:500;opacity:.85;}
+  .sf-sec .ng-promo__badge{align-self:flex-start;font-size:10.5px;font-weight:600;padding:4px 9px;border-radius:999px;background:rgba(0,0,0,.25);color:#fff;margin-bottom:auto;}
+  .sf-sec .ng-promo--green{background:#c6f024;} .sf-sec .ng-promo--green h4{color:#14210a;}
+  .sf-sec .ng-promo--dark{background:#0e0e0e;aspect-ratio:3/4.4;} .sf-sec .ng-promo--dark h4{color:#fff;}
+  .sf-sec .ng-promo--orange{background:#e8722e;aspect-ratio:3/4.2;} .sf-sec .ng-promo--orange h4,.sf-sec .ng-promo--orange p{color:#fff;}
+  /* before/after: video | testimonial | video */
+  .sf-sec--pair .sf-inner{max-width:640px;}
+  .sf-sec--pair .sf-masonry{column-count:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap);align-items:start;}
+  .sf-sec--pair .ng-card--quote{grid-column:1/-1;order:3;}
+  .sf-sec--pair .ng-card{margin:0;}
+  @media (max-width:1024px){.sf-masonry{column-count:3;}}
+  @media (max-width:640px){
+    .sf-sec{padding:40px 12px 28px;--gap:10px;}
+    .sf-masonry{column-count:2;}
+    .sf-sec--pair .sf-masonry{display:grid;grid-template-columns:repeat(2,1fr);}
+    .sf-sec--pair .ng-card--quote{grid-column:1/-1;order:3;}
+    .sf-sec .ng-card--quote{padding:14px 12px;gap:9px;}
+    .sf-sec .ng-quote__text{font-size:12px;}
+    .sf-sec .ng-quote__author img{width:30px;height:30px;}
+    .sf-sec .ng-card--promo h4{font-size:14px;}
+    .sf-head{margin-bottom:24px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .sf-sec .ng-card,.sf-head{opacity:1!important;transform:none!important;transition:none!important;}
+    .sf-sec .ng-vidwrap{transition:none!important;}
+  }
+</style>
+<script>
+(function(){
+  var els = document.querySelectorAll('.sf-sec [data-anim]');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var el = e.target;
+          setTimeout(function(){ el.classList.add('is-in'); }, (el.dataset.i||0)*50);
+          io.unobserve(el);
+        }
+      });
+    }, {threshold:.1, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(c,i){ c.dataset.i = i % 10; io.observe(c); });
+  } else {
+    els.forEach(function(c){ c.classList.add('is-in'); });
+  }
+})();
+</script>
+
+
 
 
 <!-- ===================== core-principles-section.html ===================== -->
@@ -1633,6 +2278,7 @@
   // sections showing only their poster thumbnail for too long.)
 
   // ---- Hover-to-unmute ----
+  // The two hero pill clips (.ng-vid) are deliberately excluded: they stay muted always.
   // Every clip autoplays muted (required for autoplay in every browser).
   // Hovering a clip unmutes just that one via Vimeo's official Player
   // API; moving off it (or onto a different clip) re-mutes it, so at
