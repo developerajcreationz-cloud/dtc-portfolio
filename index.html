@@ -2556,6 +2556,7 @@
   // sections showing only their poster thumbnail for too long.)
 
   // ---- Hover-to-unmute ----
+  // The two hero pill clips (.ng-vid) are deliberately excluded: they stay muted always.
   // Every clip autoplays muted (required for autoplay in every browser).
   // Hovering a clip unmutes just that one via Vimeo's official Player
   // API; moving off it (or onto a different clip) re-mutes it, so at
@@ -2565,7 +2566,7 @@
   // pointer events, meaning the wrapper is already the effective hover
   // target with no changes needed there.
   if(typeof Vimeo !== 'undefined' && Vimeo.Player){
-    var soundWraps = document.querySelectorAll('.ng-vid, .ng-vidwrap');
+    var soundWraps = document.querySelectorAll('.ng-vidwrap');
     var activePlayer = null;
     soundWraps.forEach(function(wrap){
       var iframe = wrap.querySelector('iframe.ng-vimeo');
