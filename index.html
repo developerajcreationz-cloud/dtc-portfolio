@@ -36,10 +36,10 @@
   /* offset anchor jumps so the sticky nav does not cover section tops */
   section[id]{scroll-margin-top:70px;}
 
-  /* hover focus: dim the other clips, brighten the hovered one (see HOVER_MODE in the global script) */
+  /* hover focus: fade the other clips to dark black, keep the hovered one at full brightness (see HOVER_MODE in the global script) */
   .ng-vidwrap{transition:transform .5s ease,opacity .35s ease,filter .35s ease !important;}
-  body.ng-hover-fade .ng-vidwrap:not(.is-hover){opacity:.35;filter:grayscale(.6) brightness(.8);}
-  body.ng-hover-fade .ng-vidwrap.is-hover{filter:brightness(1.08) saturate(1.08);}
+  body.ng-hover-fade .ng-vidwrap:not(.is-hover){filter:brightness(.1);}
+  body.ng-hover-fade .ng-vidwrap.is-hover{filter:none;}
 </style>
 </head>
 <body>
