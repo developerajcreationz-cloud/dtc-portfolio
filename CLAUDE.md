@@ -30,13 +30,14 @@ The Journey, Core Principles, contact form and FAQ sections are copied unchanged
 - Nav: Home, Reels, Journey, Speed Ramps, FAQs.
 
 ### `/long-form/`
-- `#ng-longform`: `.lf-card` buttons with `data-vimeo-id` and `data-title`. Clicking opens a modal player (`#lf-modal`) that injects a full Vimeo player. **To swap a video, change `data-vimeo-id`.**
+- `#ng-longform`: masonry-style grid (3/2/1 cols) where every cell is 16:9, so videos are never cropped. `.lf-card--video` cards (`data-vimeo-id`, `data-title`) autoplay muted via a Vimeo background iframe, unmute on hover, and open a modal player (`#lf-modal`) with the full Vimeo player on click. Testimonial (`.lf-card--quote`) and promo (`.lf-card--promo`) cards are mixed in. `.lf-card--wide` = 2x2 cells. **To swap a video, change `data-vimeo-id` (and the ID inside the iframe `src`/poster URL).**
 
 ### Videos
 - Vimeo ID = the number in the URL (`vimeo.com/reviews/<review-id>/videos/<VIDEO_ID>` → use `VIDEO_ID`).
 - Embed: `https://player.vimeo.com/video/<ID>?background=1&autoplay=1&loop=1&muted=1&autopause=0&byline=0&title=0&portrait=0&dnt=1`.
 - **Private videos need a hash** (`?h=<hash>`) to embed, and their `vumbnail` posters won't load. If a slot shows "This video does not exist", the video is private or embeds are domain-restricted: get the share/embed link, or set the video to allow embedding on `supads.ajcreationz.co`.
 - **Hover-to-unmute** (global script at the bottom of each page): `.ng-vidwrap` clips unmute on hover via the Vimeo Player SDK, one at a time. The two **hero pill clips (`.ng-vid`) are deliberately excluded and always stay muted.**
+- **Hover focus** (same script, `/` and `/short-form/`): while one clip is hovered the others pause and dim, the hovered one brightens; leaving restores all. Switch with `var HOVER_MODE = 'both'` (`'pause'` = only pause, `'fade'` = only dim). Desktop only (`hover: hover`).
 - Right-click/drag are blocked on `[data-vimeo-protect]` as a deterrent only. Real protection is Vimeo's own privacy settings.
 
 ### Contact form
