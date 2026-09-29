@@ -30,7 +30,7 @@ The Journey, Core Principles, contact form and FAQ sections are copied unchanged
 - Nav: Home, Reels, Journey, Speed Ramps, FAQs.
 
 ### `/long-form/`
-- `#ng-longform`: `.lf-card` buttons with `data-vimeo-id` and `data-title`. Clicking opens a modal player (`#lf-modal`) that injects a full Vimeo player. **To swap a video, change `data-vimeo-id`.**
+- `#ng-longform`: masonry-style grid (3/2/1 cols) where every cell is 16:9, so videos are never cropped. `.lf-card--video` cards (`data-vimeo-id`, `data-title`) autoplay muted via a Vimeo background iframe, unmute on hover, and open a modal player (`#lf-modal`) with the full Vimeo player on click. Testimonial (`.lf-card--quote`) and promo (`.lf-card--promo`) cards are mixed in. `.lf-card--wide` = 2x2 cells. **To swap a video, change `data-vimeo-id` (and the ID inside the iframe `src`/poster URL).**
 
 ### Videos
 - Vimeo ID = the number in the URL (`vimeo.com/reviews/<review-id>/videos/<VIDEO_ID>` → use `VIDEO_ID`).
