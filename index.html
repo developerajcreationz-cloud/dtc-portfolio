@@ -35,6 +35,11 @@
   *{box-sizing:border-box;}
   /* offset anchor jumps so the sticky nav does not cover section tops */
   section[id]{scroll-margin-top:70px;}
+
+  /* hover focus: fade the other clips to dark black, keep the hovered one at full brightness (see HOVER_MODE in the global script) */
+  .ng-vidwrap{transition:transform .5s ease,opacity .35s ease,filter .35s ease !important;}
+  body.ng-hover-fade .ng-vidwrap:not(.is-hover){filter:brightness(.55);}
+  body.ng-hover-fade .ng-vidwrap.is-hover{filter:none;}
 </style>
 </head>
 <body>
@@ -2565,23 +2570,55 @@
   // hover is detected on the wrapper - the iframe is transparent to
   // pointer events, meaning the wrapper is already the effective hover
   // target with no changes needed there.
+  // ---- Hover focus ----
+  // HOVER_MODE picks what happens to the OTHER clips while one is hovered:
+  //   'pause' : the others pause, only the hovered clip plays
+  //   'fade'  : the others dim (CSS), the hovered clip is brightened
+  //   'both'  : pause + dim
+  // Moving the mouse off resumes / restores everything. Only on devices
+  // with a real hover pointer (never on touch screens).
+  var HOVER_MODE = 'both';
+  var canHover = window.matchMedia('(hover: hover)').matches;
   if(typeof Vimeo !== 'undefined' && Vimeo.Player){
     var soundWraps = document.querySelectorAll('.ng-vidwrap');
     var activePlayer = null;
+    var players = [];
+    var restoreTimer = null;
+    var doPause = HOVER_MODE === 'pause' || HOVER_MODE === 'both';
+    var doFade  = HOVER_MODE === 'fade'  || HOVER_MODE === 'both';
     soundWraps.forEach(function(wrap){
       var iframe = wrap.querySelector('iframe.ng-vimeo');
       if(!iframe) return;
       var player = new Vimeo.Player(iframe);
+      players.push({wrap:wrap, player:player});
       wrap.addEventListener('mouseenter', function(){
         if(activePlayer && activePlayer !== player){
           activePlayer.setMuted(true).catch(function(){});
         }
         activePlayer = player;
         player.setMuted(false).catch(function(){});
+        if(!canHover) return;
+        clearTimeout(restoreTimer);
+        document.body.classList.toggle('ng-hover-fade', doFade);
+        players.forEach(function(p){
+          var me = p.player === player;
+          p.wrap.classList.toggle('is-hover', me);
+          if(doPause){ (me ? p.player.play() : p.player.pause()).catch(function(){}); }
+        });
       });
       wrap.addEventListener('mouseleave', function(){
         player.setMuted(true).catch(function(){});
         if(activePlayer === player) activePlayer = null;
+        if(!canHover) return;
+        // short delay so gliding straight onto a neighbour doesn't flicker
+        clearTimeout(restoreTimer);
+        restoreTimer = setTimeout(function(){
+          document.body.classList.remove('ng-hover-fade');
+          players.forEach(function(p){
+            p.wrap.classList.remove('is-hover');
+            if(doPause) p.player.play().catch(function(){});
+          });
+        }, 80);
       });
     });
   }
