@@ -8,21 +8,21 @@
 <link rel="canonical" href="/long-form/">
 
 <!-- Green sunburst favicon, styled after Claude's asterisk mark -->
-<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
 
 <!-- Single shared font load for the whole page -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
-<!-- Lenis v1.3.26 — smooth scroll (MIT license, see ../assets/js/lenis.LICENSE.txt).
+<!-- Lenis v1.3.26 — smooth scroll (MIT license, see /assets/js/lenis.LICENSE.txt).
      Vendored locally rather than pulled from a CDN so the page has no
      third-party runtime dependency once it's uploaded to Hostinger.
      Loaded early so it's ready before the page's scroll-triggered
      animations start listening; falls back gracefully to native
      scroll-behavior (see body{scroll-behavior:smooth} below) if this
      file is ever missing. -->
-<script src="../assets/js/lenis.min.js"></script>
+<script src="/assets/js/lenis.min.js"></script>
 
 <!-- Vimeo Player SDK — lets hovering a clip unmute it (and re-mute on
      mouse-leave) via the official postMessage API. Loaded from Vimeo's
@@ -37,6 +37,11 @@
   *{box-sizing:border-box;}
   /* offset anchor jumps so the sticky nav does not cover section tops */
   section[id]{scroll-margin-top:70px;}
+
+  /* hover focus: dim the other clips, brighten the hovered one (see HOVER_MODE in the global script) */
+  .ng-vidwrap{transition:transform .5s ease,opacity .35s ease,filter .35s ease;}
+  body.ng-hover-fade .ng-vidwrap:not(.is-hover){filter:brightness(.55);}
+  body.ng-hover-fade .ng-vidwrap.is-hover{filter:none;}
 </style>
 </head>
 <body>
@@ -51,11 +56,11 @@
 
 <header class="ng-nav" id="ng-nav">
   <div class="ng-nav__inner">
-    <a href="../" class="ng-nav__logo">Supads</a>
+    <a href="/" class="ng-nav__logo">Supads</a>
 
     <nav class="ng-nav__links" id="ng-nav-links">
       <a href="#ng-hero">Home</a>
-      <a href="../">Short-form</a>
+      <a href="/">Short-form</a>
       <a href="#ng-longform">Long-form</a>
       <a href="#ng-qa">FAQs</a>
     </nav>
@@ -676,7 +681,11 @@
   .lf-ctrl__bar span{display:block;height:100%;width:0;border-radius:inherit;background:var(--green);}
   .lf-ctrl__time{flex:0 0 auto;font-size:13px;font-variant-numeric:tabular-nums;opacity:.85;min-width:84px;text-align:right;}
   .lf-modal__title{color:#fff;font-family:'Poppins',sans-serif;font-size:15px;margin-top:12px;opacity:.85;}
-  .lf-modal__x{position:absolute;top:-44px;right:0;background:none;border:0;color:#fff;font-size:34px;line-height:1;cursor:pointer;}
+  .lf-modal__x{position:fixed;top:16px;right:16px;z-index:3;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:#111;font-size:28px;line-height:1;display:grid;place-items:center;padding:0 0 2px;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.45);transition:transform .2s,background .2s;}
+  .lf-modal__x:hover{background:var(--green,#c6f024);transform:scale(1.08);}
+  .lf-modal__x:focus-visible{outline:3px solid var(--green,#c6f024);outline-offset:3px;}
+  /* keep the whole player (video + controls + title) inside short screens */
+  .lf-modal__box{width:min(1100px,100%,calc((100vh - 150px) * 16 / 9));}
 
   @media (max-width:900px){
     .lf__grid{--cols:2;}
@@ -1263,7 +1272,7 @@
 
 <script>
 (function(){
-  // Validates the form, then POSTs it as JSON to ../assets/php/send-form.php,
+  // Validates the form, then POSTs it as JSON to /assets/php/send-form.php,
   // which emails the submission to the studio inbox. Requires a PHP host
   // (Hostinger shared/Business plans support this out of the box).
   var form = document.querySelector('#ng-form .ng-form');
@@ -1307,7 +1316,7 @@
     btn.style.pointerEvents = 'none';
     setStatus('', '');
 
-    fetch('../assets/php/send-form.php', {
+    fetch('/assets/php/send-form.php', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(collect())
@@ -1689,23 +1698,55 @@
   // hover is detected on the wrapper - the iframe is transparent to
   // pointer events, meaning the wrapper is already the effective hover
   // target with no changes needed there.
+  // ---- Hover focus ----
+  // HOVER_MODE picks what happens to the OTHER clips while one is hovered:
+  //   'pause' : the others pause, only the hovered clip plays
+  //   'fade'  : the others dim (CSS), the hovered clip is brightened
+  //   'both'  : pause + dim
+  // Moving the mouse off resumes / restores everything. Only on devices
+  // with a real hover pointer (never on touch screens).
+  var HOVER_MODE = 'both';
+  var canHover = window.matchMedia('(hover: hover)').matches;
   if(typeof Vimeo !== 'undefined' && Vimeo.Player){
     var soundWraps = document.querySelectorAll('.ng-vidwrap');
     var activePlayer = null;
+    var players = [];
+    var restoreTimer = null;
+    var doPause = HOVER_MODE === 'pause' || HOVER_MODE === 'both';
+    var doFade  = HOVER_MODE === 'fade'  || HOVER_MODE === 'both';
     soundWraps.forEach(function(wrap){
       var iframe = wrap.querySelector('iframe.ng-vimeo');
       if(!iframe) return;
       var player = new Vimeo.Player(iframe);
+      players.push({wrap:wrap, player:player});
       wrap.addEventListener('mouseenter', function(){
         if(activePlayer && activePlayer !== player){
           activePlayer.setMuted(true).catch(function(){});
         }
         activePlayer = player;
         player.setMuted(false).catch(function(){});
+        if(!canHover) return;
+        clearTimeout(restoreTimer);
+        document.body.classList.toggle('ng-hover-fade', doFade);
+        players.forEach(function(p){
+          var me = p.player === player;
+          p.wrap.classList.toggle('is-hover', me);
+          if(doPause){ (me ? p.player.play() : p.player.pause()).catch(function(){}); }
+        });
       });
       wrap.addEventListener('mouseleave', function(){
         player.setMuted(true).catch(function(){});
         if(activePlayer === player) activePlayer = null;
+        if(!canHover) return;
+        // short delay so gliding straight onto a neighbour doesn't flicker
+        clearTimeout(restoreTimer);
+        restoreTimer = setTimeout(function(){
+          document.body.classList.remove('ng-hover-fade');
+          players.forEach(function(p){
+            p.wrap.classList.remove('is-hover');
+            if(doPause) p.player.play().catch(function(){});
+          });
+        }, 80);
       });
     });
   }
