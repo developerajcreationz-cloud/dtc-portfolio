@@ -1,14 +1,14 @@
 # Editing-tool logos (Problem section on `/`)
 
-Used by `.rr-tool` tiles in `index.html`:
+Used by the `.rr-tool` tiles in `index.html` (file names are referenced there):
 
-| File | Status |
+| File | Tool |
 |---|---|
-| `premiere-pro.svg` | included |
-| `after-effects.svg` | included |
-| `davinci-resolve.svg` | included |
-| `capcut.svg` | included |
-| `final-cut-pro.svg` (or `.png`) | **missing: add the official logo** |
-| `higgsfield.svg` (or `.png`) | **missing: add the official logo** |
+| `premiere-pro.svg` | Adobe Premiere Pro |
+| `after-effects.svg` | Adobe After Effects |
+| `final-cut-pro.png` | Final Cut Pro (supplied by the owner) |
+| `davinci-resolve.png` | DaVinci Resolve (supplied by the owner) |
+| `capcut.svg` | CapCut |
+| `higgsfield.svg` | Higgsfield (supplied by the owner) |
 
-Until a missing file exists the tile shows the tool's name as text. Drop the file in this folder with exactly that name and it appears automatically (no code change). If you use `.png`, also change the `src` extension in `index.html`.
+To change a logo, replace the file keeping the same name. If a file is missing, the tile shows the tool name as text instead.
