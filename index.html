@@ -182,14 +182,14 @@
 
   <!-- hero visuals: raw footage (left) -> finished reels (right). IDs: raw = Before clip, reels = three of the Reels. -->
   <div class="hd-visual hd-left" aria-hidden="true">
-    <div class="hd-card hd-card--raw"><span class="hd-vid" style="background-image:url('https://vumbnail.com/1231027012.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231027012?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Raw footage"></iframe></span><span class="hd-play"></span></div>
+    <div class="hd-card hd-card--raw"><span class="hd-vid" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231027012.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231027012?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Raw footage"></iframe></span></div>
     <svg class="hd-arrow hd-arrow--l" viewBox="0 0 120 70" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M112 14 C 80 4 40 8 10 40"/><path d="M8 24 L10 41 L26 36"/></svg>
   </div>
   <div class="hd-visual hd-right" aria-hidden="true">
     <div class="hd-stack">
-      <div class="hd-card hd-card--3"><span class="hd-vid" style="background-image:url('https://vumbnail.com/1231016149.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016149?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel"></iframe></span></div>
-      <div class="hd-card hd-card--2"><span class="hd-vid" style="background-image:url('https://vumbnail.com/1231025310.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025310?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel"></iframe></span></div>
-      <div class="hd-card hd-card--1"><span class="hd-vid" style="background-image:url('https://vumbnail.com/1231025311.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025311?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel"></iframe></span><span class="hd-play"></span></div>
+      <div class="hd-card hd-card--3"><span class="hd-vid" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016149.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016149?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel"></iframe></span></div>
+      <div class="hd-card hd-card--2"><span class="hd-vid" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231025310.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025310?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel"></iframe></span></div>
+      <div class="hd-card hd-card--1"><span class="hd-vid" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231025311.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025311?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel"></iframe></span></div>
     </div>
     <svg class="hd-arrow hd-arrow--r" viewBox="0 0 120 70" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40 C 40 8 85 10 112 36"/><path d="M96 24 L113 37 L94 46"/></svg>
   </div>
@@ -487,8 +487,6 @@
   .hd-card{position:relative;border-radius:22px;background:#fff;padding:6px;box-shadow:0 22px 50px rgba(0,0,0,.18),0 2px 8px rgba(0,0,0,.08);}
   .hd-vid{display:block;position:relative;overflow:hidden;border-radius:17px;background:#dcdde0 center/cover no-repeat;width:100%;height:100%;}
   .hd-vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;}
-  .hd-play{position:absolute;left:50%;top:50%;width:clamp(44px,4vw,60px);height:clamp(44px,4vw,60px);margin:calc(clamp(44px,4vw,60px) / -2) 0 0 calc(clamp(44px,4vw,60px) / -2);border-radius:50%;background:rgba(255,255,255,.93);box-shadow:0 8px 24px rgba(0,0,0,.28);}
-  .hd-play::before{content:"";position:absolute;left:54%;top:50%;transform:translate(-50%,-50%);border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent #111;}
   .hd-card--raw{width:clamp(170px,15.5vw,250px);aspect-ratio:4/5;rotate:14deg;animation:hdBob 7s ease-in-out infinite;}
   .hd-stack{position:relative;width:clamp(150px,13vw,215px);aspect-ratio:9/16;}
   .hd-stack .hd-card{position:absolute;inset:0;aspect-ratio:9/16;animation:hdBob 7s ease-in-out infinite;}
@@ -1859,6 +1857,40 @@
   tiers.forEach(function(t){
     t.addEventListener('click', function(){ pick(t); });
     t.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); pick(t); } });
+  });
+})();
+</script>
+<!-- ===================== video thumbnails =====================
+     The default poster (vumbnail.com) is a 16:9 centre-crop even for vertical videos, so it looked zoomed
+     and cropped inside tall cards. Posters are now requested at each video's own aspect ratio (via Vimeo's
+     oEmbed data), so the thumbnail matches the playing video. Until it arrives the box is a plain grey. -->
+<style>
+  [data-vimeo-protect]{background-image:none!important;background-color:#e6e7ea;}
+</style>
+<script>
+(function(){
+  var els = [].slice.call(document.querySelectorAll('[data-vimeo-protect]'));
+  if(!els.length || !window.fetch) return;
+  var cache = {}, pending = {};
+  try { cache = JSON.parse(sessionStorage.getItem('vthumbs') || '{}'); } catch(e){}
+  function save(){ try { sessionStorage.setItem('vthumbs', JSON.stringify(cache)); } catch(e){} }
+  function idOf(el){ var f = el.querySelector('iframe'); var m = f && f.src.match(/video\/(\d+)/); return m ? m[1] : null; }
+  function poster(id){
+    if(cache[id]) return Promise.resolve(cache[id]);
+    if(pending[id]) return pending[id];
+    pending[id] = fetch('https://vimeo.com/api/oembed.json?width=640&url=' + encodeURIComponent('https://vimeo.com/' + id))
+      .then(function(r){ if(!r.ok) throw new Error('oembed ' + r.status); return r.json(); })
+      .then(function(j){
+        var url = j.thumbnail_url, m = (url || '').match(/\/video\/([^_?\/]+)/);
+        if(m && j.width && j.height) url = 'https://i.vimeocdn.com/video/' + m[1] + '_640x' + Math.round(640 * j.height / j.width) + '.jpg';
+        if(!url) throw new Error('no thumbnail');
+        cache[id] = url; save(); return url;
+      });
+    return pending[id];
+  }
+  els.forEach(function(el){
+    var id = idOf(el); if(!id) return;
+    poster(id).then(function(url){ el.style.setProperty('background-image', 'url("' + url + '")', 'important'); }).catch(function(){});
   });
 })();
 </script>

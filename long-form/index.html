@@ -1753,5 +1753,40 @@
 })();
 </script>
 
+<!-- ===================== video thumbnails =====================
+     The default poster (vumbnail.com) is a 16:9 centre-crop even for vertical videos, so it looked zoomed
+     and cropped inside tall cards. Posters are now requested at each video's own aspect ratio (via Vimeo's
+     oEmbed data), so the thumbnail matches the playing video. Until it arrives the box is a plain grey. -->
+<style>
+  [data-vimeo-protect]{background-image:none!important;background-color:#e6e7ea;}
+</style>
+<script>
+(function(){
+  var els = [].slice.call(document.querySelectorAll('[data-vimeo-protect]'));
+  if(!els.length || !window.fetch) return;
+  var cache = {}, pending = {};
+  try { cache = JSON.parse(sessionStorage.getItem('vthumbs') || '{}'); } catch(e){}
+  function save(){ try { sessionStorage.setItem('vthumbs', JSON.stringify(cache)); } catch(e){} }
+  function idOf(el){ var f = el.querySelector('iframe'); var m = f && f.src.match(/video\/(\d+)/); return m ? m[1] : null; }
+  function poster(id){
+    if(cache[id]) return Promise.resolve(cache[id]);
+    if(pending[id]) return pending[id];
+    pending[id] = fetch('https://vimeo.com/api/oembed.json?width=640&url=' + encodeURIComponent('https://vimeo.com/' + id))
+      .then(function(r){ if(!r.ok) throw new Error('oembed ' + r.status); return r.json(); })
+      .then(function(j){
+        var url = j.thumbnail_url, m = (url || '').match(/\/video\/([^_?\/]+)/);
+        if(m && j.width && j.height) url = 'https://i.vimeocdn.com/video/' + m[1] + '_640x' + Math.round(640 * j.height / j.width) + '.jpg';
+        if(!url) throw new Error('no thumbnail');
+        cache[id] = url; save(); return url;
+      });
+    return pending[id];
+  }
+  els.forEach(function(el){
+    var id = idOf(el); if(!id) return;
+    poster(id).then(function(url){ el.style.setProperty('background-image', 'url("' + url + '")', 'important'); }).catch(function(){});
+  });
+})();
+</script>
+
 </body>
 </html>
