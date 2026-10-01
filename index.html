@@ -179,13 +179,25 @@
   <!-- floating metric pills -->
   <span class="ng-pill ng-pill--cpa"  style="--x:4%;  --y:4%;">  <i class="dot" style="background:#ff5a5f"></i>HOOK</span>
   <span class="ng-pill ng-pill--roas" style="--x:64%; --y:2%;"> <i class="dot" style="background:#b6f24a"></i>PACING</span>
-  <span class="ng-pill ng-pill--ctr ng-pill--bottom"  style="--x:8%;  --y:5%;"> <i class="dot" style="background:#2fe6a0"></i>CAPTIONS</span>
-  <span class="ng-pill ng-pill--cpc ng-pill--bottom"  style="--x:80%; --y:5%;"> <i class="dot" style="background:#5b5bff"></i>LOOP</span>
+
+  <!-- hero visuals: raw footage (left) -> finished reels (right). IDs: raw = Before clip, reels = three of the Reels. -->
+  <div class="hd-visual hd-left" aria-hidden="true">
+    <div class="hd-card hd-card--raw"><span class="hd-vid" style="background-image:url('https://vumbnail.com/1231027012.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231027012?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Raw footage"></iframe></span><span class="hd-play"></span></div>
+    <svg class="hd-arrow hd-arrow--l" viewBox="0 0 120 70" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M112 14 C 80 4 40 8 10 40"/><path d="M8 24 L10 41 L26 36"/></svg>
+  </div>
+  <div class="hd-visual hd-right" aria-hidden="true">
+    <div class="hd-stack">
+      <div class="hd-card hd-card--3"><span class="hd-vid" style="background-image:url('https://vumbnail.com/1231016149.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016149?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel"></iframe></span></div>
+      <div class="hd-card hd-card--2"><span class="hd-vid" style="background-image:url('https://vumbnail.com/1231025310.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025310?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel"></iframe></span></div>
+      <div class="hd-card hd-card--1"><span class="hd-vid" style="background-image:url('https://vumbnail.com/1231025311.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025311?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel"></iframe></span><span class="hd-play"></span></div>
+    </div>
+    <svg class="hd-arrow hd-arrow--r" viewBox="0 0 120 70" fill="none" stroke="#222" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 40 C 40 8 85 10 112 36"/><path d="M96 24 L113 37 L94 46"/></svg>
+  </div>
 
   <div class="ng-hero__inner">
     <!-- Headline with inline video pills -->
     <p class="ng-eyebrow">For brands, creators, and coaches sitting on hours of unused footage</p>
-    <h1 class="ng-headline">
+    <h1 class="ng-headline"><svg class="hd-doodle hd-doodle--red" viewBox="0 0 50 50" fill="none" stroke="#ff5a5f" stroke-width="4.5" stroke-linecap="round" aria-hidden="true"><path d="M20 6 L40 16"/><path d="M8 21 L33 29"/><path d="M6 38 L26 42"/></svg><svg class="hd-doodle hd-doodle--green" viewBox="0 0 50 50" fill="none" stroke="#3fc98a" stroke-width="4.5" stroke-linecap="round" aria-hidden="true"><path d="M8 9 L30 14"/><path d="M12 24 L42 27"/><path d="M8 41 L30 37"/></svg>
       <span class="ng-line"><span>You</span><em>shoot</em><span>the</span><span class="ng-vid" data-vimeo-protect style="background-image:url('https://vumbnail.com/359287092.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/359287092?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" fetchpriority="high" tabindex="-1" title="Short-form clip"></iframe></span><span>raw footage.</span></span>
       <span class="ng-line"><span>We</span><em>turn</em><span>it</span><span>into</span><span>shorts</span></span>
       <span class="ng-line"><span>people</span><em>can&rsquo;t</em><span class="ng-vid" data-vimeo-protect style="background-image:url('https://vumbnail.com/514250696.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/514250696?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" fetchpriority="high" tabindex="-1" title="Short-form clip"></iframe></span><span>scroll</span><span>past.</span></span>
@@ -437,7 +449,7 @@
   }
 
   /* ---- Raw-to-Reel hero additions ---- */
-  .ng-headline{font-size:clamp(30px,5.6vw,76px);}
+  .ng-headline{font-size:clamp(30px,3.5vw,58px);}
   .ng-line:nth-child(3) > *:nth-child(1){animation-delay:.75s}
   .ng-line:nth-child(3) > *:nth-child(2){animation-delay:.82s}
   .ng-line:nth-child(3) > *:nth-child(3){animation-delay:.89s}
@@ -445,7 +457,7 @@
   .ng-line:nth-child(3) > *:nth-child(5){animation-delay:1.03s}
   .ng-sub{animation-delay:1.1s;}
   .ng-eyebrow{
-    margin:0 auto 22px;max-width:560px;
+    margin:0 auto 24px;max-width:860px;
     font-size:clamp(11px,1.1vw,13px);font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1.5;
     color:#5f6368;opacity:0;animation:ngRise .8s cubic-bezier(.22,1,.36,1) forwards;
   }
@@ -459,6 +471,46 @@
   .ng-hero-cta:hover{transform:translateY(-2px);background:#000;box-shadow:0 12px 30px rgba(0,0,0,.25);}
   .ng-micro{margin:0;font-size:13px;color:#8a8f96;font-weight:500;}
   .ng-stats{animation-delay:1.35s;}
+
+  /* ---- hero design: raw -> reel cards, doodles, underlined stats ---- */
+  .ng-hero{min-height:min(88vh,780px);}
+  .ng-headline{position:relative;width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;}
+  .hd-doodle{position:absolute;width:clamp(34px,3.6vw,56px);height:auto;overflow:visible;pointer-events:none;}
+  .hd-doodle path{stroke-dasharray:60;stroke-dashoffset:60;animation:hdDraw .7s ease forwards;}
+  .hd-doodle--red{left:clamp(-84px,-5.4vw,-30px);top:-2%;}
+  .hd-doodle--green{right:clamp(-84px,-5.4vw,-30px);bottom:6%;}
+  .hd-doodle--red path:nth-child(1){animation-delay:1.2s}.hd-doodle--red path:nth-child(2){animation-delay:1.35s}.hd-doodle--red path:nth-child(3){animation-delay:1.5s}
+  .hd-doodle--green path:nth-child(1){animation-delay:1.5s}.hd-doodle--green path:nth-child(2){animation-delay:1.65s}.hd-doodle--green path:nth-child(3){animation-delay:1.8s}
+  .hd-visual{position:absolute;z-index:1;display:none;}
+  .hd-left{left:clamp(18px,7vw,130px);top:21%;}
+  .hd-right{right:clamp(18px,7vw,130px);top:15%;}
+  .hd-card{position:relative;border-radius:22px;background:#fff;padding:6px;box-shadow:0 22px 50px rgba(0,0,0,.18),0 2px 8px rgba(0,0,0,.08);}
+  .hd-vid{display:block;position:relative;overflow:hidden;border-radius:17px;background:#dcdde0 center/cover no-repeat;width:100%;height:100%;}
+  .hd-vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;}
+  .hd-play{position:absolute;left:50%;top:50%;width:clamp(44px,4vw,60px);height:clamp(44px,4vw,60px);margin:calc(clamp(44px,4vw,60px) / -2) 0 0 calc(clamp(44px,4vw,60px) / -2);border-radius:50%;background:rgba(255,255,255,.93);box-shadow:0 8px 24px rgba(0,0,0,.28);}
+  .hd-play::before{content:"";position:absolute;left:54%;top:50%;transform:translate(-50%,-50%);border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent #111;}
+  .hd-card--raw{width:clamp(170px,15.5vw,250px);aspect-ratio:4/5;rotate:14deg;animation:hdBob 7s ease-in-out infinite;}
+  .hd-stack{position:relative;width:clamp(150px,13vw,215px);aspect-ratio:9/16;}
+  .hd-stack .hd-card{position:absolute;inset:0;aspect-ratio:9/16;animation:hdBob 7s ease-in-out infinite;}
+  .hd-card--1{rotate:7deg;z-index:3;}
+  .hd-card--2{rotate:12deg;translate:clamp(24px,2.7vw,44px) clamp(-26px,-1.6vw,-14px);z-index:2;animation-delay:-2s!important;}
+  .hd-card--3{rotate:17deg;translate:clamp(46px,5.2vw,86px) clamp(-46px,-3vw,-26px);z-index:1;animation-delay:-4s!important;}
+  .hd-arrow{position:absolute;width:clamp(70px,7vw,112px);height:auto;overflow:visible;}
+  .hd-arrow path{stroke-dasharray:160;stroke-dashoffset:160;animation:hdDraw 1s ease forwards 1.6s;}
+  .hd-arrow--l{left:calc(100% + clamp(0px,.6vw,14px));top:56%;}
+  .hd-arrow--r{right:calc(100% + clamp(26px,3.6vw,64px));top:56%;}
+  @keyframes hdDraw{to{stroke-dashoffset:0}}
+  @keyframes hdBob{0%,100%{translate:0 0}50%{translate:0 -9px}}
+  @media (min-width:1100px){.hd-visual{display:block;}}
+  @media (max-width:700px){.hd-doodle{display:none;}}
+  /* stats with dividers and coloured underlines */
+  .ng-stats{gap:0;align-items:flex-start;}
+  .ng-stat{position:relative;text-align:center;padding:0 clamp(22px,4.4vw,64px);}
+  .ng-stat + .ng-stat::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:1px;background:#dfe0e3;}
+  .ng-stat__num::after{content:"";display:block;width:clamp(44px,4.6vw,66px);height:4px;border-radius:4px;margin:12px auto 0;background:var(--c,#ff5a5f);}
+  .ng-stat:nth-child(1){--c:#ff5a5f;} .ng-stat:nth-child(2){--c:#3fc98a;} .ng-stat:nth-child(3){--c:#f5b82e;}
+  @media (max-width:560px){.ng-stat{padding:0 4px;} .ng-stat + .ng-stat::before{display:none;}}
+  @media (prefers-reduced-motion:reduce){.hd-doodle path,.hd-arrow path{stroke-dashoffset:0!important;}}
 </style>
 
 <script>
@@ -505,35 +557,20 @@
 
 <!-- ===================== reels ===================== -->
 <section class="sf-sec " id="ng-reels">
-  <div class="sf-inner">
+  <div class="sf-inner ">
     <div class="sf-head" data-anim>
       <span class="sf-eyebrow">Short-form</span>
-      <h2>From camera roll to For You page</h2>
+      <h2 class="rr-split">From camera roll to For You page</h2>
       <p>Every one of these started as raw, unedited footage. Here&rsquo;s what it turned into.</p>
     </div>
     <div class="sf-masonry">
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231025311.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025311?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231025310.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025310?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016149.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016149?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016080.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016080?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015992.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015992?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
       <a class="ng-card ng-card--promo ng-promo--orange" href="#ng-form" data-anim>
         <div class="ng-promo__badge">Free sample</div>
         <h4>Send 1 raw clip</h4>
         <p>Get 1 finished edit in 48 hours</p>
       </a>
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015994.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015994?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231025311.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025311?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
       </a>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
@@ -544,13 +581,10 @@
         </div>
       </div>
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023664.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023664?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
-      <a class="ng-card ng-card--promo ng-promo--dark" href="#ng-offer" data-anim>
-        <h4>Delivered in 72 hours or 50% off</h4>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231025310.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025310?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
       </a>
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023665.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023665?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016149.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016149?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
       </a>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
@@ -561,7 +595,7 @@
         </div>
       </div>
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023663.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023663?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016080.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016080?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
       </a>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
@@ -572,10 +606,10 @@
         </div>
       </div>
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016027.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016027?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015992.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015992?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
       </a>
-      <a class="ng-card ng-card--promo ng-promo--green" href="#ng-form" data-anim>
-        <h4>3 hook variations on every clip</h4>
+      <a class="ng-card ng-card--promo ng-promo--dark" href="#ng-offer" data-anim>
+        <h4>Delivered in 72 hours or 50% off</h4>
       </a>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
@@ -586,7 +620,13 @@
         </div>
       </div>
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015996.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015996?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015994.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015994?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <a class="ng-card ng-card--promo ng-promo--green" href="#ng-form" data-anim>
+        <h4>3 hook variations on every clip</h4>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023664.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023664?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
       </a>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
@@ -597,7 +637,7 @@
         </div>
       </div>
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015995.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015995?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023665.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023665?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
       </a>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
@@ -607,6 +647,9 @@
           <div><strong>P. Aoki</strong><span>Brand Manager, Kindred Pet Co.</span></div>
         </div>
       </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023663.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023663?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">Helped us build a content library that actually performs across every channel we run, not just one.</p>
@@ -615,34 +658,45 @@
           <div><strong>C. Bianchi</strong><span>Marketing Director, Solace Home</span></div>
         </div>
       </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016027.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016027?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015996.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015996?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015995.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015995?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- ===================== problem ===================== -->
+<!-- Tool logos live in assets/img/tools/ (see README there). final-cut-pro.svg and higgsfield.svg still need the official files. -->
 <section class="rr-sec rr-problem" id="ng-problem">
   <div class="rr-inner">
     <div class="rr-problem__grid">
       <div class="rr-tools rr-tools--l" aria-label="Editing tools">
-        <div class="rr-tool" style="--bg:#00005b;--fg:#9999ff" data-d="0"><span class="rr-tool__ico">Pr</span><span class="rr-tool__name">Premiere Pro</span></div>
-        <div class="rr-tool" style="--bg:#00005b;--fg:#d4a5ff" data-d="1"><span class="rr-tool__ico">Ae</span><span class="rr-tool__name">After Effects</span></div>
-        <div class="rr-tool" style="--bg:#161616;--fg:#ffffff" data-d="2"><span class="rr-tool__ico"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M12 4l2.2 5 5.3.5-4 3.6 1.2 5.2L12 15.4 7.3 18.3l1.2-5.2-4-3.6 5.3-.5z" fill="#fff"/></svg></span><span class="rr-tool__name">Final Cut Pro</span></div>
+        <button type="button" class="rr-tool" style="--k:-14" aria-label="Premiere Pro"><span class="rr-tool__tile"><img src="/assets/img/tools/premiere-pro.svg" alt="" onerror="this.parentNode.classList.add('is-missing')"><b class="rr-tool__fb">Premiere Pro</b></span><span class="rr-tool__name">Premiere Pro</span></button>
+        <button type="button" class="rr-tool" style="--k:10" aria-label="After Effects"><span class="rr-tool__tile"><img src="/assets/img/tools/after-effects.svg" alt="" onerror="this.parentNode.classList.add('is-missing')"><b class="rr-tool__fb">After Effects</b></span><span class="rr-tool__name">After Effects</span></button>
+        <button type="button" class="rr-tool" style="--k:-8" aria-label="Final Cut Pro"><span class="rr-tool__tile"><img src="/assets/img/tools/final-cut-pro.svg" alt="" onerror="this.parentNode.classList.add('is-missing')"><b class="rr-tool__fb">Final Cut Pro</b></span><span class="rr-tool__name">Final Cut Pro</span></button>
       </div>
       <div class="rr-problem__main">
-        <span class="rr-eyebrow">The problem</span>
-        <h2 class="rr-h2">Your best content is sitting in a folder somewhere</h2>
-        <ul class="rr-bullets">
-          <li><i aria-hidden="true">&times;</i>You film plenty but never find time to edit.</li>
-          <li><i aria-hidden="true">&times;</i>Your edits get views in the hundreds, not the thousands.</li>
-          <li><i aria-hidden="true">&times;</i>You don&rsquo;t know why one video pops and the next one flops.</li>
-          <li><i aria-hidden="true">&times;</i>Hiring a full-time editor is expensive and slow.</li>
+        <span class="rr-eyebrow" data-rr="up">The problem</span>
+        <h2 class="rr-h2 rr-split" data-rr="up">Your best content is sitting in a folder somewhere</h2>
+        <ul class="rr-bullets" data-rr="up" data-d="2">
+          <li><button type="button" class="rr-flip" aria-pressed="false"><span class="rr-flip__in"><span class="rr-flip__face rr-flip__front"><i aria-hidden="true">&times;</i><span>You film plenty but never find time to edit.</span></span><span class="rr-flip__face rr-flip__back"><i aria-hidden="true">&#10003;</i><span>We edit it for you. Upload, relax.</span></span></span></button></li>
+          <li><button type="button" class="rr-flip" aria-pressed="false"><span class="rr-flip__in"><span class="rr-flip__face rr-flip__front"><i aria-hidden="true">&times;</i><span>Your edits get views in the hundreds, not the thousands.</span></span><span class="rr-flip__face rr-flip__back"><i aria-hidden="true">&#10003;</i><span>Hooks and pacing built to hold attention.</span></span></span></button></li>
+          <li><button type="button" class="rr-flip" aria-pressed="false"><span class="rr-flip__in"><span class="rr-flip__face rr-flip__front"><i aria-hidden="true">&times;</i><span>You don&rsquo;t know why one video pops and the next one flops.</span></span><span class="rr-flip__face rr-flip__back"><i aria-hidden="true">&#10003;</i><span>Proven hook, pacing and retention structure.</span></span></span></button></li>
+          <li><button type="button" class="rr-flip" aria-pressed="false"><span class="rr-flip__in"><span class="rr-flip__face rr-flip__front"><i aria-hidden="true">&times;</i><span>Hiring a full-time editor is expensive and slow.</span></span><span class="rr-flip__face rr-flip__back"><i aria-hidden="true">&#10003;</i><span>Ready-to-post shorts in 72 hours, no hire.</span></span></span></button></li>
         </ul>
-        <p class="rr-bridge"><strong>Views aren&rsquo;t luck.</strong> They come from the first 2 seconds, the pacing, and the payoff. That&rsquo;s the part we handle.</p>
+        <p class="rr-hint" data-rr="up" data-d="3"><span aria-hidden="true">&#128073;</span> Hover or tap a problem to see how it gets solved</p>
+        <p class="rr-bridge" data-rr="up" data-d="4"><strong>Views aren&rsquo;t luck.</strong> They come from the first 2 seconds, the pacing, and the payoff. That&rsquo;s the part we handle.</p>
       </div>
       <div class="rr-tools rr-tools--r" aria-label="Editing tools">
-        <div class="rr-tool" style="--bg:#000000;--fg:#ffffff" data-d="1"><span class="rr-tool__ico"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 15.5 16 8.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><span class="rr-tool__name">CapCut</span></div>
-        <div class="rr-tool" style="--bg:#c6f024;--fg:#0e0e0e" data-d="2"><span class="rr-tool__ico">H</span><span class="rr-tool__name">Higgsfield</span></div>
-        <div class="rr-tool" style="--bg:#1b1b1f;--fg:#ffffff" data-d="0"><span class="rr-tool__ico"><span class="rr-dv"><i></i><i></i><i></i></span></span><span class="rr-tool__name">DaVinci Resolve</span></div>
+        <button type="button" class="rr-tool" style="--k:12" aria-label="CapCut"><span class="rr-tool__tile"><img src="/assets/img/tools/capcut.svg" alt="" onerror="this.parentNode.classList.add('is-missing')"><b class="rr-tool__fb">CapCut</b></span><span class="rr-tool__name">CapCut</span></button>
+        <button type="button" class="rr-tool" style="--k:-10" aria-label="Higgsfield"><span class="rr-tool__tile"><img src="/assets/img/tools/higgsfield.svg" alt="" onerror="this.parentNode.classList.add('is-missing')"><b class="rr-tool__fb">Higgsfield</b></span><span class="rr-tool__name">Higgsfield</span></button>
+        <button type="button" class="rr-tool" style="--k:14" aria-label="DaVinci Resolve"><span class="rr-tool__tile"><img src="/assets/img/tools/davinci-resolve.svg" alt="" onerror="this.parentNode.classList.add('is-missing')"><b class="rr-tool__fb">DaVinci Resolve</b></span><span class="rr-tool__name">DaVinci Resolve</span></button>
       </div>
     </div>
   </div>
@@ -650,12 +704,18 @@
 
 <!-- ===================== before / after + speed ramps ===================== -->
 <section class="sf-sec sf-sec--pair" id="ng-beforeafter">
-  <div class="sf-inner">
+  <div class="sf-inner sf-inner--wide">
     <div class="sf-head" data-anim>
       <span class="sf-eyebrow">Before &amp; after</span>
-      <h2>Same footage. Completely different video.</h2>
+      <h2 class="rr-split">Same footage. Completely different video.</h2>
       <p>Left: the raw clip a client sent us. Right: the version that went live. The difference is a hook that lands in 2 seconds, cuts timed to the beat, captions for sound-off viewing, and an ending that makes people rewatch.</p>
     </div>
+    <div class="ba-layout" id="ng-how">
+      <aside class="ba-steps ba-steps--l" aria-label="How it works">
+        <div class="ba-how" data-rr="left"><span class="sf-eyebrow">How it works</span><h3>Three steps. Zero editing on your end.</h3></div>
+        <div class="ba-step" data-rr="left" data-d="1" data-tilt><span class="ba-step__n">1</span><div><h4>Upload your raw footage.</h4><p>Google Drive, Dropbox, WeTransfer, whatever&rsquo;s easiest.</p></div></div>
+        <div class="ba-step" data-rr="left" data-d="2" data-tilt><span class="ba-step__n">2</span><div><h4>We edit.</h4><p>Hooks, pacing, captions, music, 3 variations per clip.</p></div></div>
+      </aside>
     <div class="sf-pair">
       <a class="ng-card ng-card--video" href="#" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231027012.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231027012?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Raw clip"></iframe></div><span class="sf-label">Raw clip</span>
@@ -664,34 +724,27 @@
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231027013.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231027013?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Final edit"></iframe></div><span class="sf-label">Final edit</span>
       </a>
     </div>
+      <aside class="ba-steps ba-steps--r" aria-label="How it works, continued">
+        <div class="ba-step" data-rr="right" data-d="1" data-tilt><span class="ba-step__n">3</span><div><h4>You post.</h4><p>Files arrive in 72 hours, sized for every platform. Revisions on request.</p></div></div>
+        <a href="#ng-form" class="ba-cta" data-rr="right" data-d="2" data-magnet><span class="ba-cta__badge">Free sample</span><strong>Send 1 raw clip</strong><em>Get 1 finished edit in 48 hours <i aria-hidden="true">&rarr;</i></em></a>
+      </aside>
+    </div>
   </div>
 </section>
 
 <section class="sf-sec sf-sec--tint" id="ng-speedramp">
-  <div class="sf-inner">
+  <div class="sf-inner ">
     <div class="sf-head" data-anim>
       <span class="sf-eyebrow">Speed ramps</span>
-      <h2>Speed ramps that hit the beat</h2>
+      <h2 class="rr-split">Speed ramps that hit the beat</h2>
       <p>Jump cuts, speed ramps, and zooms every 2&ndash;3 seconds so attention never drops.</p>
     </div>
     <div class="sf-masonry">
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462116.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462116?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462111.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462111?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462115.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462115?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462080.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462080?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462083.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462083?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
-      </a>
       <a class="ng-card ng-card--promo ng-promo--green" href="#ng-form" data-anim>
         <h4>Cuts timed to the beat</h4>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462116.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462116?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
       </a>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
@@ -702,7 +755,10 @@
         </div>
       </div>
       <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462081.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462081?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462111.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462111?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462115.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462115?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
       </a>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
@@ -712,11 +768,22 @@
           <div><strong>R. Okafor</strong><span>Head of Growth, Pathwell</span></div>
         </div>
       </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462080.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462080?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">If you want ads that perform and not just look nice, Ahmad is the guy. We saw a real lift within the first batch of creatives.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%25230891b2%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EEL%3C/text%3E%3C/svg%3E" alt="E. Lindqvist">
+          <div><strong>E. Lindqvist</strong><span>Co-Founder, Norrsken Skincare</span></div>
+        </div>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462083.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462083?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+      </a>
       <a class="ng-card ng-card--promo ng-promo--dark" href="#ng-offer" data-anim>
         <h4>Speed ramps in every Growth batch</h4>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462082.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462082?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
       </a>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
@@ -724,6 +791,25 @@
         <div class="ng-quote__author">
           <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%2523ca8a04%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EDM%3C/text%3E%3C/svg%3E" alt="D. Marsh">
           <div><strong>D. Marsh</strong><span>Performance Marketing Manager, Basecamp Gear</span></div>
+        </div>
+      </div>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462081.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462081?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+      </a>
+      <a class="ng-card ng-card--promo ng-promo--orange" href="#ng-form" data-anim>
+        <div class="ng-promo__badge">Free sample</div>
+        <h4>Send 1 raw clip</h4>
+        <p>Get 1 finished edit in 48 hours</p>
+      </a>
+      <a class="ng-card ng-card--video" href="#" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462082.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462082?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
+      </a>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Went well beyond the brief every single time. Experienced, easy to talk to, and the edits speak for themselves.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%252316a34a%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ENO%3C/text%3E%3C/svg%3E" alt="N. Osei">
+          <div><strong>N. Osei</strong><span>CEO, Fettle Foods</span></div>
         </div>
       </div>
     </div>
@@ -735,16 +821,14 @@
   .sf-sec--tint{background:#f7f7f8;}
   .sf-sec *{box-sizing:border-box;}
   .sf-inner{max-width:1200px;margin:0 auto;}
+  .sf-inner--wide{max-width:1240px;}
   .sf-head{text-align:center;margin:0 auto 34px;max-width:620px;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
   .sf-head.is-in{opacity:1;transform:none;}
   .sf-eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:#c9f24a;padding:5px 12px;border-radius:999px;}
   .sf-head h2{margin:14px 0 8px;font-size:clamp(26px,4vw,40px);font-weight:700;line-height:1.15;color:var(--ink);}
   .sf-head p{margin:0;font-size:15px;line-height:1.6;color:var(--muted);}
-  /* masonry: CSS columns by default; the script below swaps to explicit
-     flex columns (row-wise reading order) so the first cards sit on the top row */
+  /* masonry (CSS columns): videos, reviews and CTA cards mixed together */
   .sf-masonry{column-count:5;column-gap:var(--gap);}
-  .sf-masonry.is-js{column-count:auto;display:flex;gap:var(--gap);align-items:flex-start;}
-  .sf-col{flex:1 1 0;min-width:0;}
   .sf-sec .ng-card{display:block;width:100%;margin:0 0 var(--gap);break-inside:avoid;-webkit-column-break-inside:avoid;border-radius:var(--radius);overflow:hidden;position:relative;opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.44,0,.09,1);}
   .sf-sec .ng-card.is-in{opacity:1;transform:translateY(0);}
   .sf-sec .ng-card--video{background:#eee;line-height:0;cursor:pointer;}
@@ -760,17 +844,45 @@
   .sf-sec .ng-quote__author strong{display:block;font-size:12px;color:var(--ink);font-weight:600;}
   .sf-sec .ng-quote__author span{display:block;font-size:11px;color:var(--muted);line-height:1.3;margin-top:1px;}
   .sf-sec .ng-card--promo{padding:18px 16px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;min-height:150px;text-decoration:none;transition:opacity .6s ease,transform .6s cubic-bezier(.44,0,.09,1),box-shadow .25s ease;}
-  .sf-sec a.ng-card--promo:hover{box-shadow:0 10px 28px rgba(0,0,0,.18);}
+  .sf-sec a.ng-card--promo:hover{box-shadow:0 10px 28px rgba(0,0,0,.18);transform:translateY(-3px);}
   .sf-sec .ng-card--promo h4{margin:0;font-size:16px;font-weight:700;line-height:1.2;}
   .sf-sec .ng-card--promo p{margin:0;font-size:12.5px;font-weight:500;opacity:.85;}
   .sf-sec .ng-promo__badge{align-self:flex-start;font-size:10.5px;font-weight:600;padding:4px 9px;border-radius:999px;background:rgba(0,0,0,.25);color:#fff;margin-bottom:auto;}
   .sf-sec .ng-promo--green{background:#c6f024;} .sf-sec .ng-promo--green h4{color:#14210a;}
   .sf-sec .ng-promo--dark{background:#0e0e0e;aspect-ratio:3/4.4;} .sf-sec .ng-promo--dark h4{color:#fff;}
   .sf-sec .ng-promo--orange{background:#e8722e;aspect-ratio:3/4.2;} .sf-sec .ng-promo--orange h4,.sf-sec .ng-promo--orange p{color:#fff;}
-  /* before / after: raw left, final right */
-  .sf-sec--pair .sf-inner{max-width:640px;}
+
+  /* before / after with the three steps on the left and right */
+  .ba-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,540px) minmax(0,1fr);gap:34px;align-items:center;}
   .sf-pair{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap);}
   .sf-pair .ng-card{margin:0;}
+  .ba-steps{display:flex;flex-direction:column;gap:16px;}
+  .ba-steps--l{align-items:flex-end;} .ba-steps--r{align-items:flex-start;}
+  .ba-how,.ba-step,.ba-cta{width:100%;max-width:310px;}
+  .ba-how{margin-bottom:6px;}
+  .ba-how h3{margin:12px 0 0;font-size:clamp(20px,2vw,26px);font-weight:700;line-height:1.2;color:var(--ink);}
+  .ba-step{position:relative;display:flex;gap:16px;align-items:flex-start;background:#f4f4f5;border-radius:20px;padding:20px 20px 22px;transition:background .3s,box-shadow .3s;}
+  .ba-step:hover{background:#fff;box-shadow:0 14px 34px rgba(0,0,0,.12);}
+  .ba-step__n{flex:0 0 auto;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;transition:transform .5s cubic-bezier(.34,1.56,.64,1),background .3s,color .3s;}
+  .ba-step:hover .ba-step__n{transform:rotate(360deg) scale(1.1);background:#c6f024;color:#14210a;}
+  .ba-step h4{margin:2px 0 6px;font-size:17px;font-weight:700;line-height:1.25;color:var(--ink);}
+  .ba-step p{margin:0;font-size:13.5px;line-height:1.55;color:#6b7076;}
+  .ba-cta{position:relative;display:flex;flex-direction:column;gap:6px;justify-content:flex-end;min-height:168px;background:#e8722e;color:#fff;border-radius:20px;padding:20px;text-decoration:none;overflow:hidden;transition:box-shadow .3s;}
+  .ba-cta:hover{box-shadow:0 18px 40px rgba(232,114,46,.45);}
+  .ba-cta::after{content:"";position:absolute;inset:-40% auto -40% -60%;width:50%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-18deg);animation:baShine 4s ease-in-out infinite;}
+  .ba-cta__badge{position:absolute;top:18px;left:20px;font-size:10.5px;font-weight:600;padding:4px 9px;border-radius:999px;background:rgba(0,0,0,.25);}
+  .ba-cta strong{font-size:20px;line-height:1.15;}
+  .ba-cta em{font-style:normal;font-size:13px;opacity:.9;}
+  .ba-cta i{display:inline-block;font-style:normal;transition:transform .25s;}
+  .ba-cta:hover i{transform:translateX(5px);}
+  @keyframes baShine{0%,55%{left:-60%}100%{left:130%}}
+  @media (max-width:1060px){
+    .ba-layout{grid-template-columns:1fr;max-width:560px;margin:0 auto;gap:22px;}
+    .sf-pair{order:1;} .ba-steps--l{order:2;} .ba-steps--r{order:3;}
+    .ba-steps--l,.ba-steps--r{align-items:stretch;}
+    .ba-how,.ba-step,.ba-cta{max-width:none;}
+    .ba-how{text-align:center;}
+  }
   @media (max-width:1024px){.sf-masonry{column-count:3;}}
   @media (max-width:640px){
     .sf-sec{padding:40px 12px 28px;--gap:10px;}
@@ -784,39 +896,12 @@
   @media (prefers-reduced-motion:reduce){
     .sf-sec .ng-card,.sf-head{opacity:1!important;transform:none!important;transition:none!important;}
     .sf-sec .ng-vidwrap{transition:none!important;}
+    .ba-cta::after{animation:none!important;}
   }
 </style>
 <script>
 (function(){
-  // ---- Masonry in reading order ----
-  // CSS columns fill top-to-bottom per column, so the "first" cards would all
-  // stack in column 1. This deals the cards out left-to-right into the
-  // shortest column instead, so the first N cards form the top row.
-  // (Runs right after the grids are parsed, before the page's other scripts.)
-  var grids = [].slice.call(document.querySelectorAll('.sf-masonry'));
-  grids.forEach(function(g){ g._cards = [].slice.call(g.children); });
-  function colCount(){ var w = window.innerWidth; return w <= 640 ? 2 : (w <= 1024 ? 3 : 5); }
-  var laidFor = 0;
-  function layout(){
-    var n = colCount();
-    if(n === laidFor) return;
-    laidFor = n;
-    grids.forEach(function(g){
-      g.classList.add('is-js');
-      while(g.firstChild) g.removeChild(g.firstChild);
-      var cols = [];
-      for(var i = 0; i < n; i++){ var c = document.createElement('div'); c.className = 'sf-col'; g.appendChild(c); cols.push(c); }
-      g._cards.forEach(function(card){
-        var best = cols[0];
-        cols.forEach(function(c){ if(c.offsetHeight < best.offsetHeight) best = c; });
-        best.appendChild(card);
-      });
-    });
-  }
-  layout();
-  var rt; window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(layout, 200); });
-
-  // ---- scroll-in ----
+  // scroll-in for the video cards and section heads
   var els = document.querySelectorAll('.sf-sec [data-anim]');
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
@@ -837,17 +922,18 @@
 
 <!-- ===================== viral edit formula ===================== -->
 <section class="rr-sec rr-formula" id="ng-formula">
+  <div class="rr-orb rr-orb--a" aria-hidden="true"></div><div class="rr-orb rr-orb--b" aria-hidden="true"></div>
   <div class="rr-inner">
-    <div class="rr-head" data-rr>
+    <div class="rr-head" data-rr="up">
       <span class="rr-eyebrow">What we do to every clip</span>
-      <h2 class="rr-h2">The Viral Edit Formula</h2>
+      <h2 class="rr-h2 rr-split">The Viral Edit Formula</h2>
     </div>
     <div class="rr-formula__grid">
-      <div class="rr-fcard" data-rr><span class="rr-fcard__n">1</span><h3>Hook in 2 seconds.</h3><p>We find the strongest moment and lead with it.</p></div>
-      <div class="rr-fcard" data-rr><span class="rr-fcard__n">2</span><h3>Pacing that holds.</h3><p>Jump cuts, speed ramps, and zooms every 2&ndash;3 seconds so attention never drops.</p></div>
-      <div class="rr-fcard" data-rr><span class="rr-fcard__n">3</span><h3>Captions and sound design.</h3><p>Most viewers watch muted. We edit for them.</p></div>
-      <div class="rr-fcard" data-rr><span class="rr-fcard__n">4</span><h3>Loop-worthy endings.</h3><p>Rewatches push the algorithm. We build for them.</p></div>
-      <div class="rr-fcard" data-rr><span class="rr-fcard__n">5</span><h3>3 hook variations.</h3><p>You test angles, not guesses.</p></div>
+      <div class="rr-fcard rr-spot" data-rr="zoom" data-d="0" data-tilt><span class="rr-fcard__n">1</span><h3>Hook in 2 seconds.</h3><p>We find the strongest moment and lead with it.</p></div>
+      <div class="rr-fcard rr-spot" data-rr="zoom" data-d="1" data-tilt><span class="rr-fcard__n">2</span><h3>Pacing that holds.</h3><p>Jump cuts, speed ramps, and zooms every 2&ndash;3 seconds so attention never drops.</p></div>
+      <div class="rr-fcard rr-spot" data-rr="zoom" data-d="2" data-tilt><span class="rr-fcard__n">3</span><h3>Captions and sound design.</h3><p>Most viewers watch muted. We edit for them.</p></div>
+      <div class="rr-fcard rr-spot" data-rr="zoom" data-d="3" data-tilt><span class="rr-fcard__n">4</span><h3>Loop-worthy endings.</h3><p>Rewatches push the algorithm. We build for them.</p></div>
+      <div class="rr-fcard rr-spot" data-rr="zoom" data-d="4" data-tilt><span class="rr-fcard__n">5</span><h3>3 hook variations.</h3><p>You test angles, not guesses.</p></div>
     </div>
   </div>
 </section>
@@ -856,34 +942,25 @@
 <!-- Prices were still [$X] / [$Y] / [$Z] in the copy doc. Replace the "Get a quote" lines with the real prices. -->
 <section class="rr-sec rr-offer" id="ng-offer">
   <div class="rr-inner">
-    <div class="rr-head" data-rr>
+    <div class="rr-head" data-rr="up">
       <span class="rr-eyebrow">The offer</span>
-      <h2 class="rr-h2">The Raw-to-Reel Sprint</h2>
+      <h2 class="rr-h2 rr-split">The Raw-to-Reel Sprint</h2>
       <p class="rr-lead">Upload your footage. Get ready-to-post shorts in 72 hours.</p>
     </div>
     <div class="rr-tiers">
-      <div class="rr-tier" data-rr>
-        <h3>Starter</h3>
-        <p class="rr-tier__price">Get a quote</p>
-        <ul><li>5 edited shorts from your raw footage</li><li>3 hook variations each</li></ul>
-      </div>
-      <div class="rr-tier rr-tier--hot" data-rr>
-        <span class="rr-tier__badge">Most popular</span>
-        <h3>Growth</h3>
-        <p class="rr-tier__price">Get a quote</p>
-        <ul><li>15 shorts, 3 hooks each</li><li>Captions, speed ramps, sound design</li></ul>
-      </div>
-      <div class="rr-tier" data-rr>
-        <h3>Scale</h3>
-        <p class="rr-tier__price">Get a quote <span>/ month</span></p>
-        <ul><li>30+ shorts a month, dedicated editor</li><li>Weekly performance-based revisions</li></ul>
+      <div class="rr-tier rr-spot" role="button" tabindex="0" aria-pressed="false" data-plan="Starter" data-rr="up" data-tilt><h3>Starter</h3><p class="rr-tier__price">Get a quote</p><ul><li>5 edited shorts from your raw footage</li><li>3 hook variations each</li></ul><span class="rr-tier__pick">Selected &#10003;</span></div>
+      <div class="rr-tier rr-spot rr-tier--hot" role="button" tabindex="0" aria-pressed="false" data-plan="Growth" data-rr="up" data-tilt><span class="rr-tier__badge">Most popular</span><h3>Growth</h3><p class="rr-tier__price">Get a quote</p><ul><li>15 shorts, 3 hooks each</li><li>Captions, speed ramps, sound design</li></ul><span class="rr-tier__pick">Selected &#10003;</span></div>
+      <div class="rr-tier rr-spot" role="button" tabindex="0" aria-pressed="false" data-plan="Scale" data-rr="up" data-tilt><h3>Scale</h3><p class="rr-tier__price">Get a quote <span>/ month</span></p><ul><li>30+ shorts a month, dedicated editor</li><li>Weekly performance-based revisions</li></ul><span class="rr-tier__pick">Selected &#10003;</span></div>
+    </div>
+    <p class="rr-hint rr-hint--c" data-rr="up">Pick a package. We&rsquo;ll carry it into the form.</p>
+    <div class="rr-guarantee" data-rr="zoom">
+      <span class="rr-guarantee__ico" aria-hidden="true">72h</span>
+      <div>
+        <h3>On time or 50% off.</h3>
+        <p>Unlimited recuts until you&rsquo;re happy. Delivered in 72 hours or that batch is 50% off. Don&rsquo;t love an edit? We recut it until you do.</p>
       </div>
     </div>
-    <div class="rr-guarantee" data-rr>
-      <h3>On time or 50% off.</h3>
-      <p>Unlimited recuts until you&rsquo;re happy. Delivered in 72 hours or that batch is 50% off. Don&rsquo;t love an edit? We recut it until you do.</p>
-    </div>
-    <div class="rr-center" data-rr><a href="#ng-form" class="rr-btn">Start My Sprint <span aria-hidden="true">&rarr;</span></a></div>
+    <div class="rr-center" data-rr="up"><a href="#ng-form" class="rr-btn" id="rr-offer-cta" data-magnet><span class="rr-btn__t">Start My Sprint</span> <span class="rr-btn__a" aria-hidden="true">&rarr;</span></a></div>
   </div>
 </section>
 
@@ -891,172 +968,17 @@
 <!-- PLACEHOLDER QUOTES (same ones used in the video grids). Replace with real client quotes + numbers, names/handles and photos. -->
 <section class="rr-sec rr-testi" id="ng-testimonials">
   <div class="rr-inner">
-    <div class="rr-head" data-rr>
+    <div class="rr-head" data-rr="up">
       <span class="rr-eyebrow">Testimonials</span>
-      <h2 class="rr-h2">What clients say after their first batch</h2>
+      <h2 class="rr-h2 rr-split">What clients say after their first batch</h2>
     </div>
     <div class="rr-tgrid">
-      <figure class="rr-tcard" data-rr><span class="rr-tcard__mark" aria-hidden="true">&rdquo;</span><blockquote>If you want ads that perform and not just look nice, Ahmad is the guy. We saw a real lift within the first batch of creatives.</blockquote><figcaption><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%230891b2%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EEL%3C/text%3E%3C/svg%3E" alt="E. Lindqvist"><span><strong>E. Lindqvist</strong><em>Co-Founder, Norrsken Skincare</em></span></figcaption></figure>
-      <figure class="rr-tcard" data-rr><span class="rr-tcard__mark" aria-hidden="true">&rdquo;</span><blockquote>Skilled editor, clear communicator, and genuinely up to date on what&rsquo;s working on social right now. Already lined up our next batch.</blockquote><figcaption><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%23ca8a04%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EDM%3C/text%3E%3C/svg%3E" alt="D. Marsh"><span><strong>D. Marsh</strong><em>Performance Marketing Manager, Basecamp Gear</em></span></figcaption></figure>
-      <figure class="rr-tcard" data-rr><span class="rr-tcard__mark" aria-hidden="true">&rdquo;</span><blockquote>Fast turnarounds, sharp taste, and he actually reads the brief. Rare combination and it shows in the finished cuts.</blockquote><figcaption><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%23dc2626%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ETA%3C/text%3E%3C/svg%3E" alt="T. Alvarez"><span><strong>T. Alvarez</strong><em>Creative Director, Lumen Goods</em></span></figcaption></figure>
+      <figure class="rr-tcard rr-spot" data-rr="left" data-d="0" data-tilt><span class="rr-tcard__mark" aria-hidden="true">&rdquo;</span><blockquote>If you want ads that perform and not just look nice, Ahmad is the guy. We saw a real lift within the first batch of creatives.</blockquote><figcaption><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%230891b2%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EEL%3C/text%3E%3C/svg%3E" alt="E. Lindqvist"><span><strong>E. Lindqvist</strong><em>Co-Founder, Norrsken Skincare</em></span></figcaption></figure>
+      <figure class="rr-tcard rr-spot" data-rr="up" data-d="1" data-tilt><span class="rr-tcard__mark" aria-hidden="true">&rdquo;</span><blockquote>Skilled editor, clear communicator, and genuinely up to date on what&rsquo;s working on social right now. Already lined up our next batch.</blockquote><figcaption><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%23ca8a04%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EDM%3C/text%3E%3C/svg%3E" alt="D. Marsh"><span><strong>D. Marsh</strong><em>Performance Marketing Manager, Basecamp Gear</em></span></figcaption></figure>
+      <figure class="rr-tcard rr-spot" data-rr="right" data-d="2" data-tilt><span class="rr-tcard__mark" aria-hidden="true">&rdquo;</span><blockquote>Fast turnarounds, sharp taste, and he actually reads the brief. Rare combination and it shows in the finished cuts.</blockquote><figcaption><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%23dc2626%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ETA%3C/text%3E%3C/svg%3E" alt="T. Alvarez"><span><strong>T. Alvarez</strong><em>Creative Director, Lumen Goods</em></span></figcaption></figure>
     </div>
   </div>
 </section>
-
-<!-- ===================== how it works ===================== -->
-<section class="rr-sec rr-how" id="ng-how">
-  <div class="rr-inner">
-    <div class="rr-head" data-rr>
-      <span class="rr-eyebrow">How it works</span>
-      <h2 class="rr-h2">Three steps. Zero editing on your end.</h2>
-    </div>
-    <ol class="rr-steps">
-      <li data-rr><span class="rr-step__n">1</span><h3>Upload your raw footage.</h3><p>Google Drive, Dropbox, WeTransfer, whatever&rsquo;s easiest.</p></li>
-      <li data-rr><span class="rr-step__n">2</span><h3>We edit.</h3><p>Hooks, pacing, captions, music, 3 variations per clip.</p></li>
-      <li data-rr><span class="rr-step__n">3</span><h3>You post.</h3><p>Files arrive in 72 hours, sized for every platform. Revisions on request.</p></li>
-    </ol>
-  </div>
-</section>
-
-<!-- ===================== about (short) ===================== -->
-<!-- Copy said "[X]+ short-form videos"; the number is left out until it is known. -->
-<section class="rr-sec rr-about" id="ng-about">
-  <div class="rr-inner rr-about__inner" data-rr>
-    <img class="rr-about__avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Crect width='160' height='160' rx='80' fill='%23111111'/%3E%3Ctext x='50%25' y='53%25' font-family='Poppins,Arial,sans-serif' font-size='52' font-weight='700' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'%3EAJ%3C/text%3E%3C/svg%3E" alt="Ahmad Jan">
-    <div>
-      <h2 class="rr-h2 rr-h2--left">Hey, I&rsquo;m Ahmad.</h2>
-      <p>I&rsquo;ve edited short-form videos for 60+ brands. I don&rsquo;t do trend-chasing templates. Every edit is built on what actually holds attention, and I iterate based on what your audience responds to.</p>
-    </div>
-  </div>
-</section>
-
-<style>
-  .rr-sec{--ink:#161616;--muted:#6b7076;--green:#c6f024;background:#fff;padding:84px 20px;font-family:'Poppins','Helvetica Neue',Arial,sans-serif;color:var(--ink);}
-  .rr-sec *{box-sizing:border-box;}
-  .rr-inner{max-width:1100px;margin:0 auto;}
-  .rr-head{text-align:center;max-width:680px;margin:0 auto 40px;}
-  .rr-eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#c9f24a;color:var(--ink);padding:5px 12px;border-radius:999px;}
-  .rr-h2{margin:14px 0 0;font-size:clamp(28px,4.4vw,48px);font-weight:700;line-height:1.12;letter-spacing:-.015em;}
-  .rr-h2--left{margin:0 0 10px;}
-  .rr-lead{margin:14px 0 0;font-size:clamp(15px,1.6vw,19px);color:var(--muted);line-height:1.55;}
-  .rr-btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:15px 30px;border-radius:999px;transition:transform .2s,box-shadow .2s;}
-  .rr-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.22);}
-  .rr-center{text-align:center;margin-top:34px;}
-  [data-rr]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1);}
-  [data-rr].is-in{opacity:1;transform:none;}
-
-  /* ---------- problem + tool icons ---------- */
-  .rr-problem{background:#f7f7f8;overflow:hidden;}
-  .rr-problem__grid{display:grid;grid-template-columns:150px minmax(0,1fr) 150px;gap:36px;align-items:center;}
-  .rr-problem__main{max-width:620px;margin:0 auto;text-align:center;}
-  .rr-bullets{list-style:none;margin:30px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;text-align:left;}
-  .rr-bullets li{display:flex;align-items:center;gap:14px;background:#fff;border-radius:14px;padding:14px 18px;font-size:15px;font-weight:500;line-height:1.45;box-shadow:0 1px 0 rgba(0,0,0,.05);}
-  .rr-bullets i{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:#ffe3e3;color:#e03131;display:grid;place-items:center;font-style:normal;font-size:18px;line-height:1;font-weight:700;}
-  .rr-bridge{margin:26px 0 0;font-size:clamp(16px,1.8vw,20px);line-height:1.55;}
-  .rr-bridge strong{background:linear-gradient(transparent 58%,var(--green) 58%);}
-  .rr-tools{display:flex;flex-direction:column;gap:26px;align-items:center;}
-  .rr-tool{display:flex;flex-direction:column;align-items:center;gap:9px;animation:rrFloat 6s ease-in-out infinite;}
-  .rr-tool[data-d="1"]{animation-delay:-2s;animation-duration:7s;}
-  .rr-tool[data-d="2"]{animation-delay:-4s;animation-duration:6.5s;}
-  .rr-tools--l .rr-tool:nth-child(2){transform:translateX(18px);}
-  .rr-tools--r .rr-tool:nth-child(2){transform:translateX(-18px);}
-  .rr-tool__ico{width:72px;height:72px;border-radius:18px;background:var(--bg);color:var(--fg);display:grid;place-items:center;font-size:30px;font-weight:700;letter-spacing:-.02em;box-shadow:0 10px 26px rgba(0,0,0,.16);}
-  .rr-tool__name{font-size:12px;font-weight:600;color:#3a3d42;text-align:center;line-height:1.25;}
-  .rr-dv{position:relative;width:34px;height:34px;display:block;}
-  .rr-dv i{position:absolute;width:20px;height:20px;border-radius:50%;opacity:.95;}
-  .rr-dv i:nth-child(1){left:7px;top:0;background:#ff6b6b;}
-  .rr-dv i:nth-child(2){left:0;top:13px;background:#4dd0e1;}
-  .rr-dv i:nth-child(3){left:14px;top:13px;background:#ffd93d;mix-blend-mode:screen;}
-  @keyframes rrFloat{0%,100%{translate:0 0}50%{translate:0 -10px}}
-  @media (max-width:900px){
-    .rr-problem__grid{grid-template-columns:1fr;gap:34px;}
-    .rr-tools{flex-direction:row;justify-content:center;gap:18px;flex-wrap:wrap;}
-    .rr-tools--l{order:2;} .rr-problem__main{order:1;} .rr-tools--r{order:3;margin-top:-14px;}
-    .rr-tools--l .rr-tool:nth-child(2),.rr-tools--r .rr-tool:nth-child(2){transform:none;}
-    .rr-tool__ico{width:62px;height:62px;border-radius:16px;font-size:26px;}
-  }
-
-  /* ---------- formula ---------- */
-  .rr-formula{background:#0e0e0e;color:#fff;}
-  .rr-formula .rr-h2{color:#fff;}
-  .rr-formula .rr-eyebrow{background:var(--green);}
-  .rr-formula__grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;}
-  .rr-fcard{flex:0 1 calc(33.333% - 11px);min-width:240px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:20px;padding:26px 24px 28px;}
-  .rr-fcard__n{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--green);color:#14210a;font-weight:700;font-size:16px;margin-bottom:20px;}
-  .rr-fcard h3{margin:0 0 8px;font-size:19px;font-weight:600;line-height:1.25;}
-  .rr-fcard p{margin:0;font-size:14.5px;line-height:1.6;color:#b9bcc1;}
-
-  /* ---------- offer ---------- */
-  .rr-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;}
-  .rr-tier{position:relative;background:#f4f4f5;border-radius:22px;padding:30px 26px;display:flex;flex-direction:column;}
-  .rr-tier h3{margin:0;font-size:22px;font-weight:700;}
-  .rr-tier__price{margin:8px 0 18px;font-size:15px;font-weight:600;color:var(--muted);}
-  .rr-tier__price span{font-weight:500;}
-  .rr-tier ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;font-size:15px;line-height:1.45;}
-  .rr-tier li{position:relative;padding-left:26px;}
-  .rr-tier li::before{content:"";position:absolute;left:0;top:.35em;width:14px;height:14px;border-radius:50%;background:var(--green);box-shadow:inset 0 0 0 4px #14210a0d;}
-  .rr-tier--hot{background:var(--ink);color:#fff;transform:translateY(-10px);box-shadow:0 22px 50px rgba(0,0,0,.25);}
-  .rr-tier--hot .rr-tier__price{color:#c9ccd1;}
-  .rr-tier__badge{position:absolute;top:-13px;left:26px;background:var(--green);color:#14210a;font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:5px 12px;border-radius:999px;}
-  .rr-guarantee{margin-top:30px;border:2px dashed #d5d8dc;border-radius:20px;padding:26px 28px;text-align:center;}
-  .rr-guarantee h3{margin:0 0 8px;font-size:clamp(20px,2.4vw,26px);font-weight:700;}
-  .rr-guarantee p{margin:0 auto;max-width:640px;color:var(--muted);font-size:15px;line-height:1.6;}
-  @media (max-width:860px){
-    .rr-tiers{grid-template-columns:1fr;} .rr-tier--hot{transform:none;order:-1;}
-  }
-
-  /* ---------- testimonials ---------- */
-  .rr-testi{background:#f7f7f8;}
-  .rr-tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-  .rr-tcard{margin:0;background:#fff;border-radius:20px;padding:26px 24px;display:flex;flex-direction:column;gap:18px;}
-  .rr-tcard__mark{align-self:flex-end;font-size:44px;line-height:.5;font-weight:700;}
-  .rr-tcard blockquote{margin:0;font-size:15.5px;line-height:1.6;font-weight:500;}
-  .rr-tcard figcaption{display:flex;align-items:center;gap:12px;margin-top:auto;}
-  .rr-tcard img{width:42px;height:42px;border-radius:50%;}
-  .rr-tcard strong{display:block;font-size:14px;} .rr-tcard em{display:block;font-style:normal;font-size:12.5px;color:var(--muted);line-height:1.35;}
-  @media (max-width:860px){.rr-tgrid{grid-template-columns:1fr;}}
-
-  /* ---------- how it works ---------- */
-  .rr-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s;}
-  .rr-steps li{background:#f4f4f5;border-radius:22px;padding:30px 26px;}
-  .rr-step__n{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;margin-bottom:22px;}
-  .rr-steps h3{margin:0 0 8px;font-size:21px;font-weight:700;}
-  .rr-steps p{margin:0;font-size:15px;line-height:1.6;color:var(--muted);}
-  @media (max-width:860px){.rr-steps{grid-template-columns:1fr;}}
-
-  /* ---------- about ---------- */
-  .rr-about{padding-top:30px;}
-  .rr-about__inner{max-width:780px;display:flex;align-items:center;gap:34px;}
-  .rr-about__avatar{flex:0 0 auto;width:110px;height:110px;border-radius:50%;}
-  .rr-about p{margin:0;font-size:clamp(16px,1.8vw,19px);line-height:1.65;color:#3a3d42;}
-  @media (max-width:640px){
-    .rr-sec{padding:60px 16px;}
-    .rr-about__inner{flex-direction:column;text-align:center;gap:18px;}
-    .rr-about__avatar{width:92px;height:92px;}
-    .rr-h2--left{text-align:center;}
-  }
-  @media (prefers-reduced-motion:reduce){
-    [data-rr]{opacity:1!important;transform:none!important;transition:none!important;}
-    .rr-tool{animation:none!important;}
-  }
-</style>
-<script>
-(function(){
-  var els = document.querySelectorAll('[data-rr]');
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          var el = e.target, sibs = el.parentNode ? [].indexOf.call(el.parentNode.children, el) : 0;
-          setTimeout(function(){ el.classList.add('is-in'); }, Math.max(sibs,0) * 70);
-          io.unobserve(el);
-        }
-      });
-    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
-    els.forEach(function(el){ io.observe(el); });
-  } else { els.forEach(function(el){ el.classList.add('is-in'); }); }
-})();
-</script>
 
 <!-- ===================== contact-form-section.html ===================== -->
 <!-- ============================================================
@@ -1072,7 +994,7 @@
 
 
 <section class="ng-form-sec" id="ng-form">
-  <div class="ng-panel">
+  <div class="ng-panel" data-rr="zoom">
 
     <!-- LEFT: word column -->
     <div class="ng-words" aria-hidden="true">
@@ -1091,29 +1013,30 @@
 
     <!-- RIGHT: form -->
     <div class="ng-form">
-      <h2 class="ng-form__title">See what we&rsquo;d do with <em>your footage</em>, free.</h2>
+      <h2 class="ng-form__title" data-rr="up">See what we&rsquo;d do with <em>your footage</em>, free.</h2>
 
-      <div class="ng-field">
+      <div class="ng-field" data-rr="up">
         <input type="text" name="name" placeholder="Name" autocomplete="name" required>
       </div>
-      <div class="ng-field">
+      <div class="ng-field" data-rr="up">
         <input type="email" name="email" placeholder="Email" autocomplete="email" required>
       </div>
-      <div class="ng-field">
+      <div class="ng-field" data-rr="up">
         <input type="url" name="clip" placeholder="Upload link to 1 raw clip (Drive, Dropbox, WeTransfer)" required>
       </div>
-      <div class="ng-field">
+      <div class="ng-field" data-rr="up">
         <select name="platform" aria-label="Where you post" required>
           <option value="" disabled selected>Where you post</option>
           <option>Instagram</option><option>TikTok</option><option>YouTube</option><option>All</option>
         </select>
       </div>
-      <div class="ng-field">
+      <div class="ng-field" data-rr="up">
         <textarea name="about" rows="3" placeholder="What&rsquo;s the video about?"></textarea>
       </div>
 
       <!-- honeypot: hidden from real visitors, catches simple bots -->
       <input type="text" name="company" class="ng-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="plan" value="">
 
       <p class="ng-terms">
         By clicking this button you accept the
@@ -1193,6 +1116,12 @@
   .ng-field textarea::placeholder{color:#7d7d7d;}
   .ng-note{margin:12px 0 0;color:#a8abb0;font-size:12.5px;line-height:1.55;text-align:center;}
   .ng-form__title{font-size:clamp(26px,3vw,36px);}
+  .ng-field input:focus,.ng-field select:focus,.ng-field textarea:focus{box-shadow:0 0 0 4px rgba(198,240,36,.16);}
+  .ng-field input,.ng-field select,.ng-field textarea{transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease;}
+  .ng-field input:focus,.ng-field select:focus,.ng-field textarea:focus{transform:translateX(4px);}
+  .ng-send{position:relative;overflow:hidden;}
+  .ng-send::after{content:"";position:absolute;inset:0 auto 0 -70%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .6s;}
+  .ng-send:hover::after{left:130%;}
 
   .ng-range{margin-bottom:12px;}
   .ng-range label{display:block;color:#cfcfcf;font-size:12px;font-weight:600;margin-bottom:7px;}
@@ -1400,10 +1329,10 @@
 <section class="ng-faq" id="ng-qa">
   <div class="ng-faq__inner">
 
-    <h2 class="ng-faq__head">Questions <em>you might have</em></h2>
+    <h2 class="ng-faq__head" data-rr="up">Questions <em>you might have</em></h2>
 
     <div class="ng-acc">
-      <div class="ng-acc__item" data-faq>
+      <div class="ng-acc__item" data-faq data-rr="up">
         <button class="ng-acc__q" type="button">
           <span class="ng-acc__num">01</span>
           <span class="ng-acc__text">Can you guarantee my video goes viral?</span>
@@ -1414,7 +1343,7 @@
         </div></div>
       </div>
 
-      <div class="ng-acc__item" data-faq>
+      <div class="ng-acc__item" data-faq data-rr="up">
         <button class="ng-acc__q" type="button">
           <span class="ng-acc__num">02</span>
           <span class="ng-acc__text">What footage do you need?</span>
@@ -1425,7 +1354,7 @@
         </div></div>
       </div>
 
-      <div class="ng-acc__item" data-faq>
+      <div class="ng-acc__item" data-faq data-rr="up">
         <button class="ng-acc__q" type="button">
           <span class="ng-acc__num">03</span>
           <span class="ng-acc__text">How long can my raw footage be?</span>
@@ -1436,7 +1365,7 @@
         </div></div>
       </div>
 
-      <div class="ng-acc__item" data-faq>
+      <div class="ng-acc__item" data-faq data-rr="up">
         <button class="ng-acc__q" type="button">
           <span class="ng-acc__num">04</span>
           <span class="ng-acc__text">What if I don&rsquo;t like an edit?</span>
@@ -1447,7 +1376,7 @@
         </div></div>
       </div>
 
-      <div class="ng-acc__item" data-faq>
+      <div class="ng-acc__item" data-faq data-rr="up">
         <button class="ng-acc__q" type="button">
           <span class="ng-acc__num">05</span>
           <span class="ng-acc__text">Do you post for us?</span>
@@ -1463,9 +1392,11 @@
 
   <!-- ===== FINAL CTA (above footer) ===== -->
   <div class="rr-final">
-    <div class="rr-final__box">
-      <h2>Your next viral video is already on your phone.</h2>
-      <a href="#ng-form" class="rr-final__btn">Get My Free Sample Edit <span aria-hidden="true">&rarr;</span></a>
+    <div class="rr-final__box" data-rr="zoom">
+      <span class="rr-final__orb rr-final__orb--a" aria-hidden="true"></span><span class="rr-final__orb rr-final__orb--b" aria-hidden="true"></span>
+      <span class="rr-final__pill rr-final__pill--1" aria-hidden="true">HOOK</span><span class="rr-final__pill rr-final__pill--2" aria-hidden="true">PACE</span><span class="rr-final__pill rr-final__pill--3" aria-hidden="true">LOOP</span>
+      <h2 class="rr-split">Your next viral video is already on your phone.</h2>
+      <a href="#ng-form" class="rr-final__btn" data-magnet>Get My Free Sample Edit <span aria-hidden="true">&rarr;</span></a>
       <p>P.S. The free sample costs you one clip and 48 hours. Worst case, you get a free video.</p>
     </div>
   </div>
@@ -1603,10 +1534,26 @@
 
   /* ---- final CTA ---- */
   .rr-final{padding:10px 20px 70px;font-family:'Poppins','Helvetica Neue',Arial,sans-serif;}
-  .rr-final__box{max-width:980px;margin:0 auto;background:#0e0e0e;color:#fff;border-radius:28px;padding:clamp(40px,6vw,72px) clamp(22px,5vw,60px);text-align:center;}
+  .rr-final__box{position:relative;overflow:hidden;max-width:980px;margin:0 auto;background:#0e0e0e;color:#fff;border-radius:28px;padding:clamp(40px,6vw,72px) clamp(22px,5vw,60px);text-align:center;}
+  .rr-final__box > *:not(.rr-final__orb):not(.rr-final__pill){position:relative;z-index:1;}
+  .rr-final__orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.4;pointer-events:none;}
+  .rr-final__orb--a{width:320px;height:320px;left:-80px;top:-100px;background:#c6f024;animation:rrDrift 12s ease-in-out infinite alternate;}
+  .rr-final__orb--b{width:300px;height:300px;right:-80px;bottom:-110px;background:#5b5bff;animation:rrDrift 15s ease-in-out infinite alternate-reverse;}
+  .rr-final__pill{position:absolute;z-index:0;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#e9ecef;font-size:12px;font-weight:700;letter-spacing:.08em;animation:rrBob 5s ease-in-out infinite;}
+  .rr-final__pill--1{left:6%;bottom:12%;} .rr-final__pill--2{right:6%;bottom:16%;animation-delay:-1.7s;} .rr-final__pill--3{right:12%;top:12%;animation-delay:-3.2s;}
+  .rr-final__btn{position:relative;overflow:hidden;}
+  .rr-final__btn::after{content:"";position:absolute;inset:0 auto 0 -70%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:rrShine 3.8s ease-in-out infinite;}
+  .rr-final__btn{animation:rrHalo 2.6s ease-out infinite;}
+  @keyframes rrDrift{to{transform:translate(60px,40px) scale(1.15)}}
+  @keyframes rrBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @keyframes rrShine{0%,60%{left:-70%}100%{left:140%}}
+  @keyframes rrHalo{0%{box-shadow:0 0 0 0 rgba(198,240,36,.55)}100%{box-shadow:0 0 0 22px rgba(198,240,36,0)}}
+  @media (max-width:640px){.rr-final__pill{display:none;}}
+  @media (prefers-reduced-motion:reduce){.rr-final__orb,.rr-final__pill,.rr-final__btn,.rr-final__btn::after{animation:none!important;}}
   .rr-final h2{margin:0 0 28px;font-size:clamp(26px,4.2vw,46px);font-weight:700;line-height:1.14;letter-spacing:-.015em;}
   .rr-final__btn{display:inline-flex;align-items:center;gap:10px;background:#c6f024;color:#14210a;text-decoration:none;font-weight:700;font-size:clamp(15px,1.5vw,17px);padding:16px 32px;border-radius:999px;transition:transform .2s,box-shadow .2s;}
   .rr-final__btn:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(198,240,36,.35);}
+  .ng-acc__item{transition:background .25s ease;} .ng-acc__item:hover{background:#fafafa;}
   .rr-final p{margin:24px auto 0;max-width:560px;color:#a8abb0;font-size:14px;line-height:1.6;}
 </style>
 
@@ -1634,6 +1581,287 @@
 })();
 </script>
 
+
+<style>
+  .rr-progress{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#c6f024,#6fe36f);transform-origin:0 50%;transform:scaleX(0);z-index:200;pointer-events:none;}
+  .rr-sec{--ink:#161616;--muted:#6b7076;--green:#c6f024;position:relative;background:#fff;padding:96px 20px;font-family:'Poppins','Helvetica Neue',Arial,sans-serif;color:var(--ink);overflow:hidden;}
+  .rr-sec *{box-sizing:border-box;}
+  .rr-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto;}
+  .rr-head{text-align:center;max-width:680px;margin:0 auto 46px;}
+  .rr-eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#c9f24a;color:var(--ink);padding:5px 12px;border-radius:999px;}
+  .rr-h2{margin:14px 0 0;font-size:clamp(28px,4.4vw,48px);font-weight:700;line-height:1.12;letter-spacing:-.015em;}
+  .rr-lead{margin:14px 0 0;font-size:clamp(15px,1.6vw,19px);color:var(--muted);line-height:1.55;}
+  .rr-center{text-align:center;margin-top:38px;}
+  .rr-hint{margin:16px 0 0;font-size:13px;font-weight:500;color:var(--muted);}
+  .rr-hint--c{text-align:center;margin:22px 0 0;}
+  .rr-btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:16px 32px;border-radius:999px;position:relative;overflow:hidden;transition:box-shadow .25s,background .25s;}
+  .rr-btn::after{content:"";position:absolute;inset:0 auto 0 -70%;width:50%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.3),transparent);transform:skewX(-20deg);transition:left .6s;}
+  .rr-btn:hover{box-shadow:0 14px 34px rgba(0,0,0,.28);background:#000;}
+  .rr-btn:hover::after{left:130%;}
+  .rr-btn__a{display:inline-block;transition:transform .25s;} .rr-btn:hover .rr-btn__a{transform:translateX(6px);}
+
+  /* ---- reveal system ---- */
+  [data-rr]{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1);}
+  [data-rr="left"]{transform:translateX(-46px);} [data-rr="right"]{transform:translateX(46px);}
+  [data-rr="zoom"]{transform:scale(.9) translateY(18px);}
+  [data-rr].is-in{opacity:1;transform:none;}
+  [data-tilt].is-in{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(calc(var(--base,0px) + var(--ty,0px)));}
+  [data-tilt].is-settled{transition:transform .18s ease-out,opacity .6s,background .3s,box-shadow .3s,border-color .3s;}
+  /* headings: words rise one by one */
+  .rr-split--ready .rr-w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.12em;margin-bottom:-.12em;}
+  .rr-split--ready .rr-w > span{display:inline-block;transform:translateY(115%);transition:transform .8s cubic-bezier(.22,1,.36,1);transition-delay:calc(var(--i) * 70ms + 120ms);}
+  .is-in .rr-split--ready .rr-w > span,.rr-split--ready.is-in .rr-w > span{transform:none;}
+  /* mouse spotlight */
+  .rr-spot{position:relative;}
+  .rr-spot::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(198,240,36,.22),transparent 62%);}
+  .rr-spot:hover::before{opacity:1;}
+  @keyframes rrFloat{0%,100%{translate:0 0}50%{translate:0 -10px}}
+  @keyframes rrDrift{to{transform:translate(70px,46px) scale(1.18)}}
+  @keyframes rrHalo{0%{box-shadow:0 0 0 0 rgba(198,240,36,.55)}100%{box-shadow:0 0 0 22px rgba(198,240,36,0)}}
+  @keyframes rrRing{0%{opacity:1;box-shadow:0 0 0 0 rgba(198,240,36,.95)}100%{opacity:0;box-shadow:0 0 0 26px rgba(198,240,36,0)}}
+  @keyframes rrSpin{0%{rotate:0deg;scale:1}55%{rotate:380deg;scale:1.18}100%{rotate:360deg;scale:1}}
+  @keyframes rrMarch{to{background-position:32px 0,-32px 100%,0 -32px,100% 32px}}
+  @keyframes rrShine{0%,60%{left:-70%}100%{left:140%}}
+  @keyframes rrBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+  /* ---------- problem + tool logos ---------- */
+  .rr-problem{background:#f7f7f8;--px:0;--py:0;}
+  .rr-problem::before,.rr-problem::after{content:"";position:absolute;border-radius:50%;filter:blur(80px);opacity:.55;pointer-events:none;}
+  .rr-problem::before{width:440px;height:440px;left:-140px;top:-90px;background:#d9f77a;animation:rrDrift 14s ease-in-out infinite alternate;}
+  .rr-problem::after{width:400px;height:400px;right:-120px;bottom:-110px;background:#cfe2ff;animation:rrDrift 17s ease-in-out infinite alternate-reverse;}
+  .rr-problem__grid{display:grid;grid-template-columns:170px minmax(0,1fr) 170px;gap:56px;align-items:center;}
+  .rr-problem__main{max-width:620px;margin:0 auto;text-align:center;}
+  .rr-bullets{list-style:none;margin:32px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;text-align:left;}
+  .rr-bullets li{perspective:900px;}
+  .rr-flip{all:unset;box-sizing:border-box;display:block;width:100%;cursor:pointer;border-radius:14px;-webkit-tap-highlight-color:transparent;}
+  .rr-flip:focus-visible{outline:3px solid #14210a;outline-offset:3px;}
+  .rr-flip__in{display:grid;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.34,1.3,.5,1);}
+  .rr-flip__face{grid-area:1/1;display:flex;align-items:center;gap:14px;padding:15px 18px;border-radius:14px;font-size:15px;font-weight:500;line-height:1.45;backface-visibility:hidden;-webkit-backface-visibility:hidden;}
+  .rr-flip__front{background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.05),0 8px 20px rgba(0,0,0,.05);}
+  .rr-flip__back{background:var(--green);color:#14210a;font-weight:600;transform:rotateX(180deg);box-shadow:0 10px 26px rgba(160,200,0,.35);}
+  .rr-flip__face i{flex:0 0 auto;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:17px;font-weight:700;line-height:1;}
+  .rr-flip__front i{background:#ffe3e3;color:#e03131;} .rr-flip__back i{background:#14210a;color:var(--green);}
+  .rr-flip.is-solved .rr-flip__in{transform:rotateX(180deg);}
+  @media (hover:hover){
+    .rr-flip:not(.is-solved):hover .rr-flip__in{transform:rotateX(180deg);}
+    .rr-flip.is-solved:hover .rr-flip__in{transform:rotateX(0deg);}
+  }
+  .rr-bridge{margin:26px 0 0;font-size:clamp(16px,1.8vw,20px);line-height:1.55;}
+  .rr-bridge strong{background:linear-gradient(transparent 58%,var(--green) 58%);}
+  .rr-tools{display:flex;flex-direction:column;gap:52px;align-items:center;}
+  .rr-tools--l .rr-tool:nth-child(2){margin-left:44px;} .rr-tools--r .rr-tool:nth-child(2){margin-right:44px;}
+  .rr-tool{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:13px;translate:calc(var(--px,0) * var(--k,12) * 1px) calc(var(--py,0) * var(--k,12) * 1px);transition:translate .3s ease-out;-webkit-tap-highlight-color:transparent;}
+  .rr-tool:focus-visible .rr-tool__tile{outline:3px solid #14210a;outline-offset:4px;}
+  .rr-tool.is-spin{animation:rrSpin .75s cubic-bezier(.34,1.3,.5,1);}
+  .rr-tool__tile{position:relative;width:98px;height:98px;border-radius:28px;background:#fff;display:grid;place-items:center;padding:15px;box-shadow:0 14px 32px rgba(0,0,0,.12),0 0 0 1px rgba(0,0,0,.05);animation:rrFloat 6s ease-in-out infinite;transition:scale .35s cubic-bezier(.34,1.56,.64,1),rotate .35s,box-shadow .3s;}
+  .rr-tools .rr-tool:nth-child(2) .rr-tool__tile{animation-delay:-2s;animation-duration:7s;}
+  .rr-tools .rr-tool:nth-child(3) .rr-tool__tile{animation-delay:-4s;animation-duration:6.5s;}
+  .rr-tool__tile img{width:100%;height:100%;object-fit:contain;display:block;}
+  .rr-tool__tile::after{content:"";position:absolute;inset:0;border-radius:inherit;opacity:0;pointer-events:none;}
+  .rr-tool.is-pulse .rr-tool__tile::after{animation:rrRing 1.1s ease-out;}
+  .rr-tool.is-pulse .rr-tool__tile{box-shadow:0 18px 40px rgba(120,160,0,.35),0 0 0 2px var(--green);}
+  .rr-tool__fb{display:none;font-size:14px;font-weight:700;text-align:center;line-height:1.2;color:#161616;}
+  .rr-tool__tile.is-missing img{display:none;} .rr-tool__tile.is-missing .rr-tool__fb{display:block;}
+  .rr-tool:hover .rr-tool__tile{scale:1.13;rotate:-5deg;box-shadow:0 24px 50px rgba(0,0,0,.22);}
+  .rr-tool__name{font-size:12.5px;font-weight:600;color:#3a3d42;text-align:center;line-height:1.25;transition:color .2s;}
+  .rr-tool:hover .rr-tool__name{color:#000;}
+  @media (max-width:900px){
+    .rr-problem__grid{grid-template-columns:1fr;gap:40px;}
+    .rr-tools{flex-direction:row;justify-content:center;gap:26px;flex-wrap:wrap;}
+    .rr-tools--l{order:2;} .rr-problem__main{order:1;} .rr-tools--r{order:3;margin-top:-10px;}
+    .rr-tools--l .rr-tool:nth-child(2),.rr-tools--r .rr-tool:nth-child(2){margin:0;}
+    .rr-tool__tile{width:80px;height:80px;border-radius:22px;padding:12px;}
+    .rr-tool{translate:none;}
+  }
+
+  /* ---------- formula ---------- */
+  .rr-formula{background:#0e0e0e;color:#fff;}
+  .rr-formula .rr-h2{color:#fff;} .rr-formula .rr-eyebrow{background:var(--green);}
+  .rr-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.28;pointer-events:none;}
+  .rr-orb--a{width:420px;height:420px;left:-120px;top:10%;background:#c6f024;animation:rrDrift 15s ease-in-out infinite alternate;}
+  .rr-orb--b{width:380px;height:380px;right:-100px;bottom:0;background:#5b5bff;animation:rrDrift 19s ease-in-out infinite alternate-reverse;}
+  .rr-formula__grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;}
+  .rr-fcard{flex:0 1 calc(33.333% - 12px);min-width:250px;background:rgba(255,255,255,.04);border:1px solid #2c2c2c;border-radius:22px;padding:28px 26px 30px;backdrop-filter:blur(4px);cursor:default;transition:border-color .3s,background .3s;}
+  .rr-fcard:hover{border-color:rgba(198,240,36,.7);background:rgba(255,255,255,.07);}
+  .rr-fcard__n{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--green);color:#14210a;font-weight:700;font-size:17px;margin-bottom:22px;transition:transform .55s cubic-bezier(.34,1.56,.64,1);}
+  .rr-fcard:hover .rr-fcard__n{transform:rotate(360deg) scale(1.15);}
+  .rr-fcard h3{margin:0 0 9px;font-size:20px;font-weight:600;line-height:1.25;}
+  .rr-fcard p{margin:0;font-size:14.5px;line-height:1.65;color:#b9bcc1;}
+
+  /* ---------- offer ---------- */
+  .rr-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;perspective:1200px;}
+  .rr-tier{position:relative;background:#f4f4f5;border-radius:24px;padding:32px 28px;display:flex;flex-direction:column;cursor:pointer;overflow:hidden;border:2px solid transparent;outline:none;transition:border-color .3s,background .3s,box-shadow .3s;}
+  .rr-tier:hover{box-shadow:0 22px 50px rgba(0,0,0,.14);}
+  .rr-tier:focus-visible{border-color:var(--ink);}
+  .rr-tier h3{margin:0;font-size:23px;font-weight:700;}
+  .rr-tier__price{margin:8px 0 20px;font-size:15px;font-weight:600;color:var(--muted);}
+  .rr-tier__price span{font-weight:500;}
+  .rr-tier ul{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-direction:column;gap:12px;font-size:15px;line-height:1.45;}
+  .rr-tier li{position:relative;padding-left:28px;}
+  .rr-tier li::before{content:"\2713";position:absolute;left:0;top:1px;width:19px;height:19px;border-radius:50%;background:var(--green);color:#14210a;font-size:12px;font-weight:700;display:grid;place-items:center;transform:scale(0);transition:transform .5s cubic-bezier(.34,1.56,.64,1);}
+  .rr-tier.is-in li::before{transform:scale(1);}
+  .rr-tier.is-in li:nth-child(2)::before{transition-delay:.15s;}
+  .rr-tier__pick{margin-top:auto;align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.04em;padding:6px 12px;border-radius:999px;background:var(--green);color:#14210a;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s;}
+  .rr-tier.is-selected{border-color:var(--green);box-shadow:0 0 0 4px rgba(198,240,36,.35),0 22px 50px rgba(0,0,0,.16);}
+  .rr-tier.is-selected .rr-tier__pick{opacity:1;transform:none;}
+  .rr-tier--hot{--base:-12px;background:var(--ink);color:#fff;box-shadow:0 24px 54px rgba(0,0,0,.28);}
+  .rr-tier--hot .rr-tier__price{color:#c9ccd1;}
+  .rr-tier--hot::after{content:"";position:absolute;inset:0 auto 0 -70%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.14),transparent);transform:skewX(-20deg);animation:rrShine 4.5s ease-in-out infinite;pointer-events:none;}
+  .rr-tier__badge{position:absolute;top:16px;right:18px;background:var(--green);color:#14210a;font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:5px 12px;border-radius:999px;animation:rrBob 2.6s ease-in-out infinite;}
+  .rr-guarantee{margin-top:30px;display:flex;align-items:center;gap:26px;padding:28px 32px;border-radius:22px;background:
+      linear-gradient(90deg,#c9ccd1 50%,transparent 0) 0 0/16px 2px repeat-x,
+      linear-gradient(90deg,#c9ccd1 50%,transparent 0) 0 100%/16px 2px repeat-x,
+      linear-gradient(0deg,#c9ccd1 50%,transparent 0) 0 0/2px 16px repeat-y,
+      linear-gradient(0deg,#c9ccd1 50%,transparent 0) 100% 0/2px 16px repeat-y;
+      animation:rrMarch 1.6s linear infinite;}
+  .rr-guarantee__ico{flex:0 0 auto;display:grid;place-items:center;width:78px;height:78px;border-radius:50%;background:var(--ink);color:var(--green);font-weight:700;font-size:20px;box-shadow:0 0 0 0 rgba(198,240,36,.6);animation:rrHalo 2.4s ease-out infinite;}
+  .rr-guarantee h3{margin:0 0 6px;font-size:clamp(20px,2.4vw,27px);font-weight:700;}
+  .rr-guarantee p{margin:0;color:var(--muted);font-size:15px;line-height:1.6;}
+  @media (max-width:860px){
+    .rr-tiers{grid-template-columns:1fr;} .rr-tier--hot{--base:0px;order:-1;}
+    .rr-guarantee{flex-direction:column;text-align:center;gap:16px;}
+  }
+
+  /* ---------- testimonials ---------- */
+  .rr-testi{background:#f7f7f8;}
+  .rr-tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;perspective:1200px;}
+  .rr-tcard{margin:0;background:#fff;border-radius:22px;padding:28px 26px;display:flex;flex-direction:column;gap:20px;border:1px solid transparent;transition:border-color .3s,box-shadow .3s;}
+  .rr-tcard:hover{box-shadow:0 22px 50px rgba(0,0,0,.12);border-color:rgba(198,240,36,.8);}
+  .rr-tcard__mark{align-self:flex-end;font-size:46px;line-height:.5;font-weight:700;transition:transform .5s cubic-bezier(.34,1.56,.64,1),color .3s;}
+  .rr-tcard:hover .rr-tcard__mark{transform:rotate(-12deg) scale(1.25);color:#8fb300;}
+  .rr-tcard blockquote{margin:0;font-size:15.5px;line-height:1.65;font-weight:500;}
+  .rr-tcard figcaption{display:flex;align-items:center;gap:12px;margin-top:auto;}
+  .rr-tcard img{width:44px;height:44px;border-radius:50%;}
+  .rr-tcard strong{display:block;font-size:14px;} .rr-tcard em{display:block;font-style:normal;font-size:12.5px;color:var(--muted);line-height:1.35;}
+  @media (max-width:860px){.rr-tgrid{grid-template-columns:1fr;}}
+
+  @media (max-width:640px){.rr-sec{padding:64px 16px;}}
+  @media (prefers-reduced-motion:reduce){
+    [data-rr]{opacity:1!important;transform:none!important;transition:none!important;}
+    .rr-split--ready .rr-w > span{transform:none!important;transition:none!important;}
+    .rr-tool__tile,.rr-problem::before,.rr-problem::after,.rr-orb,.rr-guarantee,.rr-guarantee__ico,.rr-tier--hot::after,.rr-tier__badge{animation:none!important;}
+    .rr-progress{display:none;}
+  }
+</style>
+<script>
+(function(){
+  var reduce  = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canHover = window.matchMedia('(hover: hover)').matches;
+
+  // ---- 1. scroll progress bar ----
+  var bar = document.createElement('div'); bar.className = 'rr-progress'; document.body.appendChild(bar);
+  function prog(){
+    var h = document.documentElement, max = (h.scrollHeight - h.clientHeight) || 1;
+    bar.style.transform = 'scaleX(' + Math.min(Math.max((window.pageYOffset || h.scrollTop) / max, 0), 1) + ')';
+  }
+  window.addEventListener('scroll', prog, {passive:true}); prog();
+
+  // ---- 2. headings: split into words that rise in ----
+  document.querySelectorAll('.rr-split').forEach(function(h){
+    var words = h.textContent.trim().split(/\s+/);
+    h.setAttribute('aria-label', words.join(' ')); h.textContent = '';
+    words.forEach(function(w, i){
+      var wrap = document.createElement('span'); wrap.className = 'rr-w'; wrap.setAttribute('aria-hidden', 'true');
+      var inner = document.createElement('span'); inner.textContent = w; inner.style.setProperty('--i', i);
+      wrap.appendChild(inner); h.appendChild(wrap);
+      if(i < words.length - 1) h.appendChild(document.createTextNode(' '));
+    });
+    h.classList.add('rr-split--ready');
+  });
+
+  // ---- 3. reveal on scroll ----
+  var items = [].slice.call(document.querySelectorAll('[data-rr]'));
+  function show(el){
+    var d = parseFloat(el.getAttribute('data-d') || 0) * 90;
+    setTimeout(function(){ el.classList.add('is-in'); setTimeout(function(){ el.classList.add('is-settled'); }, 900); }, d);
+  }
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ show(e.target); io.unobserve(e.target); } });
+    }, {threshold:.15, rootMargin:'0px 0px -40px 0px'});
+    items.forEach(function(el){
+      if(!el.hasAttribute('data-d')) el.setAttribute('data-d', Math.min([].indexOf.call(el.parentNode.children, el), 6));
+      io.observe(el);
+    });
+  } else { items.forEach(function(el){ el.classList.add('is-in', 'is-settled'); }); }
+
+  // ---- 4. tilt + spotlight + magnetic buttons (mouse devices only) ----
+  if(canHover && !reduce){
+    document.querySelectorAll('[data-tilt]').forEach(function(el){
+      el.addEventListener('pointermove', function(e){
+        var r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        el.style.setProperty('--ry', ((x - .5) * 10).toFixed(2) + 'deg');
+        el.style.setProperty('--rx', ((.5 - y) * 8).toFixed(2) + 'deg');
+        el.style.setProperty('--mx', (x * 100).toFixed(1) + '%'); el.style.setProperty('--my', (y * 100).toFixed(1) + '%');
+        el.style.setProperty('--ty', '-6px');
+      });
+      el.addEventListener('pointerleave', function(){
+        el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg'); el.style.setProperty('--ty', '0px');
+      });
+    });
+    document.querySelectorAll('[data-magnet]').forEach(function(el){
+      el.addEventListener('pointermove', function(e){
+        var r = el.getBoundingClientRect();
+        el.style.translate = (((e.clientX - r.left) / r.width - .5) * 14).toFixed(1) + 'px ' + (((e.clientY - r.top) / r.height - .5) * 10).toFixed(1) + 'px';
+      });
+      el.addEventListener('pointerleave', function(){ el.style.translate = 'none'; });
+    });
+  }
+
+  // ---- 5. problem section: solve the problems, tools react ----
+  var prob = document.getElementById('ng-problem');
+  if(prob){
+    var flips = [].slice.call(prob.querySelectorAll('.rr-flip')), tiles = [].slice.call(prob.querySelectorAll('.rr-tool'));
+    function pulse(k){
+      [k % 3, 3 + (k % 3)].forEach(function(i){
+        var t = tiles[i]; if(!t) return;
+        t.classList.add('is-pulse'); setTimeout(function(){ t.classList.remove('is-pulse'); }, 1200);
+      });
+    }
+    function setSolved(f, on, k){
+      f.classList.toggle('is-solved', on); f.setAttribute('aria-pressed', on ? 'true' : 'false'); if(on) pulse(k);
+    }
+    flips.forEach(function(f, k){
+      f.addEventListener('click', function(){ f.setAttribute('data-touched', '1'); setSolved(f, !f.classList.contains('is-solved'), k); });
+    });
+    tiles.forEach(function(t){
+      t.addEventListener('click', function(){ t.classList.remove('is-spin'); void t.offsetWidth; t.classList.add('is-spin'); setTimeout(function(){ t.classList.remove('is-spin'); }, 800); });
+    });
+    if(canHover && !reduce){
+      prob.addEventListener('pointermove', function(e){
+        var r = prob.getBoundingClientRect();
+        prob.style.setProperty('--px', (((e.clientX - r.left) / r.width) * 2 - 1).toFixed(3));
+        prob.style.setProperty('--py', (((e.clientY - r.top) / r.height) * 2 - 1).toFixed(3));
+      });
+      prob.addEventListener('pointerleave', function(){ prob.style.setProperty('--px', 0); prob.style.setProperty('--py', 0); });
+    }
+    // the first time the section is on screen, the fixes play out one by one
+    if('IntersectionObserver' in window){
+      var po = new IntersectionObserver(function(es){
+        if(es[0].isIntersecting){
+          po.disconnect();
+          flips.forEach(function(f, k){ setTimeout(function(){ if(!f.getAttribute('data-touched')) setSolved(f, true, k); }, 1100 + k * 950); });
+        }
+      }, {threshold:.5});
+      po.observe(prob.querySelector('.rr-bullets'));
+    }
+  }
+
+  // ---- 6. offer: pick a package ----
+  var tiers = [].slice.call(document.querySelectorAll('.rr-tier')), cta = document.getElementById('rr-offer-cta'),
+      plan = document.querySelector('#ng-form input[name=plan]');
+  function pick(t){
+    tiers.forEach(function(x){ var on = x === t; x.classList.toggle('is-selected', on); x.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+    var n = t.getAttribute('data-plan');
+    if(cta) cta.querySelector('.rr-btn__t').textContent = 'Start My ' + n + ' Sprint';
+    if(plan) plan.value = n;
+  }
+  tiers.forEach(function(t){
+    t.addEventListener('click', function(){ pick(t); });
+    t.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); pick(t); } });
+  });
+})();
+</script>
 
 <!-- ============================================================
      GLOBAL: smooth scroll (Lenis) + in-page anchor links
