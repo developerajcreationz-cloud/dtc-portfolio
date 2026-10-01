@@ -63,6 +63,7 @@ $videosMax  = field($data, 'videosMax', 20);
 $clip       = field($data, 'clip', 500);
 $platform   = field($data, 'platform', 40);
 $about      = field($data, 'about', 1500);
+$plan       = field($data, 'plan', 40);
 $isSample   = ($clip !== '');
 
 $errors = [];
@@ -90,6 +91,7 @@ if ($isSample) {
         "Email:        {$email}",
         "Raw clip:     {$clip}",
         "Posts on:     " . ($platform !== '' ? $platform : '—'),
+        "Package:      " . ($plan !== '' ? $plan : '—'),
         "Video is about: " . ($about !== '' ? $about : '—'),
         "",
         "Submitted: " . date('Y-m-d H:i:s T'),

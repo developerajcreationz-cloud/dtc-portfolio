@@ -8,11 +8,11 @@ No build step, no framework, no package.json: plain HTML with inline CSS/JS.
 
 | URL | File | What it is |
 |---|---|---|
-| `/` | `index.html` | **Main page**: the "Raw-to-Reel" short-form funnel (copy doc: *Raw-to-Reel Funnel Page Copy*). Hero → proof bar → Reels → Problem → Before/After + Speed ramps → Viral Edit Formula → Offer → Testimonials → How it works → About → Free-sample form → FAQ → Final CTA |
+| `/` | `index.html` | **Main page**: the "Raw-to-Reel" short-form funnel (copy doc: *Raw-to-Reel Funnel Page Copy*). Hero → proof bar → Reels → Problem → Before/After (+ How it works steps) → Speed ramps → Viral Edit Formula → Offer → Testimonials → Free-sample form → FAQ → Final CTA |
 | `/ugc-videos/` | `ugc-videos/index.html` | UGC portfolio (the original home page): works masonry, journey, logo/word-cloud strip, full works grid, core principles, form, FAQ |
 | `/long-form/` | `long-form/index.html` | Long-form page (landscape 16:9 grid, click-to-play popup with close button) |
 | `/short-form/` | `short-form/index.html` | Only a redirect to `/` (old URL). Safe to delete once nothing links to it |
-| — | `assets/` | Shared *static files only*: `js/lenis.min.js`, `img/favicon.svg`, `php/send-form.php` (contact form mailer) |
+| — | `assets/` | Shared *static files only*: `js/lenis.min.js`, `img/favicon.svg`, `img/tools/` (editing-tool logos), `php/send-form.php` (form mailer) |
 
 ### Rule: a page's code lives only in that page
 Every page is **one self-contained file** (its own HTML, CSS and JS). There is no shared CSS/JS between pages, so **editing one page never changes another**. The flip side: something you want on every page (e.g. the hover effect, the FAQ, the form) has to be applied in each of the three files.
@@ -31,13 +31,17 @@ Journey, Core Principles, contact form and FAQ are copies of the same section in
 - Cards fade in on scroll via `[data-anim]` + IntersectionObserver.
 
 ### `/` (Raw-to-Reel funnel) sections
-Follows the funnel copy top to bottom. Section ids: `#ng-hero`, `#ng-reels`, `#ng-problem`, `#ng-beforeafter`, `#ng-speedramp`, `#ng-formula`, `#ng-offer`, `#ng-testimonials`, `#ng-how`, `#ng-about`, `#ng-form`, `#ng-qa` (+ final CTA `.rr-final` just above the footer).
+Follows the funnel copy top to bottom. Section ids: `#ng-hero`, `#ng-reels`, `#ng-problem`, `#ng-beforeafter` (contains `#ng-how`), `#ng-speedramp`, `#ng-formula`, `#ng-offer`, `#ng-testimonials`, `#ng-form`, `#ng-qa` (+ final CTA `.rr-final` just above the footer). There is no About section and no separate How-it-works section any more.
+- **Hero**: eyebrow, 3-line headline with two inline video pills, a tilted "raw footage" card on the left and a fanned stack of three reel cards on the right (`.hd-*`, desktop only, ≥1100px), hand-drawn arrows + red/green doodle strokes, CTA, and a proof bar with coloured underlines (60+, 72h, 48h). The side cards are Vimeo background clips (Before clip `1231027012`, reels `1231025311`, `1231025310`, `1231016149`); change the IDs in `index.html` to swap them. They are excluded from hover-unmute.
 - Nav: Home, Reels, How it works, Pricing, FAQs, plus a "Free sample" button that scrolls to `#ng-form`.
-- **Video grids** (`.sf-masonry`, class prefix `sf-`): Reels = 12 videos, Speed ramps = 7, Before/After = 2 (raw on the left, final on the right). Videos are mixed with testimonial and promo cards. A small script deals the cards left-to-right into the shortest column, so **the first cards in the HTML are the top row** (to put a video "on top", move it earlier in the list). Without JS it falls back to plain CSS columns.
+- **Video grids** (`.sf-masonry`, prefix `sf-`): plain CSS-column masonry mixing videos, testimonial cards and promo/CTA cards (the same mixed look as the old home grid). Reels = 12 videos, Speed ramps = 7. Column flow means the **first cards in the HTML fill the left columns first**, so list a video earlier to move it toward the top-left. The six owner-approved "green" reels come first.
 - Removed on purpose: Reels `1231023666`, Speed ramps `1220462113` (the owner flagged them).
-- New sections use class prefix `rr-` (problem, formula, offer, testimonials, how it works, about). The **Problem** section has editing-tool tiles on both sides (Premiere Pro, After Effects, Final Cut Pro, CapCut, Higgsfield, DaVinci Resolve): they are CSS letter-mark stand-ins, not official logos; swap in official logo files under `assets/img/` if wanted.
-- **Form** = free-sample request (`name`, `email`, `clip` link, `platform`, `about`) → `/assets/php/send-form.php` (extra fields are optional there, so the other pages' forms still work).
-- Still placeholders from the copy doc: prices (Offer tiers show "Get a quote"), the "[X]+ videos edited" and "[X]M+ views" proof numbers (left out), the scarcity line (left out, only add it if true), result numbers under each reel, and the three testimonials (reused placeholder quotes).
+- **Before & after** (`.ba-layout`): Raw clip (left video) and Final edit (right video) in the middle, with the three "How it works" steps on the left (1, 2) and right (3 + a free-sample card), stacking under the videos on screens narrower than 1060px.
+- **Problem** (`.rr-problem`): click/hover/tap flip cards (problem → how it is solved), they auto-solve one by one when scrolled into view, and each solve pulses the matching editing-tool tiles; tiles float, follow the mouse (parallax), spin on click. Tool logos are real SVGs in `assets/img/tools/` (Premiere Pro, After Effects, DaVinci Resolve, CapCut). **`final-cut-pro.svg` and `higgsfield.svg` are missing**; the tiles show the tool name until those files are added (see `assets/img/tools/README.md`).
+- **Offer**: three package cards you can select (selection updates the "Start My … Sprint" button and a hidden `plan` field sent with the form). Prices are placeholders ("Get a quote").
+- **Animation system** (one `<script>` near the end, prefix `rr-`): scroll progress bar, split-word heading reveals (`.rr-split`), reveal on scroll (`data-rr="up|left|right|zoom"`, `data-d` = stagger step), mouse tilt + spotlight (`data-tilt`, `.rr-spot`), magnetic buttons (`data-magnet`). All of it is off for `prefers-reduced-motion`.
+- **Form** = free-sample request (`name`, `email`, `clip` link, `platform`, `about`, hidden `plan`) → `/assets/php/send-form.php` (extra fields are optional there, so the other pages' forms still work).
+- Still placeholders from the copy doc: prices, the "[X]+ videos edited" and "[X]M+ views" proof numbers (left out), the scarcity line (left out, only add it if true), result numbers under each reel, and the three testimonials (reused placeholder quotes).
 
 ### `/long-form/`
 - `#ng-longform`: grid (3/2/1 cols) where every cell is 16:9, so videos are never cropped. `.lf-card--video` cards (`data-vimeo-id`, `data-title`) autoplay muted via a Vimeo background iframe, unmute on hover, and open a modal player (`#lf-modal`) with the full Vimeo player on click. The modal has a round close button pinned top-right (also closes on backdrop click and Esc). Testimonial (`.lf-card--quote`) and promo (`.lf-card--promo`) cards are mixed in. `.lf-card--wide` = 2x2 cells. **To swap a video, change `data-vimeo-id` (and the ID inside the iframe `src`/poster URL).**
