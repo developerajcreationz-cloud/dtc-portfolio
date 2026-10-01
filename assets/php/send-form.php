@@ -59,6 +59,11 @@ $budgetMin  = field($data, 'budgetMin', 20);
 $budgetMax  = field($data, 'budgetMax', 20);
 $videosMin  = field($data, 'videosMin', 20);
 $videosMax  = field($data, 'videosMax', 20);
+// free-sample form on the main page (all optional, so the other pages' forms are unaffected)
+$clip       = field($data, 'clip', 500);
+$platform   = field($data, 'platform', 40);
+$about      = field($data, 'about', 1500);
+$isSample   = ($clip !== '');
 
 $errors = [];
 if ($name === '') {
@@ -75,8 +80,21 @@ if (!empty($errors)) {
 }
 
 // ---- build the email -----------------------------------------------------
-$subject = "New lead from the site: {$name}";
+$subject = $isSample ? "Free sample request: {$name}" : "New lead from the site: {$name}";
 
+if ($isSample) {
+    $bodyLines = [
+        "New FREE SAMPLE request from the Raw-to-Reel page.",
+        "",
+        "Name:         {$name}",
+        "Email:        {$email}",
+        "Raw clip:     {$clip}",
+        "Posts on:     " . ($platform !== '' ? $platform : '—'),
+        "Video is about: " . ($about !== '' ? $about : '—'),
+        "",
+        "Submitted: " . date('Y-m-d H:i:s T'),
+    ];
+} else {
 $bodyLines = [
     "New submission from the Ahmad Jan contact form.",
     "",
@@ -88,6 +106,7 @@ $bodyLines = [
     "",
     "Submitted: " . date('Y-m-d H:i:s T'),
 ];
+}
 $body = implode("\n", $bodyLines);
 
 $fromDomain = 'localhost';

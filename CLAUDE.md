@@ -8,7 +8,7 @@ No build step, no framework, no package.json: plain HTML with inline CSS/JS.
 
 | URL | File | What it is |
 |---|---|---|
-| `/` | `index.html` | **Main page**: short-form / Reels (vertical 9:16). Sections: Reels, Journey, portfolio strip, Speed ramps, Before & after, Core principles, form, FAQ |
+| `/` | `index.html` | **Main page**: the "Raw-to-Reel" short-form funnel (copy doc: *Raw-to-Reel Funnel Page Copy*). Hero → proof bar → Reels → Problem → Before/After + Speed ramps → Viral Edit Formula → Offer → Testimonials → How it works → About → Free-sample form → FAQ → Final CTA |
 | `/ugc-videos/` | `ugc-videos/index.html` | UGC portfolio (the original home page): works masonry, journey, logo/word-cloud strip, full works grid, core principles, form, FAQ |
 | `/long-form/` | `long-form/index.html` | Long-form page (landscape 16:9 grid, click-to-play popup with close button) |
 | `/short-form/` | `short-form/index.html` | Only a redirect to `/` (old URL). Safe to delete once nothing links to it |
@@ -30,9 +30,14 @@ Journey, Core Principles, contact form and FAQ are copies of the same section in
 - **Testimonial** `ng-card--quote`, **promo** `ng-card--promo` (`--orange`, `--dark`, `--green`), CTA card.
 - Cards fade in on scroll via `[data-anim]` + IntersectionObserver.
 
-### `/` (short-form) sections
-- `#ng-reels`: 13 reels, `#ng-speedramp`: 8 speed ramps, `#ng-beforeafter`: Before / After pair with a testimonial below. Each is a masonry mixing videos, testimonials and promo cards.
-- Nav: Home, Reels, Journey, Speed Ramps, FAQs.
+### `/` (Raw-to-Reel funnel) sections
+Follows the funnel copy top to bottom. Section ids: `#ng-hero`, `#ng-reels`, `#ng-problem`, `#ng-beforeafter`, `#ng-speedramp`, `#ng-formula`, `#ng-offer`, `#ng-testimonials`, `#ng-how`, `#ng-about`, `#ng-form`, `#ng-qa` (+ final CTA `.rr-final` just above the footer).
+- Nav: Home, Reels, How it works, Pricing, FAQs, plus a "Free sample" button that scrolls to `#ng-form`.
+- **Video grids** (`.sf-masonry`, class prefix `sf-`): Reels = 12 videos, Speed ramps = 7, Before/After = 2 (raw on the left, final on the right). Videos are mixed with testimonial and promo cards. A small script deals the cards left-to-right into the shortest column, so **the first cards in the HTML are the top row** (to put a video "on top", move it earlier in the list). Without JS it falls back to plain CSS columns.
+- Removed on purpose: Reels `1231023666`, Speed ramps `1220462113` (the owner flagged them).
+- New sections use class prefix `rr-` (problem, formula, offer, testimonials, how it works, about). The **Problem** section has editing-tool tiles on both sides (Premiere Pro, After Effects, Final Cut Pro, CapCut, Higgsfield, DaVinci Resolve): they are CSS letter-mark stand-ins, not official logos; swap in official logo files under `assets/img/` if wanted.
+- **Form** = free-sample request (`name`, `email`, `clip` link, `platform`, `about`) → `/assets/php/send-form.php` (extra fields are optional there, so the other pages' forms still work).
+- Still placeholders from the copy doc: prices (Offer tiers show "Get a quote"), the "[X]+ videos edited" and "[X]M+ views" proof numbers (left out), the scarcity line (left out, only add it if true), result numbers under each reel, and the three testimonials (reused placeholder quotes).
 
 ### `/long-form/`
 - `#ng-longform`: grid (3/2/1 cols) where every cell is 16:9, so videos are never cropped. `.lf-card--video` cards (`data-vimeo-id`, `data-title`) autoplay muted via a Vimeo background iframe, unmute on hover, and open a modal player (`#lf-modal`) with the full Vimeo player on click. The modal has a round close button pinned top-right (also closes on backdrop click and Esc). Testimonial (`.lf-card--quote`) and promo (`.lf-card--promo`) cards are mixed in. `.lf-card--wide` = 2x2 cells. **To swap a video, change `data-vimeo-id` (and the ID inside the iframe `src`/poster URL).**
@@ -58,7 +63,7 @@ Journey, Core Principles, contact form and FAQ are copies of the same section in
 - Repo owner's to-do: GitHub → Settings → Branches → set the default branch to `main`, then delete the old `claude/*` branches.
 
 ## Placeholders to replace before/when real data exists
-Hero stats (60+ brands, $20m+, 5k+), client logo chips, testimonials and avatars (initials), and promo copy are placeholder content shared across the pages.
+Testimonials/avatars (initials), client logo chips and stats on `/ugc-videos/` and `/long-form/`, and the pricing / proof numbers on `/` (see the `/` section above) are placeholders until real data exists.
 
 ## Testing locally
 `python3 -m http.server` in the repo root, then open `/`, `/ugc-videos/`, `/long-form/`. Vimeo is blocked in some sandboxes, so video slots may render as empty boxes even though the layout is right.
