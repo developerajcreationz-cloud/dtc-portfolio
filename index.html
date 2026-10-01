@@ -482,8 +482,8 @@
   .hd-doodle--red path:nth-child(1){animation-delay:1.2s}.hd-doodle--red path:nth-child(2){animation-delay:1.35s}.hd-doodle--red path:nth-child(3){animation-delay:1.5s}
   .hd-doodle--green path:nth-child(1){animation-delay:1.5s}.hd-doodle--green path:nth-child(2){animation-delay:1.65s}.hd-doodle--green path:nth-child(3){animation-delay:1.8s}
   .hd-visual{position:absolute;z-index:1;display:none;}
-  .hd-left{left:clamp(18px,7vw,130px);top:21%;}
-  .hd-right{right:clamp(18px,7vw,130px);top:15%;}
+  .hd-left{left:max(18px,calc(50% - 700px));top:21%;}
+  .hd-right{right:max(18px,calc(50% - 700px));top:15%;}
   .hd-card{position:relative;border-radius:22px;background:#fff;padding:6px;box-shadow:0 22px 50px rgba(0,0,0,.18),0 2px 8px rgba(0,0,0,.08);}
   .hd-vid{display:block;position:relative;overflow:hidden;border-radius:17px;background:#dcdde0 center/cover no-repeat;width:100%;height:100%;}
   .hd-vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;}
@@ -499,8 +499,19 @@
   .hd-arrow--r{right:calc(100% + clamp(26px,3.6vw,64px));top:56%;}
   @keyframes hdDraw{to{stroke-dashoffset:0}}
   @keyframes hdBob{0%,100%{translate:0 0}50%{translate:0 -9px}}
-  @media (min-width:1100px){.hd-visual{display:block;}}
+  @media (min-width:1240px){.hd-visual{display:block;}}
   @media (max-width:700px){.hd-doodle{display:none;}}
+  /* responsive hero: no sub-copy on tablet / phone, no forced height */
+  @media (max-width:1239px){.ng-hero{min-height:0;padding-top:56px;padding-bottom:48px;}}
+  @media (max-width:700px){.ng-pill{display:none;}}
+  @media (max-width:900px){.ng-sub{display:none;} .ng-cta-row{margin-top:26px;}}
+  @media (max-width:640px){
+    .ng-eyebrow{font-size:10.5px;letter-spacing:.05em;margin-bottom:18px;padding:0 4px;}
+    .ng-hero{padding:44px 16px 40px;}
+    .ng-hero-cta{padding:14px 22px;font-size:14.5px;}
+    .ng-micro{font-size:12px;padding:0 8px;}
+  }
+  @media (max-width:380px){.ng-headline{font-size:28px;}}
   /* stats with dividers and coloured underlines */
   .ng-stats{gap:0;align-items:flex-start;}
   .ng-stat{position:relative;text-align:center;padding:0 clamp(22px,4.4vw,64px);}
@@ -567,9 +578,9 @@
         <h4>Send 1 raw clip</h4>
         <p>Get 1 finished edit in 48 hours</p>
       </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
+      <div class="ng-card ng-card--video" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231025311.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025311?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
+      </div>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">Fast turnarounds, sharp taste, and he actually reads the brief. Rare combination and it shows in the finished cuts.</p>
@@ -578,12 +589,12 @@
           <div><strong>T. Alvarez</strong><span>Creative Director, Lumen Goods</span></div>
         </div>
       </div>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231025310.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025310?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016027.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016027?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </div>
+      <div class="ng-card ng-card--video" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016149.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016149?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
+      </div>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">Consistently strong edits for our PPC rotation — reliable, on-brand, and quick to iterate.</p>
@@ -592,9 +603,9 @@
           <div><strong>R. Okafor</strong><span>Head of Growth, Pathwell</span></div>
         </div>
       </div>
-      <a class="ng-card ng-card--video" href="#" data-anim>
+      <div class="ng-card ng-card--video" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016080.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016080?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
+      </div>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">If you want ads that perform and not just look nice, Ahmad is the guy. We saw a real lift within the first batch of creatives.</p>
@@ -603,9 +614,9 @@
           <div><strong>E. Lindqvist</strong><span>Co-Founder, Norrsken Skincare</span></div>
         </div>
       </div>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015992.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015992?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015996.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015996?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </div>
       <a class="ng-card ng-card--promo ng-promo--dark" href="#ng-offer" data-anim>
         <h4>Delivered in 72 hours or 50% off</h4>
       </a>
@@ -617,15 +628,15 @@
           <div><strong>D. Marsh</strong><span>Performance Marketing Manager, Basecamp Gear</span></div>
         </div>
       </div>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015994.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015994?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231025310.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231025310?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </div>
       <a class="ng-card ng-card--promo ng-promo--green" href="#ng-form" data-anim>
         <h4>3 hook variations on every clip</h4>
       </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
+      <div class="ng-card ng-card--video" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023664.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023664?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
+      </div>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">Went well beyond the brief every single time. Experienced, easy to talk to, and the edits speak for themselves.</p>
@@ -634,9 +645,9 @@
           <div><strong>N. Osei</strong><span>CEO, Fettle Foods</span></div>
         </div>
       </div>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023665.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023665?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015992.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015992?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </div>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">Meticulous with detail and easy to brief. Our Facebook creatives have never looked this tight.</p>
@@ -645,9 +656,9 @@
           <div><strong>P. Aoki</strong><span>Brand Manager, Kindred Pet Co.</span></div>
         </div>
       </div>
-      <a class="ng-card ng-card--video" href="#" data-anim>
+      <div class="ng-card ng-card--video" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023663.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023663?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
+      </div>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">Helped us build a content library that actually performs across every channel we run, not just one.</p>
@@ -656,15 +667,15 @@
           <div><strong>C. Bianchi</strong><span>Marketing Director, Solace Home</span></div>
         </div>
       </div>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231016027.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231016027?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015996.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015996?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
+      <div class="ng-card ng-card--video" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015995.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015995?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
-      </a>
+      </div>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231015994.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231015994?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </div>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231023665.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231023665?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Reel clip"></iframe></div>
+      </div>
     </div>
   </div>
 </section>
@@ -700,37 +711,8 @@
   </div>
 </section>
 
-<!-- ===================== before / after + speed ramps ===================== -->
-<section class="sf-sec sf-sec--pair" id="ng-beforeafter">
-  <div class="sf-inner sf-inner--wide">
-    <div class="sf-head" data-anim>
-      <span class="sf-eyebrow">Before &amp; after</span>
-      <h2 class="rr-split">Same footage. Completely different video.</h2>
-      <p>Left: the raw clip a client sent us. Right: the version that went live. The difference is a hook that lands in 2 seconds, cuts timed to the beat, captions for sound-off viewing, and an ending that makes people rewatch.</p>
-    </div>
-    <div class="ba-layout" id="ng-how">
-      <aside class="ba-steps ba-steps--l" aria-label="How it works">
-        <div class="ba-how" data-rr="left"><span class="sf-eyebrow">How it works</span><h3>Three steps. Zero editing on your end.</h3></div>
-        <div class="ba-step" data-rr="left" data-d="1" data-tilt><span class="ba-step__n">1</span><div><h4>Upload your raw footage.</h4><p>Google Drive, Dropbox, WeTransfer, whatever&rsquo;s easiest.</p></div></div>
-        <div class="ba-step" data-rr="left" data-d="2" data-tilt><span class="ba-step__n">2</span><div><h4>We edit.</h4><p>Hooks, pacing, captions, music, 3 variations per clip.</p></div></div>
-      </aside>
-    <div class="sf-pair">
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231027012.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231027012?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Raw clip"></iframe></div><span class="sf-label">Raw clip</span>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
-        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231027013.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231027013?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Final edit"></iframe></div><span class="sf-label">Final edit</span>
-      </a>
-    </div>
-      <aside class="ba-steps ba-steps--r" aria-label="How it works, continued">
-        <div class="ba-step" data-rr="right" data-d="1" data-tilt><span class="ba-step__n">3</span><div><h4>You post.</h4><p>Files arrive in 72 hours, sized for every platform. Revisions on request.</p></div></div>
-        <a href="#ng-form" class="ba-cta" data-rr="right" data-d="2" data-magnet><span class="ba-cta__badge">Free sample</span><strong>Send 1 raw clip</strong><em>Get 1 finished edit in 48 hours <i aria-hidden="true">&rarr;</i></em></a>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<section class="sf-sec sf-sec--tint" id="ng-speedramp">
+<!-- ===================== speed ramps ===================== -->
+<section class="sf-sec " id="ng-speedramp">
   <div class="sf-inner ">
     <div class="sf-head" data-anim>
       <span class="sf-eyebrow">Speed ramps</span>
@@ -741,9 +723,9 @@
       <a class="ng-card ng-card--promo ng-promo--green" href="#ng-form" data-anim>
         <h4>Cuts timed to the beat</h4>
       </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
+      <div class="ng-card ng-card--video" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462116.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462116?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
-      </a>
+      </div>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">Fast turnarounds, sharp taste, and he actually reads the brief. Rare combination and it shows in the finished cuts.</p>
@@ -752,12 +734,12 @@
           <div><strong>T. Alvarez</strong><span>Creative Director, Lumen Goods</span></div>
         </div>
       </div>
-      <a class="ng-card ng-card--video" href="#" data-anim>
+      <div class="ng-card ng-card--video" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462111.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462111?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
-      </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
+      </div>
+      <div class="ng-card ng-card--video" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462115.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462115?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
-      </a>
+      </div>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">Consistently strong edits for our PPC rotation — reliable, on-brand, and quick to iterate.</p>
@@ -766,9 +748,9 @@
           <div><strong>R. Okafor</strong><span>Head of Growth, Pathwell</span></div>
         </div>
       </div>
-      <a class="ng-card ng-card--video" href="#" data-anim>
+      <div class="ng-card ng-card--video" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462080.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462080?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
-      </a>
+      </div>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">If you want ads that perform and not just look nice, Ahmad is the guy. We saw a real lift within the first batch of creatives.</p>
@@ -777,9 +759,9 @@
           <div><strong>E. Lindqvist</strong><span>Co-Founder, Norrsken Skincare</span></div>
         </div>
       </div>
-      <a class="ng-card ng-card--video" href="#" data-anim>
+      <div class="ng-card ng-card--video" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462083.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462083?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
-      </a>
+      </div>
       <a class="ng-card ng-card--promo ng-promo--dark" href="#ng-offer" data-anim>
         <h4>Speed ramps in every Growth batch</h4>
       </a>
@@ -791,17 +773,17 @@
           <div><strong>D. Marsh</strong><span>Performance Marketing Manager, Basecamp Gear</span></div>
         </div>
       </div>
-      <a class="ng-card ng-card--video" href="#" data-anim>
+      <div class="ng-card ng-card--video" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462081.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462081?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
-      </a>
+      </div>
       <a class="ng-card ng-card--promo ng-promo--orange" href="#ng-form" data-anim>
         <div class="ng-promo__badge">Free sample</div>
         <h4>Send 1 raw clip</h4>
         <p>Get 1 finished edit in 48 hours</p>
       </a>
-      <a class="ng-card ng-card--video" href="#" data-anim>
+      <div class="ng-card ng-card--video" data-anim>
         <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1220462082.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1220462082?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Speed ramp clip"></iframe></div>
-      </a>
+      </div>
       <div class="ng-card ng-card--quote" data-anim>
         <span class="ng-quote__mark">&rdquo;</span>
         <p class="ng-quote__text">Went well beyond the brief every single time. Experienced, easy to talk to, and the edits speak for themselves.</p>
@@ -809,6 +791,58 @@
           <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%252316a34a%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ENO%3C/text%3E%3C/svg%3E" alt="N. Osei">
           <div><strong>N. Osei</strong><span>CEO, Fettle Foods</span></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AI & CGI ===================== -->
+<section class="sf-sec sf-sec--tint" id="ng-aicgi">
+  <div class="sf-inner ">
+    <div class="sf-head" data-anim>
+      <span class="sf-eyebrow">AI &amp; CGI</span>
+      <h2 class="rr-split">AI &amp; CGI that stops the scroll</h2>
+      <p>Generated and composited visuals that turn a plain clip into a thumb-stopper.</p>
+    </div>
+    <div class="sf-masonry">
+      <a class="ng-card ng-card--promo ng-promo--dark" href="#ng-form" data-anim>
+        <h4>AI &amp; CGI visuals that stop the scroll</h4>
+      </a>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1232016248.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1232016248?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="AI CGI clip"></iframe></div>
+      </div>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">If you want ads that perform and not just look nice, Ahmad is the guy. We saw a real lift within the first batch of creatives.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%25230891b2%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3EEL%3C/text%3E%3C/svg%3E" alt="E. Lindqvist">
+          <div><strong>E. Lindqvist</strong><span>Co-Founder, Norrsken Skincare</span></div>
+        </div>
+      </div>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1232016277.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1232016277?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="AI CGI clip"></iframe></div>
+      </div>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1232016307.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1232016307?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="AI CGI clip"></iframe></div>
+      </div>
+      <a class="ng-card ng-card--promo ng-promo--orange" href="#ng-form" data-anim>
+        <div class="ng-promo__badge">Free sample</div>
+        <h4>Send 1 raw clip</h4>
+        <p>Get 1 finished edit in 48 hours</p>
+      </a>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1232016711.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1232016711?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="AI CGI clip"></iframe></div>
+      </div>
+      <div class="ng-card ng-card--quote" data-anim>
+        <span class="ng-quote__mark">&rdquo;</span>
+        <p class="ng-quote__text">Went well beyond the brief every single time. Experienced, easy to talk to, and the edits speak for themselves.</p>
+        <div class="ng-quote__author">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2780%27%20height%3D%2780%27%3E%3Crect%20width%3D%2780%27%20height%3D%2780%27%20rx%3D%2740%27%20fill%3D%27%252316a34a%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2753%25%27%20font-family%3D%27Poppins%2CArial%2Csans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27middle%27%3ENO%3C/text%3E%3C/svg%3E" alt="N. Osei">
+          <div><strong>N. Osei</strong><span>CEO, Fettle Foods</span></div>
+        </div>
+      </div>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1232016710.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1232016710?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="AI CGI clip"></iframe></div>
       </div>
     </div>
   </div>
@@ -829,7 +863,7 @@
   .sf-masonry{column-count:5;column-gap:var(--gap);}
   .sf-sec .ng-card{display:block;width:100%;margin:0 0 var(--gap);break-inside:avoid;-webkit-column-break-inside:avoid;border-radius:var(--radius);overflow:hidden;position:relative;opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.44,0,.09,1);}
   .sf-sec .ng-card.is-in{opacity:1;transform:translateY(0);}
-  .sf-sec .ng-card--video{background:#eee;line-height:0;cursor:pointer;}
+  .sf-sec .ng-card--video{background:#eee;line-height:0;}
   .sf-sec .ng-vidwrap{width:100%;aspect-ratio:9/16;display:block;position:relative;overflow:hidden;background:#eee center/cover no-repeat;transition:transform .5s ease;}
   .sf-sec .ng-vidwrap iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;pointer-events:none;}
   .sf-sec .ng-card--video:hover .ng-vidwrap{transform:scale(1.04);}
@@ -936,6 +970,36 @@
   </div>
 </section>
 
+<!-- ===================== before / after + how it works ===================== -->
+<section class="sf-sec sf-sec--pair" id="ng-beforeafter">
+  <div class="sf-inner sf-inner--wide">
+    <div class="sf-head" data-anim>
+      <span class="sf-eyebrow">Before &amp; after</span>
+      <h2 class="rr-split">Same footage. Completely different video.</h2>
+      <p>Left: the raw clip a client sent us. Right: the version that went live. The difference is a hook that lands in 2 seconds, cuts timed to the beat, captions for sound-off viewing, and an ending that makes people rewatch.</p>
+    </div>
+    <div class="ba-layout" id="ng-how">
+      <aside class="ba-steps ba-steps--l" aria-label="How it works">
+        <div class="ba-how" data-rr="left"><span class="sf-eyebrow">How it works</span><h3>Three steps. Zero editing on your end.</h3></div>
+        <div class="ba-step" data-rr="left" data-d="1" data-tilt><span class="ba-step__n">1</span><div><h4>Upload your raw footage.</h4><p>Google Drive, Dropbox, WeTransfer, whatever&rsquo;s easiest.</p></div></div>
+        <div class="ba-step" data-rr="left" data-d="2" data-tilt><span class="ba-step__n">2</span><div><h4>We edit.</h4><p>Hooks, pacing, captions, music, 3 variations per clip.</p></div></div>
+      </aside>
+    <div class="sf-pair">
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231027012.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231027012?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Raw clip"></iframe></div><span class="sf-label">Raw clip</span>
+      </div>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1231027013.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1231027013?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="Final edit"></iframe></div><span class="sf-label">Final edit</span>
+      </div>
+    </div>
+      <aside class="ba-steps ba-steps--r" aria-label="How it works, continued">
+        <div class="ba-step" data-rr="right" data-d="1" data-tilt><span class="ba-step__n">3</span><div><h4>You post.</h4><p>Files arrive in 72 hours, sized for every platform. Revisions on request.</p></div></div>
+        <a href="#ng-form" class="ba-cta" data-rr="right" data-d="2" data-magnet><span class="ba-cta__badge">Free sample</span><strong>Send 1 raw clip</strong><em>Get 1 finished edit in 48 hours <i aria-hidden="true">&rarr;</i></em></a>
+      </aside>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== offer ===================== -->
 <!-- Prices were still [$X] / [$Y] / [$Z] in the copy doc. Replace the "Get a quote" lines with the real prices. -->
 <section class="rr-sec rr-offer" id="ng-offer">
@@ -1038,7 +1102,7 @@
 
       <p class="ng-terms">
         By clicking this button you accept the
-        <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy.</a>
+        <a>Terms and Conditions</a> and <a>Privacy Policy.</a>
       </p>
 
       <p class="ng-form__status" role="status" aria-live="polite"></p>
@@ -1721,7 +1785,8 @@
   }
 
   /* ---------- testimonials ---------- */
-  .rr-testi{background:#f7f7f8;}
+  .rr-testi{background:#fff;}
+  .rr-offer{background:#f7f7f8;}
   .rr-tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;perspective:1200px;}
   .rr-tcard{margin:0;background:#fff;border-radius:22px;padding:28px 26px;display:flex;flex-direction:column;gap:20px;border:1px solid transparent;transition:border-color .3s,box-shadow .3s;}
   .rr-tcard:hover{box-shadow:0 22px 50px rgba(0,0,0,.12);border-color:rgba(198,240,36,.8);}
