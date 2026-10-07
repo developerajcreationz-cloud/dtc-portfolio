@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & CGI that stops the scroll | Ahmad Jan</title>
+<link rel="canonical" href="/ai-cgi/">
+<meta name="description" content="Generated and composited visuals that turn a plain clip into a thumb-stopper.">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<script src="/assets/js/lenis.min.js"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<style>
+  html{scroll-behavior:smooth;}
+  html,body{margin:0;padding:0;}
+  body{font-family:Poppins,Helvetica Neue,Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+  *{box-sizing:border-box;}
+  /* offset anchor jumps so the sticky nav does not cover section tops */
+  section[id]{scroll-margin-top:70px;}
+
+  /* hover focus: fade the other clips to dark black, keep the hovered one at full brightness (see HOVER_MODE in the global script) */
+  .ng-vidwrap{transition:transform .5s ease,opacity .35s ease,filter .35s ease !important;}
+  body.ng-hover-fade .ng-vidwrap:not(.is-hover){filter:brightness(.55);}
+  body.ng-hover-fade .ng-vidwrap.is-hover{filter:none;}
+
+</style>
+</head>
+<body>
+
+<header class="ng-nav" id="ng-nav">
+  <div class="ng-nav__inner">
+    <a href="/" class="ng-nav__logo">Supads</a>
+
+    <nav class="ng-nav__links" id="ng-nav-links">
+      <a href="/">Home</a>
+      <a href="/reels/">Reels</a>
+      <a href="/speed-ramps/">Speed ramps</a>
+      <a href="/ai-cgi/">AI &amp; CGI</a>
+      <a href="/saas/">SaaS</a>
+    </nav>
+
+    <a href="/#ng-form" class="ng-nav__cta">Free sample</a>
+
+    <button class="ng-nav__burger" id="ng-burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .ng-nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(255,255,255,.86);
+    backdrop-filter:saturate(180%) blur(12px);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid #efeff1;
+    font-family:'Poppins','Helvetica Neue',Arial,sans-serif;
+  }
+  .ng-nav *{box-sizing:border-box;}
+  .ng-nav__inner{
+    max-width:1180px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 22px;gap:20px;
+  }
+  .ng-nav__logo{
+    font-size:16px;font-weight:600;line-height:1.15;color:#111;text-decoration:none;
+    letter-spacing:.02em;flex:0 0 auto;
+  }
+  .ng-nav__links{
+    display:flex;gap:30px;
+    position:absolute;left:50%;transform:translateX(-50%);
+  }
+  .ng-nav__links a{
+    font-size:14px;font-weight:500;color:#2a2a2a;text-decoration:none;
+    transition:color .2s ease;position:relative;
+  }
+  .ng-nav__links a::after{
+    content:"";position:absolute;left:0;bottom:-4px;width:0;height:1.5px;background:#111;transition:width .25s ease;
+  }
+  .ng-nav__links a:hover{color:#000;}
+  .ng-nav__links a:hover::after{width:100%;}
+  .ng-nav__cta{
+    flex:0 0 auto;
+    background:#111;color:#fff;text-decoration:none;
+    font-size:13px;font-weight:600;padding:9px 18px;border-radius:999px;
+    transition:transform .2s ease, background .2s ease;
+  }
+  .ng-nav__cta:hover{transform:translateY(-1px);background:#000;}
+
+  .ng-nav__burger{
+    display:none;flex-direction:column;gap:4px;
+    background:none;border:none;cursor:pointer;padding:6px;
+  }
+  .ng-nav__burger span{width:22px;height:2px;background:#111;border-radius:2px;transition:.3s;}
+  .ng-nav__burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  .ng-nav__burger.open span:nth-child(2){opacity:0;}
+  .ng-nav__burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:820px){
+    .ng-nav__links{
+      position:fixed;left:0;right:0;top:57px;transform:none;
+      flex-direction:column;gap:0;
+      background:#fff;border-bottom:1px solid #efeff1;
+      max-height:0;overflow:hidden;transition:max-height .35s ease;
+    }
+    .ng-nav__links.open{max-height:340px;}
+    .ng-nav__links a{padding:15px 22px;border-top:1px solid #f3f3f4;font-size:15px;}
+    .ng-nav__links a::after{display:none;}
+    .ng-nav__burger{display:flex;}
+    .ng-nav__cta{margin-left:auto;margin-right:6px;}
+  }
+  @media (max-width:420px){
+    .ng-nav__cta{display:none;}
+  }
+</style>
+
+<script>
+(function(){
+  var burger = document.getElementById('ng-burger');
+  var links  = document.getElementById('ng-nav-links');
+  if(!burger) return;
+  burger.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  // close menu after clicking a link (mobile)
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+    });
+  });
+})();
+</script>
+
+<!-- ===================== ai-cgi: videos only, no reviews or CTA cards ===================== -->
+<section class="sf-sec" id="ng-ai-cgi">
+  <div class="sf-inner">
+    <a class="sf-back" href="/#ng-aicgi">&larr; Back to home</a>
+    <div class="sf-head" data-anim>
+      <span class="sf-eyebrow">AI &amp; CGI</span>
+      <h1>AI &amp; CGI that stops the scroll</h1>
+      <p>Generated and composited visuals that turn a plain clip into a thumb-stopper.</p>
+    </div>
+    <div class="sf-masonry">
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1232016248.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1232016248?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="AI CGI clip"></iframe></div>
+      </div>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1232016277.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1232016277?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="AI CGI clip"></iframe></div>
+      </div>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1232016307.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1232016307?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="AI CGI clip"></iframe></div>
+      </div>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1232016711.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1232016711?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="AI CGI clip"></iframe></div>
+      </div>
+      <div class="ng-card ng-card--video" data-anim>
+        <div class="ng-vidwrap" data-vimeo-protect style="background-image:url('https://vumbnail.com/1232016710.jpg')"><iframe class="ng-vimeo" src="https://player.vimeo.com/video/1232016710?background=1&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;autopause=0&amp;byline=0&amp;title=0&amp;portrait=0&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" tabindex="-1" title="AI CGI clip"></iframe></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sf-sec{--ink:#181818;--muted:#8a8f96;--radius:16px;--gap:14px;background:#fff;padding:56px 20px 56px;font-family:'Poppins','Helvetica Neue',Arial,sans-serif;min-height:70vh;}
+  .sf-sec *{box-sizing:border-box;}
+  .sf-inner{max-width:1200px;margin:0 auto;}
+  .sf-back{display:inline-block;margin-bottom:22px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;}
+  .sf-back:hover{text-decoration:underline;}
+  .sf-head{text-align:center;margin:0 auto 34px;max-width:620px;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  .sf-head.is-in{opacity:1;transform:none;}
+  .sf-eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:#c9f24a;padding:5px 12px;border-radius:999px;}
+  .sf-head h1{margin:14px 0 8px;font-size:clamp(26px,4vw,40px);font-weight:700;line-height:1.15;color:var(--ink);}
+  .sf-head p{margin:0;font-size:15px;line-height:1.6;color:var(--muted);}
+  /* videos only, in columns */
+  .sf-masonry{column-count:5;column-gap:var(--gap);}
+  .sf-sec .ng-card{display:block;width:100%;margin:0 0 var(--gap);break-inside:avoid;-webkit-column-break-inside:avoid;border-radius:var(--radius);overflow:hidden;position:relative;opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.44,0,.09,1);}
+  .sf-sec .ng-card.is-in{opacity:1;transform:translateY(0);}
+  .sf-sec .ng-card--video{background:#eee;line-height:0;}
+  .sf-sec .ng-vidwrap{width:100%;aspect-ratio:9/16;display:block;position:relative;overflow:hidden;background:#eee center/cover no-repeat;transition:transform .5s ease;}
+  .sf-sec .ng-vidwrap iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;pointer-events:none;}
+  .sf-sec .ng-card--video:hover .ng-vidwrap{transform:scale(1.04);}
+  .sf-foot{background:#0e0e0e;color:#fff;font-family:'Poppins','Helvetica Neue',Arial,sans-serif;text-align:center;padding:44px 20px;}
+  .sf-foot a{display:inline-block;background:#c6f024;color:#14210a;text-decoration:none;font-weight:700;font-size:14px;padding:13px 26px;border-radius:999px;margin-bottom:18px;}
+  .sf-foot p{margin:0;font-size:12px;opacity:.6;}
+  @media (max-width:1024px){.sf-masonry{column-count:3;}}
+  @media (max-width:640px){.sf-sec{padding:40px 12px 40px;--gap:10px;}.sf-masonry{column-count:2;}.sf-head{margin-bottom:24px;}}
+  @media (prefers-reduced-motion:reduce){.sf-sec .ng-card,.sf-head{opacity:1!important;transform:none!important;transition:none!important;}.sf-sec .ng-vidwrap{transition:none!important;}}
+</style>
+<script>
+(function(){
+  // scroll-in for the video cards and section heads
+  var els = document.querySelectorAll('.sf-sec [data-anim]');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var el = e.target;
+          setTimeout(function(){ el.classList.add('is-in'); }, (el.dataset.i||0)*50);
+          io.unobserve(el);
+        }
+      });
+    }, {threshold:.1, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(c,i){ c.dataset.i = i % 10; io.observe(c); });
+  } else {
+    els.forEach(function(c){ c.classList.add('is-in'); });
+  }
+})();
+</script>
+
+<footer class="sf-foot">
+  <a href="/#ng-form">Get my free sample edit &rarr;</a>
+  <p>&copy; 2020&ndash;2026 Ahmad Jan</p>
+</footer>
+
+<style>
+  [data-vimeo-protect]{background-image:none!important;background-color:#e6e7ea;}
+</style>
+<script>
+(function(){
+  var els = [].slice.call(document.querySelectorAll('[data-vimeo-protect]'));
+  if(!els.length || !window.fetch) return;
+  var cache = {}, pending = {};
+  try { cache = JSON.parse(sessionStorage.getItem('vthumbs') || '{}'); } catch(e){}
+  function save(){ try { sessionStorage.setItem('vthumbs', JSON.stringify(cache)); } catch(e){} }
+  function idOf(el){ var f = el.querySelector('iframe'); var m = f && f.src.match(/video\/(\d+)/); return m ? m[1] : null; }
+  function poster(id){
+    if(cache[id]) return Promise.resolve(cache[id]);
+    if(pending[id]) return pending[id];
+    pending[id] = fetch('https://vimeo.com/api/oembed.json?width=640&url=' + encodeURIComponent('https://vimeo.com/' + id))
+      .then(function(r){ if(!r.ok) throw new Error('oembed ' + r.status); return r.json(); })
+      .then(function(j){
+        var url = j.thumbnail_url, m = (url || '').match(/\/video\/([^_?\/]+)/);
+        if(m && j.width && j.height) url = 'https://i.vimeocdn.com/video/' + m[1] + '_640x' + Math.round(640 * j.height / j.width) + '.jpg';
+        if(!url) throw new Error('no thumbnail');
+        cache[id] = url; save(); return url;
+      });
+    return pending[id];
+  }
+  els.forEach(function(el){
+    var id = idOf(el); if(!id) return;
+    poster(id).then(function(url){ el.style.setProperty('background-image', 'url("' + url + '")', 'important'); }).catch(function(){});
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- Smooth scroll ----
+  if(!reduce && typeof Lenis !== 'undefined'){
+    var lenis = new Lenis({
+      duration: 1.1,
+      smoothWheel: true,
+      autoRaf: true
+    });
+    window.lenis = lenis;
+  }
+
+  // ---- Smooth in-page anchor navigation (nav links, CTA cards, etc.) ----
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    var href = a.getAttribute('href');
+    if(!href || href.length < 2) return;
+    a.addEventListener('click', function(e){
+      var target = document.querySelector(href);
+      if(!target) return;
+      if(window.lenis){
+        e.preventDefault();
+        window.lenis.scrollTo(target, {offset: -64});
+      }
+      // otherwise let the browser's native anchor jump + CSS
+      // scroll-behavior:smooth (see head) handle it.
+    });
+  });
+
+  // ---- Video protection ----
+  // The portfolio clips are embedded as Vimeo "background mode" iframes
+  // (no player chrome, no click-through) with pointer-events disabled, so
+  // right-click / drag never reaches the iframe in the first place. These
+  // extra listeners are a small additional deterrent for the wrapper
+  // elements themselves. None of this is a substitute for turning on
+  // Vimeo's own protections on the account that owns these videos:
+  //   Video settings → Privacy → "Allow download" = off, and
+  //   Video settings → Privacy → domain-restrict embeds to this site.
+  // Client-side tricks alone can never fully stop a determined download
+  // (devtools / screen recording always exist) — the Vimeo-side settings
+  // are the real control.
+  document.querySelectorAll('[data-vimeo-protect]').forEach(function(el){
+    el.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+    el.addEventListener('dragstart', function(e){ e.preventDefault(); });
+  });
+
+  // All 20 clips load eagerly and simultaneously - no lazy-load, no
+  // staged waterfall, no gating on scroll/idle/viewport of any kind, on
+  // desktop or mobile. (A staged version was tried and reverted: it
+  // relied on requestIdleCallback firing promptly, which isn't
+  // guaranteed on a real device under load, and could leave later
+  // sections showing only their poster thumbnail for too long.)
+
+  // ---- Hover-to-unmute ----
+  // The two hero pill clips (.ng-vid) are deliberately excluded: they stay muted always.
+  // Every clip autoplays muted (required for autoplay in every browser).
+  // Hovering a clip unmutes just that one via Vimeo's official Player
+  // API; moving off it (or onto a different clip) re-mutes it, so at
+  // most one clip plays sound at a time. The iframes themselves have
+  // pointer-events:none (see the download-deterrent block above), so
+  // hover is detected on the wrapper - the iframe is transparent to
+  // pointer events, meaning the wrapper is already the effective hover
+  // target with no changes needed there.
+  // ---- Hover focus ----
+  // HOVER_MODE picks what happens to the OTHER clips while one is hovered:
+  //   'pause' : the others pause, only the hovered clip plays
+  //   'fade'  : the others dim (CSS), the hovered clip is brightened
+  //   'both'  : pause + dim
+  // Moving the mouse off resumes / restores everything. Only on devices
+  // with a real hover pointer (never on touch screens).
+  var HOVER_MODE = 'both';
+  var canHover = window.matchMedia('(hover: hover)').matches;
+  if(typeof Vimeo !== 'undefined' && Vimeo.Player){
+    var soundWraps = document.querySelectorAll('.ng-vidwrap');
+    var activePlayer = null;
+    var players = [];
+    var restoreTimer = null;
+    var doPause = HOVER_MODE === 'pause' || HOVER_MODE === 'both';
+    var doFade  = HOVER_MODE === 'fade'  || HOVER_MODE === 'both';
+    soundWraps.forEach(function(wrap){
+      var iframe = wrap.querySelector('iframe.ng-vimeo');
+      if(!iframe) return;
+      var player = new Vimeo.Player(iframe);
+      players.push({wrap:wrap, player:player});
+      wrap.addEventListener('mouseenter', function(){
+        if(activePlayer && activePlayer !== player){
+          activePlayer.setMuted(true).catch(function(){});
+        }
+        activePlayer = player;
+        player.setMuted(false).catch(function(){});
+        if(!canHover) return;
+        clearTimeout(restoreTimer);
+        document.body.classList.toggle('ng-hover-fade', doFade);
+        players.forEach(function(p){
+          var me = p.player === player;
+          p.wrap.classList.toggle('is-hover', me);
+          if(doPause){ (me ? p.player.play() : p.player.pause()).catch(function(){}); }
+        });
+      });
+      wrap.addEventListener('mouseleave', function(){
+        player.setMuted(true).catch(function(){});
+        if(activePlayer === player) activePlayer = null;
+        if(!canHover) return;
+        // short delay so gliding straight onto a neighbour doesn't flicker
+        clearTimeout(restoreTimer);
+        restoreTimer = setTimeout(function(){
+          document.body.classList.remove('ng-hover-fade');
+          players.forEach(function(p){
+            p.wrap.classList.remove('is-hover');
+            if(doPause) p.player.play().catch(function(){});
+          });
+        }, 80);
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
