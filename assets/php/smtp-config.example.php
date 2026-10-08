@@ -7,9 +7,9 @@
 return [
     'host'      => 'smtp.hostinger.com',
     'port'      => 465,                          // 465 = SSL, 587 = STARTTLS
-    'user'      => 'forms@ajcreationz.co',       // the mailbox that sends
+    'user'      => 'marketing@ajcreationz.co',   // the mailbox that sends
     'pass'      => 'PUT-THE-MAILBOX-PASSWORD-HERE',
-    'from'      => 'forms@ajcreationz.co',       // must be the same mailbox
+    'from'      => 'marketing@ajcreationz.co',   // must be the same mailbox
     'from_name' => 'Supads website form',
-    'to'        => ['developerajcreationz@gmail.com'], // add more addresses to get copies
+    'to'        => ['developerajcreationz@gmail.com', 'ahmadjan1012@gmail.com'],
 ];

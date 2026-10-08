@@ -11,7 +11,7 @@ declare(strict_types=1);
 header('Content-Type: application/json; charset=utf-8');
 
 // ---- config -----------------------------------------------------------
-$recipient = 'developerajcreationz@gmail.com';
+$recipient = ['developerajcreationz@gmail.com', 'ahmadjan1012@gmail.com'];
 $siteName  = 'Ahmad Jan — Contact Form';
 
 // ---- only accept POST --------------------------------------------------
@@ -119,18 +119,27 @@ $body = implode("\n", $bodyLines);
 
 $baseDir = dirname($_SERVER['DOCUMENT_ROOT'] ?? __DIR__);
 $cfg = [];
-$cfgFile = $baseDir . '/smtp-config.php';
-if (is_file($cfgFile)) {
-    $loaded = include $cfgFile;
-    if (is_array($loaded)) {
-        $cfg = $loaded;
+// Preferred: above the web root. Alternative: /_private/ inside it (blocked from the web by its .htaccess).
+foreach ([$baseDir . '/smtp-config.php', ($_SERVER['DOCUMENT_ROOT'] ?? '') . '/_private/smtp-config.php'] as $cfgFile) {
+    if (is_file($cfgFile)) {
+        $loaded = include $cfgFile;
+        if (is_array($loaded)) {
+            $cfg = $loaded;
+            break;
+        }
     }
 }
 
 // -- 1) durable copy
 $saved = false;
-$leadDir = $baseDir . '/form-leads';
-if (is_dir($leadDir) || @mkdir($leadDir, 0750, true)) {
+$leadDir = null;
+foreach ([$baseDir . '/form-leads', ($_SERVER['DOCUMENT_ROOT'] ?? '') . '/_private/form-leads'] as $d) {
+    if ((is_dir($d) || @mkdir($d, 0750, true)) && is_writable($d)) {
+        $leadDir = $d;
+        break;
+    }
+}
+if ($leadDir !== null) {
     $entry = "==== " . date('c') . " ====\nSubject: {$subject}\n{$body}\n\n";
     $saved = @file_put_contents($leadDir . '/leads.log', $entry, FILE_APPEND | LOCK_EX) !== false;
 }
