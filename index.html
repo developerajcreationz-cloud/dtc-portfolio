@@ -1132,13 +1132,12 @@
         </select>
       </div>
       <div class="ng-field" data-rr="up">
-        <textarea name="about" rows="3" placeholder="What&rsquo;s the video about?"></textarea>
+        <textarea name="about" rows="3" placeholder="What&rsquo;s the video about?" required></textarea>
       </div>
 
       <!-- honeypot: hidden from real visitors, catches simple bots -->
       <input type="text" name="company" class="ng-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <input type="hidden" name="plan" value="">
-
+      
       <p class="ng-terms">
         By clicking this button you accept the
         <a>Terms and Conditions</a> and <a>Privacy Policy.</a>
@@ -1299,6 +1298,8 @@
   var nameInput  = form.querySelector('input[name=name]');
   var emailInput = form.querySelector('input[name=email]');
   var clipInput  = form.querySelector('input[name=clip]');
+  var platformInput = form.querySelector('select[name=platform]');
+  var aboutInput = form.querySelector('textarea[name=about]');
 
   function setStatus(msg, kind){
     if(!status) return;
@@ -1314,9 +1315,29 @@
     return data;
   }
 
+  // Thank-you popup shown after a successful send
+  // (looked up lazily: the popup markup sits at the end of <body>, after this script)
+  function thanksEl(){ return document.getElementById('ng-thanks'); }
+  function showThanks(){
+    var thanks = thanksEl(); if(!thanks) return;
+    thanks.classList.add('is-open');
+    thanks.setAttribute('aria-hidden', 'false');
+    var c = thanks.querySelector('.ng-thanks__btn'); if(c) c.focus();
+  }
+  function hideThanks(){
+    var thanks = thanksEl(); if(!thanks) return;
+    thanks.classList.remove('is-open');
+    thanks.setAttribute('aria-hidden', 'true');
+  }
+  document.addEventListener('click', function(e){
+    var thanks = thanksEl();
+    if(thanks && (e.target === thanks || e.target.closest('[data-thanks-close]'))) hideThanks();
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') hideThanks(); });
+
   btn.addEventListener('click', function(){
     var ok = true;
-    [nameInput, emailInput, clipInput].forEach(function(inp){
+    [nameInput, emailInput, clipInput, platformInput, aboutInput].forEach(function(inp){
       if(!inp || !inp.value.trim()){ if(inp) inp.style.borderColor = '#ff5a5f'; ok = false; }
       else { inp.style.borderColor = ''; }
     });
@@ -1325,7 +1346,7 @@
       ok = false;
     }
     if(!ok){
-      setStatus('Please add your name, a valid email and a link to your raw clip.', 'error');
+      setStatus('Please fill in every field (with a valid email) before sending.', 'error');
       return;
     }
 
@@ -1346,7 +1367,8 @@
       .then(function(result){
         if(result.ok && result.json && result.json.success){
           btn.textContent = 'Sent ✓';
-          setStatus('Thanks — we’ve got your clip. Your edit arrives within 48 hours.', 'ok');
+          setStatus('', '');
+          showThanks();
           form.querySelectorAll('input[name],select[name],textarea[name]').forEach(function(inp){ if(inp.tagName==='SELECT'){ inp.selectedIndex = 0; } else { inp.value = ''; } });
           setTimeout(function(){ btn.textContent = 'Send My Request →'; btn.style.pointerEvents=''; }, 3000);
         } else {
@@ -2122,5 +2144,25 @@
 })();
 </script>
 
+
+<!-- Thank-you popup (shown after the form is sent) -->
+<div class="ng-thanks" id="ng-thanks" role="dialog" aria-modal="true" aria-labelledby="ng-thanks-title" aria-hidden="true">
+  <div class="ng-thanks__card">
+    <div class="ng-thanks__tick" aria-hidden="true">&#10003;</div>
+    <h3 id="ng-thanks-title">Thank you for contacting us!</h3>
+    <p>I&rsquo;ll contact you shortly.</p>
+    <button type="button" class="ng-thanks__btn" data-thanks-close>Close</button>
+  </div>
+</div>
+<style>
+  .ng-thanks{position:fixed;inset:0;z-index:100000;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(10,10,10,.6);backdrop-filter:blur(4px);}
+  .ng-thanks.is-open{display:flex;animation:ngThanksIn .25s ease;}
+  .ng-thanks__card{width:100%;max-width:420px;background:#fff;color:#14210a;border-radius:24px;padding:40px 28px 32px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.35);}
+  .ng-thanks__tick{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:#c6f024;color:#14210a;font-size:32px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .ng-thanks__card h3{margin:0 0 8px;font-size:24px;line-height:1.2;}
+  .ng-thanks__card p{margin:0 0 24px;color:#555;font-size:16px;}
+  .ng-thanks__btn{border:0;cursor:pointer;background:#0e0e0e;color:#fff;font-weight:700;font-size:15px;padding:13px 32px;border-radius:999px;}
+  @keyframes ngThanksIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+</style>
 </body>
 </html>

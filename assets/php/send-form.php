@@ -62,7 +62,7 @@ $clip       = field($data, 'clip', 500);
 $platform   = field($data, 'platform', 40);
 $about      = field($data, 'about', 1500);
 $plan       = field($data, 'plan', 40);
-$isSample   = ($clip !== '');
+$isSample   = array_key_exists('clip', $data); // the main-page form sends a clip link
 
 $errors = [];
 if ($name === '') {
@@ -71,28 +71,37 @@ if ($name === '') {
 if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors[] = 'email';
 }
+if ($isSample) {
+    // every field on the main-page form is required
+    if ($clip === '')     { $errors[] = 'clip'; }
+    if ($platform === '') { $errors[] = 'platform'; }
+    if ($about === '')    { $errors[] = 'about'; }
+}
 
 if (!empty($errors)) {
     http_response_code(422);
-    echo json_encode(['success' => false, 'message' => 'Please fill in a valid name and email.', 'fields' => $errors]);
+    echo json_encode(['success' => false, 'message' => 'Please fill in all the fields with a valid email.', 'fields' => $errors]);
     exit;
 }
 
 // ---- build the email -----------------------------------------------------
-$subject = $isSample ? "Free sample request: {$name}" : "New lead from the site: {$name}";
+$subject = $isSample ? "New enquiry from {$name} (supads.ajcreationz.co)" : "New lead from the site: {$name}";
 
 if ($isSample) {
     $bodyLines = [
-        "New FREE SAMPLE request from the Raw-to-Reel page.",
+        "New enquiry from the website",
+        "============================",
         "",
-        "Name:         {$name}",
-        "Email:        {$email}",
-        "Raw clip:     {$clip}",
-        "Posts on:     " . ($platform !== '' ? $platform : '—'),
-        "Package:      " . ($plan !== '' ? $plan : '—'),
-        "Video is about: " . ($about !== '' ? $about : '—'),
+        "Name:       {$name}",
+        "Email:      {$email}",
+        "Raw clip:   {$clip}",
+        "Posts on:   {$platform}",
         "",
-        "Submitted: " . date('Y-m-d H:i:s T'),
+        "About the video:",
+        $about,
+        "",
+        "Received: " . date('d M Y, H:i T'),
+        "Reply to this email to answer {$name} directly.",
     ];
 } else {
 $bodyLines = [
