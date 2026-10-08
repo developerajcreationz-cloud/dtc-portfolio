@@ -62,7 +62,7 @@ Follows the funnel copy top to bottom. Section ids (in page order): `#ng-hero`, 
 - Right-click/drag are blocked on `[data-vimeo-protect]` as a deterrent only. Real protection is Vimeo's own privacy settings.
 
 ### Contact form
-`#ng-form` POSTs JSON to `/assets/php/send-form.php` (PHP `mail()`, recipient set at the top of that file). Needs PHP hosting (Hostinger has it).
+`#ng-form` POSTs JSON to `/assets/php/send-form.php`. Every lead is first saved to `form-leads/leads.log` (above `public_html`, or `_private/form-leads/` if that is not writable), then sent over authenticated SMTP using `smtp-config.php` (in `_private/` or one folder above `public_html`; NOT in git, template: `assets/php/smtp-config.example.php`). `_private/` is blocked from the web by its `.htaccess`, falling back to PHP `mail()`. The recipient list is `to` in that config (default in the PHP file). Needs PHP hosting (Hostinger has it).
 
 ## Git and deploy
 
