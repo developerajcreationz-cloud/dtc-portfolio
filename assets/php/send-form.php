@@ -2,10 +2,8 @@
 /**
  * Contact-form mail handler for the Ahmad Jan site.
  *
- * Requires PHP + the mail() function to be available on the host (true on
- * Hostinger shared/Business plans out of the box). Receives the form's
- * fields as JSON, validates/sanitizes them, and emails the submission to
- * the address below.
+ * Receives the form's fields as JSON, validates/sanitizes them, saves the lead
+ * to disk, and emails it via authenticated SMTP (fallback: PHP mail()).
  */
 
 declare(strict_types=1);
@@ -111,21 +109,135 @@ $bodyLines = [
 }
 $body = implode("\n", $bodyLines);
 
-$fromDomain = 'localhost';
-if (!empty($_SERVER['HTTP_HOST'])) {
-    $fromDomain = preg_replace('/[^A-Za-z0-9.\-]/', '', $_SERVER['HTTP_HOST']);
+// ---- delivery -------------------------------------------------------------
+// 1) Save the lead to disk first, so it survives even if every mail route fails.
+// 2) Send through the site's own mailbox over authenticated SMTP (best
+//    deliverability). Credentials live in smtp-config.php, ABOVE the web root
+//    (never in git, never web-accessible). See smtp-config.example.php.
+// 3) If SMTP is not configured or fails, fall back to PHP mail().
+// The visitor only sees an error if all of it fails.
+
+$baseDir = dirname($_SERVER['DOCUMENT_ROOT'] ?? __DIR__);
+$cfg = [];
+$cfgFile = $baseDir . '/smtp-config.php';
+if (is_file($cfgFile)) {
+    $loaded = include $cfgFile;
+    if (is_array($loaded)) {
+        $cfg = $loaded;
+    }
 }
-$fromAddress = 'no-reply@' . $fromDomain;
 
-$headers = [];
-$headers[] = "From: {$siteName} <{$fromAddress}>";
-$headers[] = "Reply-To: {$name} <{$email}>";
-$headers[] = 'Content-Type: text/plain; charset=UTF-8';
-$headers[] = 'X-Mailer: PHP/' . phpversion();
+// -- 1) durable copy
+$saved = false;
+$leadDir = $baseDir . '/form-leads';
+if (is_dir($leadDir) || @mkdir($leadDir, 0750, true)) {
+    $entry = "==== " . date('c') . " ====\nSubject: {$subject}\n{$body}\n\n";
+    $saved = @file_put_contents($leadDir . '/leads.log', $entry, FILE_APPEND | LOCK_EX) !== false;
+}
+if (!$saved) {
+    error_log("send-form lead (could not write file): {$subject} | {$email} | " . str_replace("\n", ' / ', $body));
+}
 
-$sent = @mail($recipient, $subject, $body, implode("\r\n", $headers));
+// -- 2) SMTP
+function smtp_send(array $c, string $to, string $subject, string $body, string $replyName, string $replyEmail, string &$err): bool
+{
+    $host = $c['host'] ?? 'smtp.hostinger.com';
+    $port = (int) ($c['port'] ?? 465);
+    $user = $c['user'] ?? '';
+    $pass = $c['pass'] ?? '';
+    $from = $c['from'] ?? $user;
+    $fromName = $c['from_name'] ?? 'Website form';
+    if ($user === '' || $pass === '') {
+        $err = 'smtp not configured';
+        return false;
+    }
+    $fp = @stream_socket_client(($port === 465 ? 'ssl://' : 'tcp://') . $host . ':' . $port, $en, $es, 15);
+    if (!$fp) {
+        $err = "connect failed: {$es}";
+        return false;
+    }
+    stream_set_timeout($fp, 15);
+    $read = function () use ($fp): string {
+        $out = '';
+        while (($line = fgets($fp, 515)) !== false) {
+            $out .= $line;
+            if (strlen($line) < 4 || $line[3] === ' ') {
+                break;
+            }
+        }
+        return $out;
+    };
+    $cmd = function (string $line, string $ok) use ($fp, $read, &$err): bool {
+        fwrite($fp, $line . "\r\n");
+        $r = $read();
+        if (strpos($r, $ok) !== 0) {
+            $err = trim($r);
+            return false;
+        }
+        return true;
+    };
+    $ehlo = 'supads.ajcreationz.co';
+    if (strpos($read(), '220') !== 0) { $err = 'bad greeting'; fclose($fp); return false; }
+    if (!$cmd("EHLO {$ehlo}", '250')) { fclose($fp); return false; }
+    if ($port !== 465) {
+        if (!$cmd('STARTTLS', '220') || !@stream_socket_enable_crypto($fp, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) { $err = $err ?: 'starttls failed'; fclose($fp); return false; }
+        if (!$cmd("EHLO {$ehlo}", '250')) { fclose($fp); return false; }
+    }
+    if (!$cmd('AUTH LOGIN', '334') || !$cmd(base64_encode($user), '334') || !$cmd(base64_encode($pass), '235')) { fclose($fp); return false; }
+    if (!$cmd("MAIL FROM:<{$from}>", '250') || !$cmd("RCPT TO:<{$to}>", '250') || !$cmd('DATA', '354')) { fclose($fp); return false; }
 
-if ($sent) {
+    $enc = function (string $v): string { return '=?UTF-8?B?' . base64_encode($v) . '?='; };
+    $msg  = "From: {$enc($fromName)} <{$from}>\r\n";
+    $msg .= "To: <{$to}>\r\n";
+    $msg .= "Reply-To: {$enc($replyName)} <{$replyEmail}>\r\n";
+    $msg .= "Subject: {$enc($subject)}\r\n";
+    $msg .= 'Date: ' . date('r') . "\r\n";
+    $msg .= 'Message-ID: <' . bin2hex(random_bytes(12)) . '@supads.ajcreationz.co>' . "\r\n";
+    $msg .= "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n";
+    $msg .= chunk_split(base64_encode($body));
+    fwrite($fp, $msg . "\r\n.\r\n");
+    $r = $read();
+    $ok = strpos($r, '250') === 0;
+    if (!$ok) { $err = trim($r); }
+    @fwrite($fp, "QUIT\r\n");
+    fclose($fp);
+    return $ok;
+}
+
+$recipients = $cfg['to'] ?? $recipient;
+$recipients = is_array($recipients) ? $recipients : [$recipients];
+
+$sent = false;
+$smtpErr = '';
+foreach ($recipients as $to) {
+    if (smtp_send($cfg, (string) $to, $subject, $body, $name, $email, $smtpErr)) {
+        $sent = true;
+    }
+}
+if (!$sent && $smtpErr !== '') {
+    error_log('send-form SMTP failed: ' . $smtpErr);
+}
+
+// -- 3) fallback: PHP mail()
+if (!$sent) {
+    $fromDomain = 'localhost';
+    if (!empty($_SERVER['HTTP_HOST'])) {
+        $fromDomain = preg_replace('/[^A-Za-z0-9.\-]/', '', $_SERVER['HTTP_HOST']);
+    }
+    $headers = [];
+    $headers[] = "From: {$siteName} <no-reply@{$fromDomain}>";
+    $headers[] = "Reply-To: {$name} <{$email}>";
+    $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+    $headers[] = 'X-Mailer: PHP/' . phpversion();
+    foreach ($recipients as $to) {
+        if (@mail((string) $to, $subject, $body, implode("\r\n", $headers))) {
+            $sent = true;
+        }
+    }
+}
+
+// The lead is on disk even if mail failed, so only report failure when nothing worked at all.
+if ($sent || $saved) {
     echo json_encode(['success' => true]);
 } else {
     http_response_code(500);
